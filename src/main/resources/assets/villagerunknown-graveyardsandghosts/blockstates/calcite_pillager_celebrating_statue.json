@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "villagerunknown-graveyardsandghosts:block/calcite_pillager_statue-b", "y": 0
+    },
+    "facing=east": {
+      "model": "villagerunknown-graveyardsandghosts:block/calcite_pillager_statue-b", "y": 90
+    },
+    "facing=south": {
+      "model": "villagerunknown-graveyardsandghosts:block/calcite_pillager_statue-b", "y": 180
+    },
+    "facing=west": {
+      "model": "villagerunknown-graveyardsandghosts:block/calcite_pillager_statue-b", "y": 270
+    }
+  }
+}

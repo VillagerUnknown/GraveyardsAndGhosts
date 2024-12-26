@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "villagerunknown-graveyardsandghosts",
+  "version": "${version}",
+  "name": "VillagerUnknown's Graveyards & Ghosts",
+  "description": "Hrm.. Adds Graveyards and Ghosts to your world.",
+  "authors": ["VillagerUnknown"],
+  "contact": {
+    "homepage":"https://discord.gg/PXjXh6M38H"
+  },
+  "license": "CC-BY-4.0",
+  "icon": "assets/graveyardsandghosts/villagerunknown-graveyards-and-ghosts.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "me.villagerunknown.graveyardsandghosts.client.GraveyardsandghostsClient"
+    ],
+    "main": [
+      "me.villagerunknown.graveyardsandghosts.Graveyardsandghosts"
+    ],
+    "modmenu": [
+      "me.villagerunknown.graveyardsandghosts.client.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "graveyardsandghosts.mixins.json",
+    {
+      "config": "graveyardsandghosts.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}",
+    "villagerunknown-platform": ">=1.1.0"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/PXjXh6M38H"
+      }
+    }
+  }
+}

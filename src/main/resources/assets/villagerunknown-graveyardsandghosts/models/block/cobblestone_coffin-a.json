@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/coffins/coffin-a",
+	"textures": {
+		"0": "minecraft:block/cobblestone",
+		"particle": "minecraft:block/cobblestone"
+	}
+}

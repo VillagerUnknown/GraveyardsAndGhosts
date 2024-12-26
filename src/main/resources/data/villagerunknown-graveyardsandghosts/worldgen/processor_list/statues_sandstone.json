@@ -1,0 +1,852 @@
+{
+  "processors": [
+    {
+      "processor_type": "minecraft:rule",
+      "rules": [
+        {
+          "input_predicate": {
+            "block": "minecraft:obsidian",
+            "predicate_type": "minecraft:block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:smooth_sandstone"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:end_stone_bricks",
+            "predicate_type": "minecraft:block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:sandstone"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:end_stone",
+            "predicate_type": "minecraft:block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:sand"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "villagerunknown-graveyardsandghosts:obsidian_pedestal",
+            "predicate_type": "minecraft:block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_pedestal",
+            "Properties": {
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "villagerunknown-graveyardsandghosts:obsidian_thin_pedestal",
+            "predicate_type": "minecraft:block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_thin_pedestal",
+            "Properties": {
+              "waterlogged": "false"
+            }
+          }
+        },
+
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_statue",
+              "Properties": {
+                "half": "upper",
+                "facing": "north",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_statue",
+            "Properties": {
+              "half": "upper",
+              "facing": "north",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_statue",
+              "Properties": {
+                "half": "upper",
+                "facing": "east",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_statue",
+            "Properties": {
+              "half": "upper",
+              "facing": "east",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_statue",
+              "Properties": {
+                "half": "upper",
+                "facing": "west",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_statue",
+            "Properties": {
+              "half": "upper",
+              "facing": "west",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_statue",
+              "Properties": {
+                "half": "upper",
+                "facing": "south",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_statue",
+            "Properties": {
+              "half": "upper",
+              "facing": "south",
+              "waterlogged": "false"
+            }
+          }
+        },
+
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_statue",
+              "Properties": {
+                "half": "lower",
+                "facing": "north",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_statue",
+            "Properties": {
+              "half": "lower",
+              "facing": "north",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_statue",
+              "Properties": {
+                "half": "lower",
+                "facing": "east",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_statue",
+            "Properties": {
+              "half": "lower",
+              "facing": "east",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_statue",
+              "Properties": {
+                "half": "lower",
+                "facing": "west",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_statue",
+            "Properties": {
+              "half": "lower",
+              "facing": "west",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_statue",
+              "Properties": {
+                "half": "lower",
+                "facing": "south",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_statue",
+            "Properties": {
+              "half": "lower",
+              "facing": "south",
+              "waterlogged": "false"
+            }
+          }
+        },
+
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_cross_statue",
+              "Properties": {
+                "half": "upper",
+                "facing": "north",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_cross_statue",
+            "Properties": {
+              "half": "upper",
+              "facing": "north",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_cross_statue",
+              "Properties": {
+                "half": "upper",
+                "facing": "east",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_cross_statue",
+            "Properties": {
+              "half": "upper",
+              "facing": "east",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_cross_statue",
+              "Properties": {
+                "half": "upper",
+                "facing": "west",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_cross_statue",
+            "Properties": {
+              "half": "upper",
+              "facing": "west",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_cross_statue",
+              "Properties": {
+                "half": "upper",
+                "facing": "south",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_cross_statue",
+            "Properties": {
+              "half": "upper",
+              "facing": "south",
+              "waterlogged": "false"
+            }
+          }
+        },
+
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_cross_statue",
+              "Properties": {
+                "half": "lower",
+                "facing": "north",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_cross_statue",
+            "Properties": {
+              "half": "lower",
+              "facing": "north",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_cross_statue",
+              "Properties": {
+                "half": "lower",
+                "facing": "east",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_cross_statue",
+            "Properties": {
+              "half": "lower",
+              "facing": "east",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_cross_statue",
+              "Properties": {
+                "half": "lower",
+                "facing": "west",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_cross_statue",
+            "Properties": {
+              "half": "lower",
+              "facing": "west",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_cross_statue",
+              "Properties": {
+                "half": "lower",
+                "facing": "south",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_cross_statue",
+            "Properties": {
+              "half": "lower",
+              "facing": "south",
+              "waterlogged": "false"
+            }
+          }
+        },
+
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_celtic_cross_statue",
+              "Properties": {
+                "half": "upper",
+                "facing": "north",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_celtic_cross_statue",
+            "Properties": {
+              "half": "upper",
+              "facing": "north",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_celtic_cross_statue",
+              "Properties": {
+                "half": "upper",
+                "facing": "east",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_celtic_cross_statue",
+            "Properties": {
+              "half": "upper",
+              "facing": "east",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_celtic_cross_statue",
+              "Properties": {
+                "half": "upper",
+                "facing": "west",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_celtic_cross_statue",
+            "Properties": {
+              "half": "upper",
+              "facing": "west",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_celtic_cross_statue",
+              "Properties": {
+                "half": "upper",
+                "facing": "south",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_celtic_cross_statue",
+            "Properties": {
+              "half": "upper",
+              "facing": "south",
+              "waterlogged": "false"
+            }
+          }
+        },
+
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_celtic_cross_statue",
+              "Properties": {
+                "half": "lower",
+                "facing": "north",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_celtic_cross_statue",
+            "Properties": {
+              "half": "lower",
+              "facing": "north",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_celtic_cross_statue",
+              "Properties": {
+                "half": "lower",
+                "facing": "east",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_celtic_cross_statue",
+            "Properties": {
+              "half": "lower",
+              "facing": "east",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_celtic_cross_statue",
+              "Properties": {
+                "half": "lower",
+                "facing": "west",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_celtic_cross_statue",
+            "Properties": {
+              "half": "lower",
+              "facing": "west",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_celtic_cross_statue",
+              "Properties": {
+                "half": "lower",
+                "facing": "south",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_celtic_cross_statue",
+            "Properties": {
+              "half": "lower",
+              "facing": "south",
+              "waterlogged": "false"
+            }
+          }
+        },
+
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_resurrection_statue",
+              "Properties": {
+                "half": "upper",
+                "facing": "north",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_resurrection_statue",
+            "Properties": {
+              "half": "upper",
+              "facing": "north",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_resurrection_statue",
+              "Properties": {
+                "half": "upper",
+                "facing": "east",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_resurrection_statue",
+            "Properties": {
+              "half": "upper",
+              "facing": "east",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_resurrection_statue",
+              "Properties": {
+                "half": "upper",
+                "facing": "west",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_resurrection_statue",
+            "Properties": {
+              "half": "upper",
+              "facing": "west",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_resurrection_statue",
+              "Properties": {
+                "half": "upper",
+                "facing": "south",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_resurrection_statue",
+            "Properties": {
+              "half": "upper",
+              "facing": "south",
+              "waterlogged": "false"
+            }
+          }
+        },
+
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_resurrection_statue",
+              "Properties": {
+                "half": "lower",
+                "facing": "north",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_resurrection_statue",
+            "Properties": {
+              "half": "lower",
+              "facing": "north",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_resurrection_statue",
+              "Properties": {
+                "half": "lower",
+                "facing": "east",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_resurrection_statue",
+            "Properties": {
+              "half": "lower",
+              "facing": "east",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_resurrection_statue",
+              "Properties": {
+                "half": "lower",
+                "facing": "west",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_resurrection_statue",
+            "Properties": {
+              "half": "lower",
+              "facing": "west",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_resurrection_statue",
+              "Properties": {
+                "half": "lower",
+                "facing": "south",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:smooth_sandstone_resurrection_statue",
+            "Properties": {
+              "half": "lower",
+              "facing": "south",
+              "waterlogged": "false"
+            }
+          }
+        }
+
+      ]
+    }
+  ]
+}

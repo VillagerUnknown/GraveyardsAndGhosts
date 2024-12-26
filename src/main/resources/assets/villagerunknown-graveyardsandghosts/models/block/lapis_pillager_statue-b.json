@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/statues/pillager/pillager_statue-b",
+	"textures": {
+		"0": "minecraft:block/lapis_block",
+		"particle": "minecraft:block/lapis_block"
+	}
+}

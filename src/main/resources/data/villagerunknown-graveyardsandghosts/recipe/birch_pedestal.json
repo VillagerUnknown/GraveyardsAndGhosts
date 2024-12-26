@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:stripped_birch_wood"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:birch_pedestal",
+    "count": 1
+  }
+}

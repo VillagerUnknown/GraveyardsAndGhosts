@@ -1,0 +1,59 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:grave_top/grave_top-blank",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:grave_top_oak"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:grave_top/grave_top-obsidian-coffin",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:grave_top_oak"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:grave_top/grave_top-obsidian-a",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:grave_top_oak"
+      }
+    },
+    {
+      "weight": 4,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:grave_top/grave_top-obsidian-b",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:grave_top_oak"
+      }
+    },
+    {
+      "weight": 5,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:grave_top/grave_top-obsidian-c",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:grave_top_oak"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:grave_top/grave_top-obsidian-d",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:grave_top_oak"
+      }
+    }
+  ]
+}

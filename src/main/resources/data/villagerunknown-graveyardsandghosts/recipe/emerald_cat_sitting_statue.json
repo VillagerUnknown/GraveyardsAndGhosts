@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:emerald_block"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:emerald_cat_sitting_statue",
+    "count": 1
+  }
+}

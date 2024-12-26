@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:diorite"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:diorite_villager_poppy_statue",
+    "count": 1
+  }
+}

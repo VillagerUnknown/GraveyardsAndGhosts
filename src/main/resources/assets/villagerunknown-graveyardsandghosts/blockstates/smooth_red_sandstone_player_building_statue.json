@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "villagerunknown-graveyardsandghosts:block/smooth_red_sandstone_player_statue-c", "y": 0
+    },
+    "facing=east": {
+      "model": "villagerunknown-graveyardsandghosts:block/smooth_red_sandstone_player_statue-c", "y": 90
+    },
+    "facing=south": {
+      "model": "villagerunknown-graveyardsandghosts:block/smooth_red_sandstone_player_statue-c", "y": 180
+    },
+    "facing=west": {
+      "model": "villagerunknown-graveyardsandghosts:block/smooth_red_sandstone_player_statue-c", "y": 270
+    }
+  }
+}

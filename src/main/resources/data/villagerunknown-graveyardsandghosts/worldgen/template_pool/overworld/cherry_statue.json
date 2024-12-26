@@ -1,0 +1,87 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:statues/statue-blank",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:statues_cherry"
+      }
+    },
+
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:statues/statue-obsidian-a",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:statues_cherry"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:statues/statue-obsidian-b",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:statues_cherry"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:statues/statue-obsidian-c",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:statues_cherry"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:statues/statue-obsidian-d",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:statues_cherry"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:statues/statue-obsidian-e",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:statues_cherry"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:statues/statue-obsidian-f",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:statues_cherry"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:statues/statue-obsidian-g",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:statues_cherry"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:statues/statue-obsidian-h",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:statues_cherry"
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:snow_block"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:snow_cross_statue",
+    "count": 1
+  }
+}

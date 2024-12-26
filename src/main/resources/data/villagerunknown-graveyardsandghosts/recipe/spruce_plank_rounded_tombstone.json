@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:spruce_planks"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:spruce_plank_rounded_tombstone",
+    "count": 6
+  }
+}

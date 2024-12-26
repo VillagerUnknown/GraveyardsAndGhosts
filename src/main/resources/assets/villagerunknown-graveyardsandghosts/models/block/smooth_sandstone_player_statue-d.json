@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/statues/player/player_statue-d",
+	"textures": {
+		"0": "minecraft:block/sandstone_top",
+		"particle": "minecraft:block/sandstone_top"
+	}
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:stripped_cherry_wood"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:cherry_player_exploring_statue",
+    "count": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:obsidian"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:obsidian_dragon_egg_statue",
+    "count": 1
+  }
+}

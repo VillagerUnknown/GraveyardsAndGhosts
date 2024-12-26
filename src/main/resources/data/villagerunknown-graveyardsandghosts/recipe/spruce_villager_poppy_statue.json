@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:stripped_spruce_wood"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:spruce_villager_poppy_statue",
+    "count": 1
+  }
+}

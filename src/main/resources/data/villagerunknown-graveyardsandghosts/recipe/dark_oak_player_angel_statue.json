@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:stripped_dark_oak_wood"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:dark_oak_player_angel_statue",
+    "count": 1
+  }
+}

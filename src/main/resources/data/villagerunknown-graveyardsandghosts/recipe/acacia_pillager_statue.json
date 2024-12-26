@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:stripped_acacia_wood"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:acacia_pillager_statue",
+    "count": 1
+  }
+}

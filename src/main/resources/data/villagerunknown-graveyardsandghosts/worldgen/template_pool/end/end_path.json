@@ -1,0 +1,140 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/path/end_path_entrance_fade-a",
+        "projection": "terrain_matching",
+        "processors": "minecraft:empty"
+      }
+    },
+
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/path/end_path_entrance-blank",
+        "projection": "terrain_matching",
+        "processors": "villagerunknown-graveyardsandghosts:path_end"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/path/end_path_entrance-obsidian-dragon_egg",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:path_end"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/path/end_path_entrance-obsidian-obelisk",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:path_end"
+      }
+    },
+
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/path/end_path_entrance_straight-a",
+        "projection": "terrain_matching",
+        "processors": "villagerunknown-graveyardsandghosts:path_end"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/path/end_path_entrance_straight-b",
+        "projection": "terrain_matching",
+        "processors": "villagerunknown-graveyardsandghosts:path_end"
+      }
+    },
+
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/path/end_path_straight-a",
+        "projection": "terrain_matching",
+        "processors": "villagerunknown-graveyardsandghosts:path_end"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/path/end_path_straight-b",
+        "projection": "terrain_matching",
+        "processors": "villagerunknown-graveyardsandghosts:path_end"
+      }
+    },
+
+    {
+      "weight": 5,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/path/end_path_straight_monoside-a",
+        "projection": "terrain_matching",
+        "processors": "villagerunknown-graveyardsandghosts:path_end"
+      }
+    },
+
+    {
+      "weight": 5,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/path/end_path_straight_side-a",
+        "projection": "terrain_matching",
+        "processors": "villagerunknown-graveyardsandghosts:path_end"
+      }
+    },
+
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/path/end_path_intersection_l-a",
+        "projection": "terrain_matching",
+        "processors": "villagerunknown-graveyardsandghosts:path_end"
+      }
+    },
+
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/path/end_path_intersection_t-a",
+        "projection": "terrain_matching",
+        "processors": "villagerunknown-graveyardsandghosts:path_end"
+      }
+    },
+
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/path/end_path_intersection_x-a",
+        "projection": "terrain_matching",
+        "processors": "villagerunknown-graveyardsandghosts:path_end"
+      }
+    },
+
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/path/end_path_straight_end-a",
+        "projection": "terrain_matching",
+        "processors": "villagerunknown-graveyardsandghosts:path_end"
+      }
+    }
+  ]
+}

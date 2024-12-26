@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "villagerunknown-graveyardsandghosts:block/mangrove_plank_tombstone-b", "y": 0
+    },
+    "facing=east": {
+      "model": "villagerunknown-graveyardsandghosts:block/mangrove_plank_tombstone-b", "y": 90
+    },
+    "facing=south": {
+      "model": "villagerunknown-graveyardsandghosts:block/mangrove_plank_tombstone-b", "y": 180
+    },
+    "facing=west": {
+      "model": "villagerunknown-graveyardsandghosts:block/mangrove_plank_tombstone-b", "y": 270
+    }
+  }
+}

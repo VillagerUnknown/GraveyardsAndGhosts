@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/tombstones/tombstone-a",
+	"textures": {
+		"0": "minecraft:block/dark_oak_planks",
+		"particle": "minecraft:block/dark_oak_planks"
+	}
+}

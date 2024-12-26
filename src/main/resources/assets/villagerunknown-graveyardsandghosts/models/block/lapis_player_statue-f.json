@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/statues/player/player_statue-f",
+	"textures": {
+		"0": "minecraft:block/lapis_block",
+		"particle": "minecraft:block/lapis_block"
+	}
+}

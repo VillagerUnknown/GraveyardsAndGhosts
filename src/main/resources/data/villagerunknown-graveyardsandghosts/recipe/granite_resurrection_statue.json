@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#C#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:granite"
+    },
+    "C": {
+      "item": "minecraft:totem_of_undying"
+    }
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:granite_resurrection_statue",
+    "count": 1
+  }
+}

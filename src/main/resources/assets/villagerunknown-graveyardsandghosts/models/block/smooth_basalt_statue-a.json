@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/statues/statue-a",
+	"textures": {
+		"0": "minecraft:block/smooth_basalt",
+		"particle": "minecraft:block/smooth_basalt"
+	}
+}

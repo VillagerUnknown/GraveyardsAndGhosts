@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:warped_planks"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:warped_plank_player_reaper_statue",
+    "count": 1
+  }
+}

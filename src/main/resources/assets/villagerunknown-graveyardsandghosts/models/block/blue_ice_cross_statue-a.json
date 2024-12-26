@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/statues/statue-b",
+	"textures": {
+		"0": "minecraft:block/blue_ice",
+		"particle": "minecraft:block/blue_ice"
+	}
+}

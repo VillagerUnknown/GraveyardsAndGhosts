@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:mossy_cobblestone"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:mossy_cobblestone_tombstone",
+    "count": 6
+  }
+}

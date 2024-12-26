@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/tombstones/tombstone-a",
+	"textures": {
+		"0": "minecraft:block/gold_block",
+		"particle": "minecraft:block/gold_block"
+	}
+}

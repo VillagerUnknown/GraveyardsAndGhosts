@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/statues/pillager/pillager_statue-b",
+	"textures": {
+		"0": "minecraft:block/stripped_crimson_stem",
+		"particle": "minecraft:block/stripped_crimson_stem"
+	}
+}

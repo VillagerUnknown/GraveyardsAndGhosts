@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/statues/piglin/piglin_statue-a",
+	"textures": {
+		"0": "minecraft:block/amethyst_block",
+		"particle": "minecraft:block/amethyst_block"
+	}
+}

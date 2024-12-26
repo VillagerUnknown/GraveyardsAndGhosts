@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:blackstone"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:blackstone_piglin_axe_statue",
+    "count": 1
+  }
+}

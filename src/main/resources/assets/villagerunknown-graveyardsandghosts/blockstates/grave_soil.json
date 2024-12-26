@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "model=0": {
+      "model": "minecraft:block/coarse_dirt"
+    },
+    "model=1": {
+      "model": "minecraft:block/smooth_basalt"
+    },
+    "model=2": {
+      "model": "minecraft:block/obsidian"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/statues/statue-c",
+	"textures": {
+		"0": "minecraft:block/sculk",
+		"particle": "minecraft:block/sculk"
+	}
+}

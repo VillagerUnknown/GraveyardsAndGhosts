@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/statues/player/player_statue-e",
+	"textures": {
+		"0": "minecraft:block/stripped_crimson_stem",
+		"particle": "minecraft:block/stripped_crimson_stem"
+	}
+}

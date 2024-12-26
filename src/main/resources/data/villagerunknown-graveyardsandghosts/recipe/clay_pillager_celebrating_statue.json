@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:clay"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:clay_pillager_celebrating_statue",
+    "count": 1
+  }
+}

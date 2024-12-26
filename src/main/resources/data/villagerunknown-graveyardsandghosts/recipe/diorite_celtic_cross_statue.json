@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:diorite"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:diorite_celtic_cross_statue",
+    "count": 1
+  }
+}

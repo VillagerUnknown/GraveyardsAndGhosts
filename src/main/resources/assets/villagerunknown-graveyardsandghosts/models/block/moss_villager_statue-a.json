@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/statues/villager/villager_statue-a",
+	"textures": {
+		"0": "minecraft:block/moss_block",
+		"particle": "minecraft:block/moss_block"
+	}
+}

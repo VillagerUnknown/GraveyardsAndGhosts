@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/statues/dragon/dragon_egg_statue-a",
+	"textures": {
+		"0": "minecraft:block/granite",
+		"particle": "minecraft:block/granite"
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/statues/resurrection/resurrection_statue-a",
+	"textures": {
+		"0": "minecraft:block/stripped_oak_log",
+		"particle": "minecraft:block/stripped_oak_log"
+	}
+}

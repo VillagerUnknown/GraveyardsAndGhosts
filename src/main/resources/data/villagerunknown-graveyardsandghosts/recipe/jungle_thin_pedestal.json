@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:stripped_jungle_wood"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:jungle_thin_pedestal",
+    "count": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:tuff"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:tuff_player_reaper_statue",
+    "count": 1
+  }
+}

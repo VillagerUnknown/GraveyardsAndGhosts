@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:polished_granite"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:polished_granite_celtic_cross_statue",
+    "count": 1
+  }
+}

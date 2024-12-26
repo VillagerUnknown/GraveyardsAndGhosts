@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/statues/cat/cat_statue-a",
+	"textures": {
+		"0": "minecraft:block/redstone_block",
+		"particle": "minecraft:block/redstone_block"
+	}
+}

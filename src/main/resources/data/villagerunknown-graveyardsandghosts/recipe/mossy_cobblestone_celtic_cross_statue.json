@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:mossy_cobblestone"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:mossy_cobblestone_celtic_cross_statue",
+    "count": 1
+  }
+}

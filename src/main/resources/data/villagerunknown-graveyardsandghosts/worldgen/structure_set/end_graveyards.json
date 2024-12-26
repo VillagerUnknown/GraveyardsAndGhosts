@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "villagerunknown-graveyardsandghosts:small_end_graveyard",
+      "weight": 2
+    },
+    {
+      "structure": "villagerunknown-graveyardsandghosts:medium_end_graveyard",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 24,
+    "separation": 16,
+    "salt": 10387313
+  }
+}

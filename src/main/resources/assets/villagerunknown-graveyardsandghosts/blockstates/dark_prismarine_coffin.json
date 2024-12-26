@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north,model=0": {
+      "model": "villagerunknown-graveyardsandghosts:block/dark_prismarine_coffin-a", "y": 0
+    },
+    "facing=north,model=1": {
+      "model": "villagerunknown-graveyardsandghosts:block/dark_prismarine_coffin-b", "y": 0
+    },
+    "facing=east,model=0": {
+      "model": "villagerunknown-graveyardsandghosts:block/dark_prismarine_coffin-a", "y": 90
+    },
+    "facing=east,model=1": {
+      "model": "villagerunknown-graveyardsandghosts:block/dark_prismarine_coffin-b", "y": 90
+    },
+    "facing=south,model=0": {
+      "model": "villagerunknown-graveyardsandghosts:block/dark_prismarine_coffin-a", "y": 180
+    },
+    "facing=south,model=1": {
+      "model": "villagerunknown-graveyardsandghosts:block/dark_prismarine_coffin-b", "y": 180
+    },
+    "facing=west,model=0": {
+      "model": "villagerunknown-graveyardsandghosts:block/dark_prismarine_coffin-a", "y": 270
+    },
+    "facing=west,model=1": {
+      "model": "villagerunknown-graveyardsandghosts:block/dark_prismarine_coffin-b", "y": 270
+    }
+  }
+}

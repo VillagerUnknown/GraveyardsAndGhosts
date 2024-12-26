@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/tombstones/broken/broken_tombstone-a",
+	"textures": {
+		"0": "minecraft:block/stone",
+		"particle": "minecraft:block/stone"
+	}
+}

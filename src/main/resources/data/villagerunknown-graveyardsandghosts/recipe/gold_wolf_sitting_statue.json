@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:gold_block"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:gold_wolf_sitting_statue",
+    "count": 1
+  }
+}

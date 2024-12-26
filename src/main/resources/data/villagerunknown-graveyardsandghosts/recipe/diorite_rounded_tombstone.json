@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:diorite"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:diorite_rounded_tombstone",
+    "count": 6
+  }
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/statues/player/player_statue-b",
+	"textures": {
+		"0": "minecraft:block/stripped_mangrove_log",
+		"particle": "minecraft:block/stripped_mangrove_log"
+	}
+}

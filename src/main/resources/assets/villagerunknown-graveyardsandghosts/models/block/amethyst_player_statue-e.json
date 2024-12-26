@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/statues/player/player_statue-e",
+	"textures": {
+		"0": "minecraft:block/amethyst_block",
+		"particle": "minecraft:block/amethyst_block"
+	}
+}

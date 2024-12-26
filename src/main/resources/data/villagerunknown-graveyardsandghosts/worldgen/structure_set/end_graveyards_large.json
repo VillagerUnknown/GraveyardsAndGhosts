@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "villagerunknown-graveyardsandghosts:large_end_graveyard",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:concentric_rings",
+    "preferred_biomes": [
+      "minecraft:end_highlands"
+    ],
+    "distance": 32,
+    "count": 128,
+    "spread": 6,
+    "salt": 0
+  }
+}

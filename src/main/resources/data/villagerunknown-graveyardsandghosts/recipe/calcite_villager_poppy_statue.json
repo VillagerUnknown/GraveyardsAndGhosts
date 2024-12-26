@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:calcite"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:calcite_villager_poppy_statue",
+    "count": 1
+  }
+}

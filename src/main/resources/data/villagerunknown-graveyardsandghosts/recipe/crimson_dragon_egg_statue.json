@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:stripped_crimson_hyphae"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:crimson_dragon_egg_statue",
+    "count": 1
+  }
+}

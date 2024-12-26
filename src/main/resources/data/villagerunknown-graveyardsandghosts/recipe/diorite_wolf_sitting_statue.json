@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:diorite"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:diorite_wolf_sitting_statue",
+    "count": 1
+  }
+}

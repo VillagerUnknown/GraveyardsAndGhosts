@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "villagerunknown-graveyardsandghosts:block/obsidian_player_statue-d", "y": 0
+    },
+    "facing=east": {
+      "model": "villagerunknown-graveyardsandghosts:block/obsidian_player_statue-d", "y": 90
+    },
+    "facing=south": {
+      "model": "villagerunknown-graveyardsandghosts:block/obsidian_player_statue-d", "y": 180
+    },
+    "facing=west": {
+      "model": "villagerunknown-graveyardsandghosts:block/obsidian_player_statue-d", "y": 270
+    }
+  }
+}

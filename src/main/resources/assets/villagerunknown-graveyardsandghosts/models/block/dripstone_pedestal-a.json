@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/pedestals/pedestal-a",
+	"textures": {
+		"0": "minecraft:block/dripstone_block",
+		"particle": "minecraft:block/dripstone_block"
+	}
+}

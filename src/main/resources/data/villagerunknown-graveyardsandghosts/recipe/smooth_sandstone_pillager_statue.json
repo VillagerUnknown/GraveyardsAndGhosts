@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:smooth_sandstone"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:smooth_sandstone_pillager_statue",
+    "count": 1
+  }
+}

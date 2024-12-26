@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:tuff"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:tuff_rounded_tombstone",
+    "count": 6
+  }
+}

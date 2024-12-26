@@ -1,0 +1,826 @@
+{
+  "processors": [
+    {
+      "processor_type": "minecraft:rule",
+      "rules": [
+        {
+          "input_predicate": {
+            "block": "minecraft:end_stone",
+            "predicate_type": "minecraft:block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:dirt"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:end_stone_bricks",
+            "predicate_type": "minecraft:block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:dirt_path"
+          }
+        },
+
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:broken_obsidian_tombstone",
+              "Properties": {
+                "random_model": "0",
+                "facing": "north",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:broken_spruce_tombstone",
+            "Properties": {
+              "random_model": "0",
+              "facing": "north",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:broken_obsidian_tombstone",
+              "Properties": {
+                "random_model": "0",
+                "facing": "east",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:broken_spruce_tombstone",
+            "Properties": {
+              "random_model": "0",
+              "facing": "east",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:broken_obsidian_tombstone",
+              "Properties": {
+                "random_model": "0",
+                "facing": "west",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:broken_spruce_tombstone",
+            "Properties": {
+              "random_model": "0",
+              "facing": "west",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:broken_obsidian_tombstone",
+              "Properties": {
+                "random_model": "0",
+                "facing": "south",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:broken_spruce_tombstone",
+            "Properties": {
+              "random_model": "0",
+              "facing": "south",
+              "waterlogged": "false"
+            }
+          }
+        },
+
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:broken_obsidian_tombstone",
+              "Properties": {
+                "random_model": "1",
+                "facing": "north",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:broken_spruce_tombstone",
+            "Properties": {
+              "random_model": "1",
+              "facing": "north",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:broken_obsidian_tombstone",
+              "Properties": {
+                "random_model": "1",
+                "facing": "east",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:broken_spruce_tombstone",
+            "Properties": {
+              "random_model": "1",
+              "facing": "east",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:broken_obsidian_tombstone",
+              "Properties": {
+                "random_model": "1",
+                "facing": "west",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:broken_spruce_tombstone",
+            "Properties": {
+              "random_model": "1",
+              "facing": "west",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:broken_obsidian_tombstone",
+              "Properties": {
+                "random_model": "1",
+                "facing": "south",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:broken_spruce_tombstone",
+            "Properties": {
+              "random_model": "1",
+              "facing": "south",
+              "waterlogged": "false"
+            }
+          }
+        },
+
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_tombstone",
+              "Properties": {
+                "facing": "north",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_tombstone",
+            "Properties": {
+              "facing": "north",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_tombstone",
+              "Properties": {
+                "facing": "east",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_tombstone",
+            "Properties": {
+              "facing": "east",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_tombstone",
+              "Properties": {
+                "facing": "west",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_tombstone",
+            "Properties": {
+              "facing": "west",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_tombstone",
+              "Properties": {
+                "facing": "south",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_tombstone",
+            "Properties": {
+              "facing": "south",
+              "waterlogged": "false"
+            }
+          }
+        },
+
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_rounded_tombstone",
+              "Properties": {
+                "facing": "north",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_rounded_tombstone",
+            "Properties": {
+              "facing": "north",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_rounded_tombstone",
+              "Properties": {
+                "facing": "east",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_rounded_tombstone",
+            "Properties": {
+              "facing": "east",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_rounded_tombstone",
+              "Properties": {
+                "facing": "west",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_rounded_tombstone",
+            "Properties": {
+              "facing": "west",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_rounded_tombstone",
+              "Properties": {
+                "facing": "south",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_rounded_tombstone",
+            "Properties": {
+              "facing": "south",
+              "waterlogged": "false"
+            }
+          }
+        },
+
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_coffin",
+              "Properties": {
+                "part": "head",
+                "model": "0",
+                "facing": "north",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_coffin",
+            "Properties": {
+              "part": "head",
+              "model": "0",
+              "facing": "north",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_coffin",
+              "Properties": {
+                "part": "head",
+                "model": "0",
+                "facing": "east",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_coffin",
+            "Properties": {
+              "part": "head",
+              "model": "0",
+              "facing": "east",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_coffin",
+              "Properties": {
+                "part": "head",
+                "model": "0",
+                "facing": "west",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_coffin",
+            "Properties": {
+              "part": "head",
+              "model": "0",
+              "facing": "west",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_coffin",
+              "Properties": {
+                "part": "head",
+                "model": "0",
+                "facing": "south",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_coffin",
+            "Properties": {
+              "part": "head",
+              "model": "0",
+              "facing": "south",
+              "waterlogged": "false"
+            }
+          }
+        },
+
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_coffin",
+              "Properties": {
+                "part": "head",
+                "model": "1",
+                "facing": "north",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_coffin",
+            "Properties": {
+              "part": "head",
+              "model": "1",
+              "facing": "north",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_coffin",
+              "Properties": {
+                "part": "head",
+                "model": "1",
+                "facing": "east",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_coffin",
+            "Properties": {
+              "part": "head",
+              "model": "1",
+              "facing": "east",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_coffin",
+              "Properties": {
+                "part": "head",
+                "model": "1",
+                "facing": "west",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_coffin",
+            "Properties": {
+              "part": "head",
+              "model": "1",
+              "facing": "west",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_coffin",
+              "Properties": {
+                "part": "head",
+                "model": "1",
+                "facing": "south",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_coffin",
+            "Properties": {
+              "part": "head",
+              "model": "1",
+              "facing": "south",
+              "waterlogged": "false"
+            }
+          }
+        },
+
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_coffin",
+              "Properties": {
+                "part": "foot",
+                "model": "0",
+                "facing": "north",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_coffin",
+            "Properties": {
+              "part": "foot",
+              "model": "0",
+              "facing": "north",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_coffin",
+              "Properties": {
+                "part": "foot",
+                "model": "0",
+                "facing": "east",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_coffin",
+            "Properties": {
+              "part": "foot",
+              "model": "0",
+              "facing": "east",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_coffin",
+              "Properties": {
+                "part": "foot",
+                "model": "0",
+                "facing": "west",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_coffin",
+            "Properties": {
+              "part": "foot",
+              "model": "0",
+              "facing": "west",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_coffin",
+              "Properties": {
+                "part": "foot",
+                "model": "0",
+                "facing": "south",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_coffin",
+            "Properties": {
+              "part": "foot",
+              "model": "0",
+              "facing": "south",
+              "waterlogged": "false"
+            }
+          }
+        },
+
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_coffin",
+              "Properties": {
+                "part": "foot",
+                "model": "1",
+                "facing": "north",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_coffin",
+            "Properties": {
+              "part": "foot",
+              "model": "1",
+              "facing": "north",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_coffin",
+              "Properties": {
+                "part": "foot",
+                "model": "1",
+                "facing": "east",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_coffin",
+            "Properties": {
+              "part": "foot",
+              "model": "1",
+              "facing": "east",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_coffin",
+              "Properties": {
+                "part": "foot",
+                "model": "1",
+                "facing": "west",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_coffin",
+            "Properties": {
+              "part": "foot",
+              "model": "1",
+              "facing": "west",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "villagerunknown-graveyardsandghosts:obsidian_coffin",
+              "Properties": {
+                "part": "foot",
+                "model": "1",
+                "facing": "south",
+                "waterlogged": "false"
+              }
+            }
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "villagerunknown-graveyardsandghosts:spruce_coffin",
+            "Properties": {
+              "part": "foot",
+              "model": "1",
+              "facing": "south",
+              "waterlogged": "false"
+            }
+          }
+        }
+
+      ]
+    }
+  ]
+}

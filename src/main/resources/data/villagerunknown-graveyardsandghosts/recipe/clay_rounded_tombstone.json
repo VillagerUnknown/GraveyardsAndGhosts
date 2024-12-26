@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:clay"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:clay_rounded_tombstone",
+    "count": 6
+  }
+}

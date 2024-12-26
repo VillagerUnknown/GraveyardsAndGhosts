@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/statues/villager/villager_statue-b",
+	"textures": {
+		"0": "minecraft:block/polished_andesite",
+		"particle": "minecraft:block/polished_andesite"
+	}
+}

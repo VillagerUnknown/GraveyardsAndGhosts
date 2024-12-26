@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:moss_block"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:moss_dragon_egg_statue",
+    "count": 1
+  }
+}
