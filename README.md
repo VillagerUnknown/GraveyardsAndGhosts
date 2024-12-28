@@ -86,12 +86,10 @@ A Ghost potion can be brewed by brewing a Totem of Undying with an Awkward Potio
 
 ## Support
 
-**Known Issues:**
-
-* Preventing collisions for ghosts has odd behaviors.
-
----
-
 * Get support and share feedback at https://discord.gg/PXjXh6M38H
 * Request features and report bugs at https://github.com/VillagerUnknown/GraveyardsAndGhosts/issues
 * View the changelog at https://github.com/VillagerUnknown/GraveyardsAndGhosts/blob/main/CHANGELOG.md
+
+**Known Issues:**
+
+* Preventing collisions for ghosts has odd behaviors.
