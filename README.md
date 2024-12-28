@@ -84,16 +84,14 @@ A Ghost potion can be brewed by brewing a Totem of Undying with an Awkward Potio
 * Resurrection Prompt Frequency in Seconds
 * Resurrection Safe Respawn Search Radius
 
-## Hm hrm hm! (Version Notes)
-
-**v1.0.0**
-
-* Initial release.
-
-## Hm hrm! (Support)
+## Support
 
 **Known Issues:**
 
 * Preventing collisions for ghosts has odd behaviors.
 
-Join VillagerUnknown's Discord Server for support at [https://discord.gg/PXjXh6M38H](https://discord.gg/PXjXh6M38H)
+---
+
+* Get support and share feedback at https://discord.gg/PXjXh6M38H
+* Request features and report bugs at https://github.com/VillagerUnknown/GraveyardsAndGhosts/issues
+* View the changelog at https://github.com/VillagerUnknown/GraveyardsAndGhosts/blob/main/CHANGELOG.md
