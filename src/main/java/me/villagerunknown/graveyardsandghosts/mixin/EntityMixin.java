@@ -20,32 +20,16 @@ public class EntityMixin {
 	@Unique
 	private void setNoClip(Entity entity, boolean value ) {
 		if( entity instanceof LivingEntity livingEntity) {
-			if( livingEntity.hasStatusEffect(playerGhostFeature.GHOST_EFFECT_REGISTRY) && !Graveyardsandghosts.CONFIG.preventGhostCollisions ) {
+			if( !Graveyardsandghosts.CONFIG.preventGhostCollisions && livingEntity.hasStatusEffect(playerGhostFeature.GHOST_EFFECT_REGISTRY) ) {
 				entity.noClip = value;
+				entity.verticalCollision = !value;
+				entity.horizontalCollision = !value;
 			} // if
 		} // if
 	}
 	
-	@Inject(method = "move", at = @At("HEAD"))
-	private void move( CallbackInfo ci ) {
-		Entity entity = (Entity) (Object) this;
-		setNoClip( entity, true );
-	}
-	
-	@Inject(method = "pushAwayFrom", at = @At("HEAD"))
-	private void pushAwayFrom( Entity other, CallbackInfo ci ) {
-		Entity entity = (Entity) (Object) this;
-		setNoClip( entity, true );
-	}
-	
-	@Inject(method = "isInsideWall", at = @At("HEAD"))
-	private void isInsideWall(CallbackInfoReturnable<Boolean> cir ) {
-		Entity entity = (Entity) (Object) this;
-		setNoClip( entity, true );
-	}
-	
-	@Inject(method = "calculateDimensions", at = @At("HEAD"))
-	private void calculateDimensions(CallbackInfo ci ) {
+	@Inject(method = "baseTick", at = @At("HEAD"))
+	private void baseTick( CallbackInfo ci ) {
 		Entity entity = (Entity) (Object) this;
 		setNoClip( entity, true );
 	}
