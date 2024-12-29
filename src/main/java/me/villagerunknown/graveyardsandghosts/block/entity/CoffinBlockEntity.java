@@ -54,20 +54,19 @@ public class CoffinBlockEntity extends LootableContainerBlockEntity {
 	
 	public static final RegistryKey<LootTable> CUSTOM_LOOT_TABLE = RegistryKey.of(RegistryKeys.LOOT_TABLE, Identifier.of(MOD_ID, "chests/coffin_block"));
 	
-	public CoffinBlockEntity(BlockPos pos, BlockState state) {
-		super(graveyardBlocksFeature.BLOCK_ENTITY_TYPES.get("coffin_block"), pos, state);
-		this.inventory = DefaultedList.ofSize(INVENTORY_SIZE, ItemStack.EMPTY);
-		if( super.hasWorld() && WorldUtil.getEntitiesByType( WorldUtil.getServerWorld( super.getWorld() ), BoxUtil.createBox( pos, 1 ), ServerPlayerEntity.class ).isEmpty() ) {
-			if (MathUtil.hasChance(LOOT_FILL_CHANCE)) {
-				this.setLootTable(CUSTOM_LOOT_TABLE);
-			} // if
-		} // if
+	public CoffinBlockEntity(BlockPos blockPos, BlockState blockState) {
+		super(graveyardBlocksFeature.BLOCK_ENTITY_TYPES.get("coffin_block"), blockPos, blockState);
+		constructEntity( graveyardBlocksFeature.BLOCK_ENTITY_TYPES.get("coffin_block"), blockPos, blockState );
 	}
 	
 	protected CoffinBlockEntity(BlockEntityType<?> blockEntityType, BlockPos blockPos, BlockState blockState) {
 		super(blockEntityType, blockPos, blockState);
+		constructEntity( blockEntityType, blockPos, blockState );
+	}
+	
+	private void constructEntity( BlockEntityType<?> blockEntityType,  BlockPos blockPos, BlockState blockState ) {
 		this.inventory = DefaultedList.ofSize(INVENTORY_SIZE, ItemStack.EMPTY);
-		if( super.hasWorld() && WorldUtil.getEntitiesByType( WorldUtil.getServerWorld( super.getWorld() ), BoxUtil.createBox( pos, 1 ), ServerPlayerEntity.class ).isEmpty() ) {
+		if( blockState.get(PART) == BedPart.FOOT && super.hasWorld() && WorldUtil.getEntitiesByType( WorldUtil.getServerWorld( super.getWorld() ), BoxUtil.createBox( pos, 1 ), ServerPlayerEntity.class ).isEmpty() ) {
 			if (MathUtil.hasChance(LOOT_FILL_CHANCE)) {
 				this.setLootTable(CUSTOM_LOOT_TABLE);
 			} // if
