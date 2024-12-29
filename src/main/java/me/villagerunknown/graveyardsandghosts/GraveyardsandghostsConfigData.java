@@ -55,7 +55,7 @@ public class GraveyardsandghostsConfigData implements me.shedaniel.autoconfig.Co
 	 */
 	
 	@ConfigEntry.Category("Ghosts")
-	public boolean playersStartWorldsAsGhosts = true;
+	public boolean playersStartWorldsAsGhosts = false;
 	
 	@ConfigEntry.Category("Ghosts")
 	public boolean enablePlayerGhostOnDeath = true;
