@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 
 - Coffins no longer generate loot twice during world generation.
+- Ghosts ignoring collision no longer get pushed out of blocks.
 
 ## [1.0.0]
 
