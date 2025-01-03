@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 
 - Changed default value for `playersStartWorldAsGhosts` option to `false` to make the mod friendlier for new players.
+- Items in hand no longer display when the Ghost effect is applied. 
 
 ### Fixed
 
