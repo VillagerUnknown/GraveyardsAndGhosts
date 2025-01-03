@@ -6,7 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- Tags for graveyards to make the `locate` command more useful.
+- Added `#graveyard` tag for graveyards to make the `locate` command more useful.
+- Added `#graveyard` tag for blocks and items to find items easier.
 
 ### Changed
 
