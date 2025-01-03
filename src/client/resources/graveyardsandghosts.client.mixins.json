@@ -1,9 +1,10 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "me.villagerunknown.graveyardsandghosts.mixin.client",
+  "package": "me.villagerunknown.graveyardsandghosts.client.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
+    "ItemRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

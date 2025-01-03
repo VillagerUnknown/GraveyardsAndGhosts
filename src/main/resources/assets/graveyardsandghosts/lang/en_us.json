@@ -24,7 +24,7 @@
 
   "text.autoconfig.villagerunknown-graveyardsandghosts.option.playersStartWorldsAsGhosts": "Players Start Worlds as Ghosts",
   "text.autoconfig.villagerunknown-graveyardsandghosts.option.enablePlayerGhostOnDeath": "Enable Player Ghost on Death",
-  "text.autoconfig.villagerunknown-graveyardsandghosts.option.preventGhostCollisions": "Prevent Ghost Collisions (Experimental)",
+  "text.autoconfig.villagerunknown-graveyardsandghosts.option.preventGhostCollisions": "Prevent Ghost Collisions",
   "text.autoconfig.villagerunknown-graveyardsandghosts.option.preventGhostBlockAttack": "Prevent Ghost Block Attack",
   "text.autoconfig.villagerunknown-graveyardsandghosts.option.preventGhostBlockUse": "Prevent Ghost Block Use",
   "text.autoconfig.villagerunknown-graveyardsandghosts.option.preventGhostBlockBreak": "Prevent Ghost Block Break",
