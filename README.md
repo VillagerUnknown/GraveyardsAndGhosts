@@ -2,8 +2,8 @@
 
 Inspired by MMORPG's, this mod adds graveyards to the world generation and changes the respawn system so that players become ghosts when they die and respawn at the nearest graveyard.
 
-* By default, Players join the world as Ghosts. This can be changed in the settings.
-* Ghosts can respawn at their last death location or any Resurrection Statue (Graveyard). 
+* Players can join the world as Ghosts. This can be changed in the settings. (Players used to start as ghosts in v1.0.0)
+* Ghosts can respawn at their last death location or any Resurrection Statue (Graveyard).
 * Graveyards generate in the Overworld and End dimensions.
 * Beds no longer act as spawn points but still pass the night.
 * Respawn anchors still work in the Nether.
@@ -68,7 +68,7 @@ A Ghost potion can be brewed by brewing a Totem of Undying with an Awkward Potio
 
 * Players Start Worlds as Ghosts
 * Enable Player Ghosts on Death
-* Prevent Ghost Collisions (Experimental)
+* Prevent Ghost Collisions
 * Prevent Ghost Block Attack
 * Prevent Ghost Block Use
 * Prevent Ghost Block Break
@@ -89,7 +89,3 @@ A Ghost potion can be brewed by brewing a Totem of Undying with an Awkward Potio
 * Get support and share feedback at https://discord.gg/PXjXh6M38H
 * Request features and report bugs at https://github.com/VillagerUnknown/GraveyardsAndGhosts/issues
 * View the changelog at https://github.com/VillagerUnknown/GraveyardsAndGhosts/blob/main/CHANGELOG.md
-
-**Known Issues:**
-
-* Preventing collisions for ghosts has odd behaviors.
