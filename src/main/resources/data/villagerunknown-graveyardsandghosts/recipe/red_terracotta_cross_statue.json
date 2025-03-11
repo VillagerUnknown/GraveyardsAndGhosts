@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:red_terracotta"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:red_terracotta_cross_statue",
+    "count": 1
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north,random_model=0": {
+      "model": "villagerunknown-graveyardsandghosts:block/broken_red_concrete_tombstone-a", "y": 0
+    },
+    "facing=north,random_model=1": {
+      "model": "villagerunknown-graveyardsandghosts:block/broken_red_concrete_tombstone-b", "y": 0
+    },
+    "facing=east,random_model=0": {
+      "model": "villagerunknown-graveyardsandghosts:block/broken_red_concrete_tombstone-a", "y": 90
+    },
+    "facing=east,random_model=1": {
+      "model": "villagerunknown-graveyardsandghosts:block/broken_red_concrete_tombstone-b", "y": 90
+    },
+    "facing=south,random_model=0": {
+      "model": "villagerunknown-graveyardsandghosts:block/broken_red_concrete_tombstone-a", "y": 180
+    },
+    "facing=south,random_model=1": {
+      "model": "villagerunknown-graveyardsandghosts:block/broken_red_concrete_tombstone-b", "y": 180
+    },
+    "facing=west,random_model=0": {
+      "model": "villagerunknown-graveyardsandghosts:block/broken_red_concrete_tombstone-a", "y": 270
+    },
+    "facing=west,random_model=1": {
+      "model": "villagerunknown-graveyardsandghosts:block/broken_red_concrete_tombstone-b", "y": 270
+    }
+  }
+}

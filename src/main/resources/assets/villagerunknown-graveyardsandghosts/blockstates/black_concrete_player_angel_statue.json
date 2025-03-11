@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "villagerunknown-graveyardsandghosts:block/black_concrete_player_statue-f", "y": 0
+    },
+    "facing=east": {
+      "model": "villagerunknown-graveyardsandghosts:block/black_concrete_player_statue-f", "y": 90
+    },
+    "facing=south": {
+      "model": "villagerunknown-graveyardsandghosts:block/black_concrete_player_statue-f", "y": 180
+    },
+    "facing=west": {
+      "model": "villagerunknown-graveyardsandghosts:block/black_concrete_player_statue-f", "y": 270
+    }
+  }
+}

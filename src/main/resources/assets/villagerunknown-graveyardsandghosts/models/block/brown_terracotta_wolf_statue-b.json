@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/statues/wolf/wolf_statue-b",
+	"textures": {
+		"0": "minecraft:block/brown_terracotta",
+		"particle": "minecraft:block/brown_terracotta"
+	}
+}

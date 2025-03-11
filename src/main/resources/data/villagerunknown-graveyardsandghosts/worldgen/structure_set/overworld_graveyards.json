@@ -82,6 +82,15 @@
     {
       "structure": "villagerunknown-graveyardsandghosts:medium_sandstone_graveyard",
       "weight": 25
+    },
+
+    {
+      "structure": "villagerunknown-graveyardsandghosts:small_terracotta_graveyard",
+      "weight": 25
+    },
+    {
+      "structure": "villagerunknown-graveyardsandghosts:medium_terracotta_graveyard",
+      "weight": 25
     }
   ],
   "placement": {

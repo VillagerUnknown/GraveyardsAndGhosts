@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/statues/player/player_statue-d",
+	"textures": {
+		"0": "minecraft:block/light_gray_terracotta",
+		"particle": "minecraft:block/light_gray_terracotta"
+	}
+}

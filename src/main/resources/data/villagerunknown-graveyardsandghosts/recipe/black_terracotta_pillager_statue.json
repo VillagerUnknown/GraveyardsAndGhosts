@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:black_terracotta"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:black_terracotta_pillager_statue",
+    "count": 1
+  }
+}

@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0]
+
+### Added
+
+- Added Concrete block variations
+- Added Terracotta block variations
+
+### Changed
+
+- Simplified the recipe for Resurrection Statues
+
 ## [1.0.1]
 
 ### Added

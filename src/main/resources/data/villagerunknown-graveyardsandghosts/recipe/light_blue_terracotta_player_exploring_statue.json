@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:light_blue_terracotta"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:light_blue_terracotta_player_exploring_statue",
+    "count": 1
+  }
+}

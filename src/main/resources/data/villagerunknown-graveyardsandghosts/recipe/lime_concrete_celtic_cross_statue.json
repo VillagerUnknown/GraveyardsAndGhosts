@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:lime_concrete"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:lime_concrete_celtic_cross_statue",
+    "count": 1
+  }
+}
