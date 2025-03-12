@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:yellow_terracotta"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:yellow_terracotta_cat_sitting_statue",
+    "count": 1
+  }
+}

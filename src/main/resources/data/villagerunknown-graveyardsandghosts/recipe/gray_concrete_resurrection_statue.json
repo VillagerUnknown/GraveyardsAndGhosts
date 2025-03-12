@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "C",
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:gray_concrete"
+    },
+    "C": {
+      "item": "minecraft:totem_of_undying"
+    }
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:gray_concrete_resurrection_statue",
+    "count": 1
+  }
+}

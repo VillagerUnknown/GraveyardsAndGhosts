@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/statues/pillager/pillager_statue-a",
+	"textures": {
+		"0": "minecraft:block/yellow_terracotta",
+		"particle": "minecraft:block/yellow_terracotta"
+	}
+}

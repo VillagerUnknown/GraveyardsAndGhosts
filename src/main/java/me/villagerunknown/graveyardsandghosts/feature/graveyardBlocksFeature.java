@@ -67,43 +67,41 @@ public class graveyardBlocksFeature {
 			"clay",
 			"mud",
 			"packed_mud",
-
-// @todo
-//			"terracotta",
-//			"white_terracotta",
-//			"gray_terracotta",
-//			"light_gray_terracotta",
-//			"black_terracotta",
-//			"brown_terracotta",
-//			"red_terracotta",
-//			"orange_terracotta",
-//			"yellow_terracotta",
-//			"lime_terracotta",
-//			"green_terracotta",
-//			"cyan_terracotta",
-//			"light_blue_terracotta",
-//			"blue_terracotta",
-//			"purple_terracotta",
-//			"magenta_terracotta",
-//			"pink_terracotta",
-
-// @todo
-//			"white_concrete",
-//			"gray_concrete",
-//			"light_gray_concrete",
-//			"black_concrete",
-//			"brown_concrete",
-//			"red_concrete",
-//			"orange_concrete",
-//			"yellow_concrete",
-//			"lime_concrete",
-//			"green_concrete",
-//			"cyan_concrete",
-//			"light_blue_concrete",
-//			"blue_concrete",
-//			"purple_concrete",
-//			"magenta_concrete",
-//			"pink_concrete",
+			
+			"terracotta",
+			"white_terracotta",
+			"gray_terracotta",
+			"light_gray_terracotta",
+			"black_terracotta",
+			"brown_terracotta",
+			"red_terracotta",
+			"orange_terracotta",
+			"yellow_terracotta",
+			"lime_terracotta",
+			"green_terracotta",
+			"cyan_terracotta",
+			"light_blue_terracotta",
+			"blue_terracotta",
+			"purple_terracotta",
+			"magenta_terracotta",
+			"pink_terracotta",
+			
+			"white_concrete",
+			"gray_concrete",
+			"light_gray_concrete",
+			"black_concrete",
+			"brown_concrete",
+			"red_concrete",
+			"orange_concrete",
+			"yellow_concrete",
+			"lime_concrete",
+			"green_concrete",
+			"cyan_concrete",
+			"light_blue_concrete",
+			"blue_concrete",
+			"purple_concrete",
+			"magenta_concrete",
+			"pink_concrete",
 
 			"blue_ice",
 			"snow",
@@ -138,6 +136,12 @@ public class graveyardBlocksFeature {
 	
 	public static Map<String, BlockEntityType> BLOCK_ENTITY_TYPES = new HashMap<>();
 	public static Map<String, Block> BLOCKS = new HashMap<>();
+	
+	public static Map<String, Block> TOMBSTONES = new HashMap<>();
+	public static Map<String, Block> PEDESTALS = new HashMap<>();
+	public static Map<String, Block> STATUES = new HashMap<>();
+	public static Map<String, Block> COFFINS = new HashMap<>();
+	public static Map<String, Block> RESURRECTION_STATUES = new HashMap<>();
 	
 	public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(Graveyardsandghosts.MOD_ID, "item_group"));
 	public static final ItemGroup CUSTOM_ITEM_GROUP = FabricItemGroup.builder()
@@ -184,6 +188,9 @@ public class graveyardBlocksFeature {
 		BLOCKS.put( blockType + "_tombstone", registerBlock( new TombstoneBlock(), blockType + "_tombstone", true) );
 		BLOCKS.put( blockType + "_rounded_tombstone", registerBlock( new TombstoneBlock(), blockType + "_rounded_tombstone", true) );
 //		BLOCKS.put( blockType + "_tombstone", registerBlock( new TombstoneSignBlock(), blockType + "_tombstone", true) );
+		
+		TOMBSTONES.put( blockType + "_tombstone", BLOCKS.get( blockType + "_tombstone" ) );
+		TOMBSTONES.put( blockType + "_rounded_tombstone", BLOCKS.get( blockType + "_rounded_tombstone" ) );
 	}
 	
 	private static void register_broken_tombstone( String blockType ) {
@@ -192,21 +199,32 @@ public class graveyardBlocksFeature {
 	
 	private static void register_coffin( String blockType ) {
 		BLOCKS.put( blockType + "_coffin", registerBlock( new CoffinBlock(), blockType + "_coffin", true) );
+		
+		COFFINS.put( blockType + "_coffin", BLOCKS.get( blockType + "_coffin" ) );
 	}
 	
 	private static void register_pedestal( String blockType ) {
 		BLOCKS.put( blockType + "_pedestal", registerBlock( new StatueBlock(), blockType + "_pedestal", true) );
 		BLOCKS.put( blockType + "_thin_pedestal", registerBlock( new StatueBlock(), blockType + "_thin_pedestal", true) );
+		
+		PEDESTALS.put( blockType + "_pedestal", BLOCKS.get( blockType + "_pedestal" ) );
+		PEDESTALS.put( blockType + "_thin_pedestal", BLOCKS.get( blockType + "_thin_pedestal" ) );
 	}
 	
 	private static void register_statue( String blockType ) {
 		BLOCKS.put( blockType + "_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_statue", true) );
 		BLOCKS.put( blockType + "_cross_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_cross_statue", true) );
 		BLOCKS.put( blockType + "_celtic_cross_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_celtic_cross_statue", true) );
+		
+		STATUES.put( blockType + "_statue", BLOCKS.get( blockType + "_statue" ) );
+		STATUES.put( blockType + "_cross_statue", BLOCKS.get( blockType + "_cross_statue" ) );
+		STATUES.put( blockType + "_celtic_cross_statue", BLOCKS.get( blockType + "_celtic_cross_statue" ) );
 	}
 	
 	private static void register_resurrection_statue( String blockType ) {
 		BLOCKS.put( blockType + "_resurrection_statue", registerBlock( new TwoTallResurrectionStatueBlock(), blockType + "_resurrection_statue", true) );
+		
+		RESURRECTION_STATUES.put( blockType + "_resurrection_statue", BLOCKS.get( blockType + "_resurrection_statue" ) );
 	}
 	
 	private static void register_player_statue( String blockType ) {
@@ -216,36 +234,60 @@ public class graveyardBlocksFeature {
 		BLOCKS.put( blockType + "_player_fighting_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_player_fighting_statue", true) );
 		BLOCKS.put( blockType + "_player_reaper_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_player_reaper_statue", true) );
 		BLOCKS.put( blockType + "_player_angel_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_player_angel_statue", true) );
+		
+		STATUES.put( blockType + "_player_statue", BLOCKS.get( blockType + "_player_statue" ) );
+		STATUES.put( blockType + "_player_exploring_statue", BLOCKS.get( blockType + "_player_exploring_statue" ) );
+		STATUES.put( blockType + "_player_building_statue", BLOCKS.get( blockType + "_player_building_statue" ) );
+		STATUES.put( blockType + "_player_fighting_statue", BLOCKS.get( blockType + "_player_fighting_statue" ) );
+		STATUES.put( blockType + "_player_reaper_statue", BLOCKS.get( blockType + "_player_reaper_statue" ) );
+		STATUES.put( blockType + "_player_angel_statue", BLOCKS.get( blockType + "_player_angel_statue" ) );
 	}
 	
 	private static void register_cat_statue( String blockType ) {
 		BLOCKS.put( blockType + "_cat_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_cat_statue", true) );
 		BLOCKS.put( blockType + "_cat_sitting_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_cat_sitting_statue", true) );
+		
+		STATUES.put( blockType + "_cat_statue", BLOCKS.get( blockType + "_cat_statue" ) );
+		STATUES.put( blockType + "_cat_sitting_statue", BLOCKS.get( blockType + "_cat_sitting_statue" ) );
 	}
 	
 	private static void register_wolf_statue( String blockType ) {
 		BLOCKS.put( blockType + "_wolf_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_wolf_statue", true) );
 		BLOCKS.put( blockType + "_wolf_sitting_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_wolf_sitting_statue", true) );
+		
+		STATUES.put( blockType + "_wolf_statue", BLOCKS.get( blockType + "_wolf_statue" ) );
+		STATUES.put( blockType + "_wolf_sitting_statue", BLOCKS.get( blockType + "_wolf_sitting_statue" ) );
 	}
 	
 	private static void register_villager_statue( String blockType ) {
 		BLOCKS.put( blockType + "_villager_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_villager_statue", true) );
 		BLOCKS.put( blockType + "_villager_poppy_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_villager_poppy_statue", true) );
+		
+		STATUES.put( blockType + "_villager_statue", BLOCKS.get( blockType + "_villager_statue" ) );
+		STATUES.put( blockType + "_villager_poppy_statue", BLOCKS.get( blockType + "_villager_poppy_statue" ) );
 	}
 	
 	private static void register_pillager_statue( String blockType ) {
 		BLOCKS.put( blockType + "_pillager_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_pillager_statue", true) );
 		BLOCKS.put( blockType + "_pillager_celebrating_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_pillager_celebrating_statue", true) );
+		
+		STATUES.put( blockType + "_pillager_statue", BLOCKS.get( blockType + "_pillager_statue" ) );
+		STATUES.put( blockType + "_pillager_celebrating_statue", BLOCKS.get( blockType + "_pillager_celebrating_statue" ) );
 	}
 	
 	private static void register_piglin_statue( String blockType ) {
 		BLOCKS.put( blockType + "_piglin_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_piglin_statue", true) );
 		BLOCKS.put( blockType + "_piglin_axe_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_piglin_axe_statue", true) );
+		
+		STATUES.put( blockType + "_piglin_statue", BLOCKS.get( blockType + "_piglin_statue" ) );
+		STATUES.put( blockType + "_piglin_axe_statue", BLOCKS.get( blockType + "_piglin_axe_statue" ) );
 	}
 	
 	private static void register_dragon_statue( String blockType ) {
 //		BLOCKS.put( blockType + "_dragon_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_dragon_statue", true) );
 		BLOCKS.put( blockType + "_dragon_egg_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_dragon_egg_statue", true) );
+		
+		STATUES.put( blockType + "_dragon_egg_statue", BLOCKS.get( blockType + "_dragon_egg_statue" ) );
 	}
 	
 	private static void registerItemGroup() {
@@ -391,7 +433,42 @@ public class graveyardBlocksFeature {
 				BLOCKS.get("prismarine_coffin"),
 				BLOCKS.get("dark_prismarine_coffin"),
 				BLOCKS.get("polished_deepslate_coffin"),
-				BLOCKS.get("polished_blackstone_coffin")
+				BLOCKS.get("polished_blackstone_coffin"),
+				
+				BLOCKS.get("white_concrete_coffin"),
+				BLOCKS.get("gray_concrete_coffin"),
+				BLOCKS.get("light_gray_concrete_coffin"),
+				BLOCKS.get("black_concrete_coffin"),
+				BLOCKS.get("brown_concrete_coffin"),
+				BLOCKS.get("red_concrete_coffin"),
+				BLOCKS.get("orange_concrete_coffin"),
+				BLOCKS.get("yellow_concrete_coffin"),
+				BLOCKS.get("lime_concrete_coffin"),
+				BLOCKS.get("green_concrete_coffin"),
+				BLOCKS.get("cyan_concrete_coffin"),
+				BLOCKS.get("light_blue_concrete_coffin"),
+				BLOCKS.get("blue_concrete_coffin"),
+				BLOCKS.get("purple_concrete_coffin"),
+				BLOCKS.get("magenta_concrete_coffin"),
+				BLOCKS.get("pink_concrete_coffin"),
+				
+				BLOCKS.get("terracotta_coffin"),
+				BLOCKS.get("white_terracotta_coffin"),
+				BLOCKS.get("gray_terracotta_coffin"),
+				BLOCKS.get("light_gray_terracotta_coffin"),
+				BLOCKS.get("black_terracotta_coffin"),
+				BLOCKS.get("brown_terracotta_coffin"),
+				BLOCKS.get("red_terracotta_coffin"),
+				BLOCKS.get("orange_terracotta_coffin"),
+				BLOCKS.get("yellow_terracotta_coffin"),
+				BLOCKS.get("lime_terracotta_coffin"),
+				BLOCKS.get("green_terracotta_coffin"),
+				BLOCKS.get("cyan_terracotta_coffin"),
+				BLOCKS.get("light_blue_terracotta_coffin"),
+				BLOCKS.get("blue_terracotta_coffin"),
+				BLOCKS.get("purple_terracotta_coffin"),
+				BLOCKS.get("magenta_terracotta_coffin"),
+				BLOCKS.get("pink_terracotta_coffin")
 		);
 		
 		// # Register the Block Entity Types
@@ -470,7 +547,42 @@ public class graveyardBlocksFeature {
 				BLOCKS.get("prismarine_resurrection_statue"),
 				BLOCKS.get("dark_prismarine_resurrection_statue"),
 				BLOCKS.get("polished_deepslate_resurrection_statue"),
-				BLOCKS.get("polished_blackstone_resurrection_statue")
+				BLOCKS.get("polished_blackstone_resurrection_statue"),
+				
+				BLOCKS.get("white_concrete_resurrection_statue"),
+				BLOCKS.get("gray_concrete_resurrection_statue"),
+				BLOCKS.get("light_gray_concrete_resurrection_statue"),
+				BLOCKS.get("black_concrete_resurrection_statue"),
+				BLOCKS.get("brown_concrete_resurrection_statue"),
+				BLOCKS.get("red_concrete_resurrection_statue"),
+				BLOCKS.get("orange_concrete_resurrection_statue"),
+				BLOCKS.get("yellow_concrete_resurrection_statue"),
+				BLOCKS.get("lime_concrete_resurrection_statue"),
+				BLOCKS.get("green_concrete_resurrection_statue"),
+				BLOCKS.get("cyan_concrete_resurrection_statue"),
+				BLOCKS.get("light_blue_concrete_resurrection_statue"),
+				BLOCKS.get("blue_concrete_resurrection_statue"),
+				BLOCKS.get("purple_concrete_resurrection_statue"),
+				BLOCKS.get("magenta_concrete_resurrection_statue"),
+				BLOCKS.get("pink_concrete_resurrection_statue"),
+				
+				BLOCKS.get("terracotta_resurrection_statue"),
+				BLOCKS.get("white_terracotta_resurrection_statue"),
+				BLOCKS.get("gray_terracotta_resurrection_statue"),
+				BLOCKS.get("light_gray_terracotta_resurrection_statue"),
+				BLOCKS.get("black_terracotta_resurrection_statue"),
+				BLOCKS.get("brown_terracotta_resurrection_statue"),
+				BLOCKS.get("red_terracotta_resurrection_statue"),
+				BLOCKS.get("orange_terracotta_resurrection_statue"),
+				BLOCKS.get("yellow_terracotta_resurrection_statue"),
+				BLOCKS.get("lime_terracotta_resurrection_statue"),
+				BLOCKS.get("green_terracotta_resurrection_statue"),
+				BLOCKS.get("cyan_terracotta_resurrection_statue"),
+				BLOCKS.get("light_blue_terracotta_resurrection_statue"),
+				BLOCKS.get("blue_terracotta_resurrection_statue"),
+				BLOCKS.get("purple_terracotta_resurrection_statue"),
+				BLOCKS.get("magenta_terracotta_resurrection_statue"),
+				BLOCKS.get("pink_terracotta_resurrection_statue")
 		);
 		
 		// # Register the Block Entity Types

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "C",
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:blue_terracotta"
+    },
+    "C": {
+      "item": "minecraft:totem_of_undying"
+    }
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:blue_terracotta_resurrection_statue",
+    "count": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:pink_terracotta"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:pink_terracotta_pillager_celebrating_statue",
+    "count": 1
+  }
+}

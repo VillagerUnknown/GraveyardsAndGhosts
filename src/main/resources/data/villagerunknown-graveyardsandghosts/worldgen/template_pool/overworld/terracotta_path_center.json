@@ -1,0 +1,14 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 75,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/path/end_path_intersection_center-a",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:path_terracotta"
+      }
+    }
+  ]
+}

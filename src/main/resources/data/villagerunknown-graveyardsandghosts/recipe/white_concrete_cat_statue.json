@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:white_concrete"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:white_concrete_cat_statue",
+    "count": 1
+  }
+}
