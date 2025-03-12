@@ -89,7 +89,7 @@ public class GraveSoilBlock extends BlockWithEntity implements BlockEntityProvid
 			return;
 		} // if
 		
-		if( entity.isPlayer() || entity instanceof VillagerEntity || entity instanceof IronGolemEntity) {
+		if( entity.isPlayer() ) {
 			// Play sound
 			playSound(world, pos);
 			
