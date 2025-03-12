@@ -14,6 +14,7 @@ Inspired by MMORPG's, this mod adds graveyards to the world generation and chang
 * Graveyard respawn system.
 * Custom structures.
 * Custom blocks using vanilla ingredients for players to design their own graveyards.
+* Groundskeeper villager trading graveyard blocks.
 
 **"Ghost" Status Effect**
 
@@ -35,7 +36,7 @@ A Ghost potion can be brewed by brewing a Totem of Undying with an Awkward Potio
 
 **Custom Structures**
 
-**Graveyards** - Graveyards spawn in the Overworld and End dimensions. They act as respawn points and can provide risky looting opportunities.
+* **Graveyards** - Graveyards spawn in the Overworld and End dimensions. They act as respawn points and can provide risky looting opportunities.
 
 **Custom Block Types**
 
@@ -45,6 +46,11 @@ A Ghost potion can be brewed by brewing a Totem of Undying with an Awkward Potio
 * **Statues** - Aesthetic statues including generic statues, player statues, villager statues, pillager statues, piglin statues, and dragon-inspired statues. All statues can be crafted with a stonecutter.
 * **Pedestals** - Basic cut blocks to hold statues that can be crafted with a stonecutter.
 * **Tombstones** - Various grave markers including flat, rounded, and broken tombstones. Use silk touch on tombstones if you don't want their broken form. All tombstones can be crafted with a stonecutter. (In the future I hope to be able to make tombstones similar to signs where players can edit and place text on them.)
+
+**Groundskeeper Villager**
+
+* Groundskeeper villagers use Resurrection Statues as workstations.
+* Groundskeeper villagers trade Tombstones (level 1), Pedestals (level 2), Statues (level 3), Coffins (level 4), and Resurrection Statues (level 5).
 
 **General Options:**
 
@@ -86,6 +92,5 @@ A Ghost potion can be brewed by brewing a Totem of Undying with an Awkward Potio
 
 ## Support
 
-* Get support and share feedback at https://discord.gg/PXjXh6M38H
 * Request features and report bugs at https://github.com/VillagerUnknown/GraveyardsAndGhosts/issues
 * View the changelog at https://github.com/VillagerUnknown/GraveyardsAndGhosts/blob/main/CHANGELOG.md
