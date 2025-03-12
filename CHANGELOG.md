@@ -6,8 +6,10 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+- Added Groundskeeper villager with Graveyard block trades
 - Added Concrete block variations
 - Added Terracotta block variations
+- Added Terracotta graveyards to Badlands biomes
 
 ### Changed
 
