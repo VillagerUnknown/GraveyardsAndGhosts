@@ -14,7 +14,7 @@ Inspired by MMORPG's, this mod adds graveyards to the world generation and chang
 * Graveyard respawn system.
 * Custom structures.
 * Custom blocks using vanilla ingredients for players to design their own graveyards.
-* Groundskeeper villager trading graveyard blocks.
+* Groundskeeper villager trading Tombstones, Pedestals, Statues, Coffins, and Resurrection Statues.
 
 **"Ghost" Status Effect**
 
