@@ -142,11 +142,13 @@ public class TwoTallResurrectionStatueBlock extends BlockWithEntity implements B
 				onBreakInCreative(world, pos, state, player);
 			} else {
 				dropStacks(state, world, pos, (BlockEntity)null, player, player.getMainHandStack());
-			}
+			} // if, else
 			
 			if( state.get(HALF) == DoubleBlockHalf.LOWER ) {
 				world.breakBlock(pos.up(),false);
-			} // if
+			} else {
+				world.breakBlock(pos.down(),false);
+			} // if, else
 			
 //			respawnPositions.remove( pos );
 		}
