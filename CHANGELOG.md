@@ -19,6 +19,7 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 
 - Two block tall statues can no longer be duplicated by breaking the top half first.
+- Coffins can no longer be duplicated by breaking them.
 
 ## [1.0.1]
 
