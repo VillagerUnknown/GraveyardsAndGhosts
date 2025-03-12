@@ -6,14 +6,15 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- Added Groundskeeper villager with Graveyard block trades
-- Added Concrete block variations
-- Added Terracotta block variations
-- Added Terracotta graveyards to Badlands biomes
+- Added Groundskeeper villager with Graveyard block trades.
+- Added Concrete block variations.
+- Added Terracotta block variations.
+- Added Terracotta graveyards to Badlands biomes.
 
 ### Changed
 
-- Simplified the recipe for Resurrection Statues
+- Simplified the recipe for Resurrection Statues.
+- Villagers and Iron Golems no longer have a chance to spawn entities when stepping on Grave Soil.
 
 ## [1.0.1]
 
