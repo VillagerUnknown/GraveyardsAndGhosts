@@ -13,6 +13,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.enums.BedPart;
+import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -138,17 +139,20 @@ public class CoffinBlock extends BlockWithEntity implements Waterloggable {
 	}
 	
 	public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-		if (!world.isClient && player.isCreative()) {
+		if (!world.isClient) {
 			BedPart bedPart = (BedPart)state.get(PART);
-			if (bedPart == BedPart.FOOT) {
-				BlockPos blockPos = pos.offset(getDirectionTowardsOtherPart(bedPart, (Direction)state.get(FACING)));
-				BlockState blockState = world.getBlockState(blockPos);
-				if (blockState.isOf(this) && blockState.get(PART) == BedPart.HEAD) {
-					world.setBlockState(blockPos, Blocks.AIR.getDefaultState(), 35);
-					world.syncWorldEvent(player, 2001, blockPos, Block.getRawIdFromState(blockState));
-				}
-			}
-		}
+			BlockPos joinedBlockPos = pos.offset(getDirectionTowardsOtherPart(bedPart, (Direction)state.get(FACING)));
+			BlockState joinedBlockState = world.getBlockState(joinedBlockPos);
+			
+			if( joinedBlockState.isOf(this) ) {
+				if( player.isCreative() ) {
+					world.setBlockState(joinedBlockPos, Blocks.AIR.getDefaultState(), 35);
+					world.syncWorldEvent(player, 2001, joinedBlockPos, Block.getRawIdFromState(joinedBlockState));
+				} // if
+				
+				world.breakBlock(joinedBlockPos,false);
+			} // if
+		} // if
 		
 		return super.onBreak(world, pos, state, player);
 	}
