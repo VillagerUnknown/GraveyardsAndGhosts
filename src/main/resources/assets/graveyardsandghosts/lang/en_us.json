@@ -49,6 +49,8 @@
 
   "container.villagerunknown-graveyardsandghosts.coffin": "Coffin",
 
+  "tag.item.villagerunknown-graveyardsandghosts.graveyard": "Graveyard",
+
   "itemGroup.villagerunknown-graveyardsandghosts": "Graveyards & Ghosts",
 
   "item.minecraft.tipped_arrow.effect.ghost": "Ghost Tipped Arrow",
