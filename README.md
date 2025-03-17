@@ -1,12 +1,6 @@
 # VillagerUnknown's Graveyards & Ghosts
 
-Inspired by MMORPG's, this mod adds graveyards to the world generation and changes the respawn system so that players become ghosts when they die and respawn at the nearest graveyard.
-
-* Players can join the world as Ghosts. This can be changed in the settings. (Players used to start as ghosts in v1.0.0)
-* Ghosts can respawn at their last death location or any Resurrection Statue (Graveyard).
-* Graveyards generate in the Overworld and End dimensions.
-* Beds no longer act as spawn points but still pass the night.
-* Respawn anchors still work in the Nether.
+Inspired by MMORPG's, this mod adds graveyards to the world generation and optionally changes the respawn system so that players become ghosts when they die and respawn at the nearest graveyard.
 
 **Features:**
 
@@ -15,6 +9,11 @@ Inspired by MMORPG's, this mod adds graveyards to the world generation and chang
 * Custom structures.
 * Custom blocks using vanilla ingredients for players to design their own graveyards.
 * Groundskeeper villager trading Tombstones, Pedestals, Statues, Coffins, and Resurrection Statues.
+* Players can join the world as Ghosts. This can be changed in the settings. (Players used to start as ghosts in v1.0.0)
+* Ghosts can respawn at their last death location or any Resurrection Statue (Graveyard).
+* Graveyards generate in the Overworld and End dimensions.
+* Beds no longer act as spawn points but still pass the night.
+* Respawn anchors still work in the Nether.
 
 **"Ghost" Status Effect**
 
@@ -40,9 +39,10 @@ A Ghost potion can be brewed by brewing a Totem of Undying with an Awkward Potio
 
 **Custom Block Types**
 
-* **Resurrection Statues** - The centerpiece of every Graveyard, the resurrection statue can be crafted in the crafting bench by surrounding a Totem of Undying with the desired statue material. It will act as a respawn point for ghosts. Ghosts can interact with the statue to resurrect.
-* **Coffins** - A chest-like block that when disturbed has a chance of spawning an undead mob. Are the treasures inside worth the risk? Coffins can be crafted with a stonecutter.
-* **Grave Soil** - A dirt-like block that when disturbed has a chance of spawning an undead mob. Grave soil will not drop it's item form and has a chance of dropping loot when broken. Be respectful of the dead and watch your step or pay the consequences!
+* **Resurrection Statues** - The centerpiece of every Graveyard, the resurrection statue can be crafted in the crafting bench with a Totem of Undying and the desired statue material. 
+It will act as a respawn point for ghosts. Ghosts can interact with the statue to resurrect.
+* **Coffins** - A chest-like block that when disturbed has a chance of spawning an undead mob. Are the treasures inside worth the risk? Coffins can be crafted in the crafting table with a Chest and the desired statue material.
+* **Grave Soil** - A dirt-like block that when disturbed has a chance of spawning an undead mob. Grave soil will not drop it's item form, cannot be crafted, and has a chance of dropping loot when broken. Be respectful of the dead and watch your step or pay the consequences!
 * **Statues** - Aesthetic statues including generic statues, player statues, villager statues, pillager statues, piglin statues, and dragon-inspired statues. All statues can be crafted with a stonecutter.
 * **Pedestals** - Basic cut blocks to hold statues that can be crafted with a stonecutter.
 * **Tombstones** - Various grave markers including flat, rounded, and broken tombstones. Use silk touch on tombstones if you don't want their broken form. All tombstones can be crafted with a stonecutter. (In the future I hope to be able to make tombstones similar to signs where players can edit and place text on them.)
