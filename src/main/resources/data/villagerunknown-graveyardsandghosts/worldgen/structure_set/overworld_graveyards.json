@@ -1,51 +1,51 @@
 {
   "structures": [
     {
-      "structure": "villagerunknown-graveyardsandghosts:small_obsidian_graveyard",
+      "structure": "villagerunknown-graveyardsandghosts:obsidian_graveyard",
       "weight": 1
     },
 
     {
-      "structure": "villagerunknown-graveyardsandghosts:small_cobblestone_graveyard",
+      "structure": "villagerunknown-graveyardsandghosts:cobblestone_graveyard",
       "weight": 5
     },
 
     {
-      "structure": "villagerunknown-graveyardsandghosts:small_acacia_graveyard",
+      "structure": "villagerunknown-graveyardsandghosts:acacia_graveyard",
       "weight": 25
     },
     {
-      "structure": "villagerunknown-graveyardsandghosts:small_birch_graveyard",
+      "structure": "villagerunknown-graveyardsandghosts:birch_graveyard",
       "weight": 25
     },
     {
-      "structure": "villagerunknown-graveyardsandghosts:small_cherry_graveyard",
+      "structure": "villagerunknown-graveyardsandghosts:cherry_graveyard",
       "weight": 25
     },
     {
-      "structure": "villagerunknown-graveyardsandghosts:small_dark_oak_graveyard",
+      "structure": "villagerunknown-graveyardsandghosts:dark_oak_graveyard",
       "weight": 25
     },
     {
-      "structure": "villagerunknown-graveyardsandghosts:small_jungle_graveyard",
+      "structure": "villagerunknown-graveyardsandghosts:jungle_graveyard",
       "weight": 25
     },
     {
-      "structure": "villagerunknown-graveyardsandghosts:small_oak_graveyard",
+      "structure": "villagerunknown-graveyardsandghosts:oak_graveyard",
       "weight": 25
     },
     {
-      "structure": "villagerunknown-graveyardsandghosts:small_spruce_graveyard",
-      "weight": 25
-    },
-
-    {
-      "structure": "villagerunknown-graveyardsandghosts:small_sandstone_graveyard",
+      "structure": "villagerunknown-graveyardsandghosts:spruce_graveyard",
       "weight": 25
     },
 
     {
-      "structure": "villagerunknown-graveyardsandghosts:small_terracotta_graveyard",
+      "structure": "villagerunknown-graveyardsandghosts:sandstone_graveyard",
+      "weight": 25
+    },
+
+    {
+      "structure": "villagerunknown-graveyardsandghosts:terracotta_graveyard",
       "weight": 25
     }
   ],

@@ -18,6 +18,51 @@
         "projection": "rigid",
         "processors": "villagerunknown-graveyardsandghosts:path_dirt"
       }
+    },
+    {
+      "weight": 75,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/grave_site/grave_site-end_stone-a",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:path_dirt"
+      }
+    },
+    {
+      "weight": 75,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/grave_site/grave_site-end_stone-b",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:path_dirt"
+      }
+    },
+    {
+      "weight": 75,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/grave_site/grave_site-end_stone-c",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:path_dirt"
+      }
+    },
+    {
+      "weight": 75,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/grave_site/grave_site-end_stone-d",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:path_dirt"
+      }
+    },
+    {
+      "weight": 75,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/grave_site/grave_site-end_stone-e",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:path_dirt"
+      }
     }
   ]
 }
