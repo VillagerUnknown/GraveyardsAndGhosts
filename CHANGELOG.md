@@ -9,6 +9,10 @@ All notable changes to this project will be documented in this file.
 - Added additional variations of generated Small Graveyards.
 - Novice Cartographers now have a chance of selling maps to Graveyards.
 
+### Changed
+
+- Players with the Ghost effect no longer need an empty hand to interact with Resurrection Statues.
+
 ### Removed
 
 - Removed generated Large and Medium Graveyards.

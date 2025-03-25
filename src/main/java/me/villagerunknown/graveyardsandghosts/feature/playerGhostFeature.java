@@ -376,10 +376,6 @@ public class playerGhostFeature {
 			} // if
 			
 			if( Graveyardsandghosts.CONFIG.preventGhostBlockUse && playerEntity.hasStatusEffect(GHOST_EFFECT_REGISTRY) ) {
-				if( !playerEntity.getStackInHand( hand ).isEmpty() ) {
-					return ActionResult.FAIL;
-				} // if
-				
 				Block block = world.getBlockState(blockHitResult.getBlockPos()).getBlock();
 				BlockEntity blockEntity = world.getBlockEntity(blockHitResult.getBlockPos());
 				
