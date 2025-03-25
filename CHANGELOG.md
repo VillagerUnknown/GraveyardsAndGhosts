@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0]
+
+### Added
+
+- Added additional variations of generated Small Graveyards.
+- Novice Cartographers now have a chance of selling maps to Graveyards.
+
+### Removed
+
+- Removed generated Large and Medium Graveyards.
+
 ## [1.1.0]
 
 ### Added
