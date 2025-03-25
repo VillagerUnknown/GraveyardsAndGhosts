@@ -28,20 +28,20 @@ import static me.villagerunknown.graveyardsandghosts.Graveyardsandghosts.MOD_ID;
 
 public class groundskeeperVillagerFeature {
 	
-	private static final int DEFAULT_MAX_USES = 12;
-	private static final int COMMON_MAX_USES = 16;
-	private static final int RARE_MAX_USES = 3;
-	private static final int NOVICE_SELL_XP = 1;
-	private static final int NOVICE_BUY_XP = 2;
-	private static final int APPRENTICE_SELL_XP = 5;
-	private static final int APPRENTICE_BUY_XP = 10;
-	private static final int JOURNEYMAN_SELL_XP = 10;
-	private static final int JOURNEYMAN_BUY_XP = 20;
-	private static final int EXPERT_SELL_XP = 15;
-	private static final int EXPERT_BUY_XP = 30;
-	private static final int MASTER_TRADE_XP = 30;
-	private static final float LOW_PRICE_MULTIPLIER = 0.05F;
-	private static final float HIGH_PRICE_MULTIPLIER = 0.2F;
+	public static final int DEFAULT_MAX_USES = 12;
+	public static final int COMMON_MAX_USES = 16;
+	public static final int RARE_MAX_USES = 3;
+	public static final int NOVICE_SELL_XP = 1;
+	public static final int NOVICE_BUY_XP = 2;
+	public static final int APPRENTICE_SELL_XP = 5;
+	public static final int APPRENTICE_BUY_XP = 10;
+	public static final int JOURNEYMAN_SELL_XP = 10;
+	public static final int JOURNEYMAN_BUY_XP = 20;
+	public static final int EXPERT_SELL_XP = 15;
+	public static final int EXPERT_BUY_XP = 30;
+	public static final int MASTER_TRADE_XP = 30;
+	public static final float LOW_PRICE_MULTIPLIER = 0.05F;
+	public static final float HIGH_PRICE_MULTIPLIER = 0.2F;
 	
 	public static final String GROUNDSKEEPER_STRING = "groundskeeper";
 	public static final Identifier GROUNDSKEEPER_IDENTIFIER = Identifier.of( MOD_ID, GROUNDSKEEPER_STRING );

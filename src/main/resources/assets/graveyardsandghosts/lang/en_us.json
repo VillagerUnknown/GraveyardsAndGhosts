@@ -43,6 +43,8 @@
   "stat.villagerunknown-graveyardsandghosts.discovered_graveyards": "Discovered Graveyards",
   "stat.villagerunknown-graveyardsandghosts.total_resurrections": "Resurrections",
 
+  "filled_map.graveyards": "Graveyard Map",
+
   "entity.minecraft.villager.groundskeeper": "Groundskeeper",
 
   "effect.villagerunknown-graveyardsandghosts.ghost": "Ghost",
