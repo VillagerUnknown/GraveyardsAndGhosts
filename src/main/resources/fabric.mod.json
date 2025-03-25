@@ -6,7 +6,8 @@
   "description": "Adds Graveyards and Ghosts to your world.",
   "authors": ["VillagerUnknown"],
   "contact": {
-    "homepage":"https://discord.gg/PXjXh6M38H"
+    "sources":"https://github.com/VillagerUnknown/GraveyardsAndGhosts",
+    "issues":"https://github.com/VillagerUnknown/GraveyardsAndGhosts/issues"
   },
   "license": "CC-BY-4.0",
   "icon": "assets/graveyardsandghosts/villagerunknown-graveyards-and-ghosts.png",
@@ -34,12 +35,5 @@
     "fabric": "*",
     "minecraft": "${minecraft_version}",
     "villagerunknown-platform": ">=1.1.1"
-  },
-  "custom": {
-    "modmenu": {
-      "links": {
-        "modmenu.discord": "https://discord.gg/PXjXh6M38H"
-      }
-    }
   }
 }
