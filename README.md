@@ -9,6 +9,7 @@ Inspired by MMORPG's, this mod adds graveyards to the world generation and optio
 * Custom structures.
 * Custom blocks using vanilla ingredients for players to design their own graveyards.
 * Groundskeeper villager trading Tombstones, Pedestals, Statues, Coffins, and Resurrection Statues.
+* Cartographers sell maps to Graveyards.
 * Players can join the world as Ghosts. This can be changed in the settings. (Players used to start as ghosts in v1.0.0)
 * Ghosts can respawn at their last death location or any Resurrection Statue (Graveyard).
 * Graveyards generate in the Overworld and End dimensions.

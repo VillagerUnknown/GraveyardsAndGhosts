@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0]
+
+### Added
+
+- Added additional variations of generated Small Graveyards.
+- Novice Cartographers now have a chance of selling maps to Graveyards.
+
+### Changed
+
+- Players with the Ghost effect no longer need an empty hand to interact with Resurrection Statues.
+- Changed Groundskeeper sales prices.
+
+### Removed
+
+- Removed generated Large and Medium Graveyards.
+
 ## [1.1.0]
 
 ### Added

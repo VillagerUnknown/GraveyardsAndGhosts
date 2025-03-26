@@ -1,12 +1,8 @@
 {
   "structures": [
     {
-      "structure": "villagerunknown-graveyardsandghosts:small_end_graveyard",
+      "structure": "villagerunknown-graveyardsandghosts:end_graveyard",
       "weight": 2
-    },
-    {
-      "structure": "villagerunknown-graveyardsandghosts:medium_end_graveyard",
-      "weight": 1
     }
   ],
   "placement": {

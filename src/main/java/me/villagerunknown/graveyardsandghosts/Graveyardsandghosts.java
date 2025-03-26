@@ -1,9 +1,6 @@
 package me.villagerunknown.graveyardsandghosts;
 
-import me.villagerunknown.graveyardsandghosts.feature.graveyardBlocksFeature;
-import me.villagerunknown.graveyardsandghosts.feature.ghostRespawnFeature;
-import me.villagerunknown.graveyardsandghosts.feature.groundskeeperVillagerFeature;
-import me.villagerunknown.graveyardsandghosts.feature.playerGhostFeature;
+import me.villagerunknown.graveyardsandghosts.feature.*;
 import me.villagerunknown.platform.Platform;
 import me.villagerunknown.platform.PlatformMod;
 import me.villagerunknown.platform.manager.featureManager;
@@ -38,6 +35,7 @@ public class Graveyardsandghosts implements ModInitializer {
 		featureManager.addFeature( "playerGhost", playerGhostFeature::execute );
 		featureManager.addFeature( "ghostRespawn", ghostRespawnFeature::execute );
 		featureManager.addFeature( "groundskeeperVillager", groundskeeperVillagerFeature::execute );
+		featureManager.addFeature( "graveyardMapsTrade", graveyardMapsTradeFeature::execute );
 	}
 	
 }
