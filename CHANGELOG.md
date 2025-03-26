@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 
 - Players with the Ghost effect no longer need an empty hand to interact with Resurrection Statues.
+- Changed Groundskeeper sales prices.
 
 ### Removed
 
