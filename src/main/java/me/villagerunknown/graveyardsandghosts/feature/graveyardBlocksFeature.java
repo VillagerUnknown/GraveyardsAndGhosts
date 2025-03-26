@@ -5,11 +5,13 @@ import me.villagerunknown.graveyardsandghosts.block.coffin.CoffinBlock;
 import me.villagerunknown.graveyardsandghosts.block.entity.CoffinBlockEntity;
 import me.villagerunknown.graveyardsandghosts.block.entity.GraveSoilBlockEntity;
 import me.villagerunknown.graveyardsandghosts.block.entity.ResurrectionBlockEntity;
+import me.villagerunknown.graveyardsandghosts.block.entity.TombstoneBlockEntity;
 import me.villagerunknown.graveyardsandghosts.block.grave.GraveSoilBlock;
 import me.villagerunknown.graveyardsandghosts.block.resurrection.TwoTallResurrectionStatueBlock;
 import me.villagerunknown.graveyardsandghosts.block.statue.StatueBlock;
 import me.villagerunknown.graveyardsandghosts.block.statue.TwoTallStatueBlock;
 import me.villagerunknown.graveyardsandghosts.block.tombstone.BrokenTombstoneBlock;
+import me.villagerunknown.graveyardsandghosts.block.tombstone.CarvedTombstoneBlock;
 import me.villagerunknown.graveyardsandghosts.block.tombstone.TombstoneBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -311,7 +313,7 @@ public class graveyardBlocksFeature {
 	
 	public static void registerBlockEntityTypes() {
 		registerGraveSoilBlockEntities();
-//		registerEngravedTombstoneBlockEntities();
+//		registerTombstoneBlockEntities();
 		registerCoffinBlockEntities();
 		registerResurrectionBlockEntities();
 	}
@@ -333,38 +335,21 @@ public class graveyardBlocksFeature {
 		);
 	}
 	
-	private static void registerEngravedTombstoneBlockEntities() {
-		// # Explicitly define each engraved tombstone block
-//		BlockEntityType.Builder<EngravedTombstoneBlockEntity> builder = BlockEntityType.Builder.create(
-//				EngravedTombstoneBlockEntity::new,
-//				BLOCKS.get("moss_engraved_tombstone_block"),
-//				BLOCKS.get("snow_engraved_tombstone_block"),
-//				BLOCKS.get("sculk_engraved_tombstone_block"),
-//				BLOCKS.get("oak_engraved_tombstone_block"),
-//				BLOCKS.get("spruce_engraved_tombstone_block"),
-//				BLOCKS.get("birch_engraved_tombstone_block"),
-//				BLOCKS.get("jungle_engraved_tombstone_block"),
-//				BLOCKS.get("acacia_engraved_tombstone_block"),
-//				BLOCKS.get("dark_oak_engraved_tombstone_block"),
-//				BLOCKS.get("mangrove_engraved_tombstone_block"),
-//				BLOCKS.get("cherry_engraved_tombstone_block"),
-//				BLOCKS.get("crimson_stem_engraved_tombstone_block"),
-//				BLOCKS.get("warped_stem_engraved_tombstone_block"),
-//				BLOCKS.get("quartz_engraved_tombstone_block"),
-//				BLOCKS.get("emerald_engraved_tombstone_block"),
-//				BLOCKS.get("gold_engraved_tombstone_block"),
-//				BLOCKS.get("obsidian_engraved_tombstone_block"),
-//				BLOCKS.get("netherrack_engraved_tombstone_block")
-//		);
+	private static void registerTombstoneBlockEntities() {
+		// # Explicitly define each tombstone block
+		BlockEntityType.Builder<TombstoneBlockEntity> builder = BlockEntityType.Builder.create(
+				TombstoneBlockEntity::new,
+				BLOCKS.get("acacia_tombstone")
+		);
 		
 		// # Register the Block Entity Types
-//		BLOCK_ENTITY_TYPES.put( "coffin_block",
-//				Registry.register(
-//						Registries.BLOCK_ENTITY_TYPE,
-//						Identifier.of(MOD_ID, "coffin_block"),
-//						builder.build()
-//				)
-//		);
+		BLOCK_ENTITY_TYPES.put( "tombstone",
+				Registry.register(
+						Registries.BLOCK_ENTITY_TYPE,
+						Identifier.of(MOD_ID, "tombstone"),
+						builder.build()
+				)
+		);
 	}
 	
 	private static void registerCoffinBlockEntities() {

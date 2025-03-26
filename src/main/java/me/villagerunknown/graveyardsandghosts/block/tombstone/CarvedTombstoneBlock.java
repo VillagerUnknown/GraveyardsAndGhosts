@@ -1,6 +1,7 @@
 package me.villagerunknown.graveyardsandghosts.block.tombstone;
 
 import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.*;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.fluid.FluidState;
@@ -15,24 +16,24 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 
-public class EngravedTombstoneBlock extends HorizontalFacingBlock implements Waterloggable {
+public class CarvedTombstoneBlock extends AbstractSignBlock {
 	
 	protected static final VoxelShape SHAPE_NORTH = Block.createCuboidShape(1.0, 0.0, 1.0, 15.0, 16.0, 3.0);
 	protected static final VoxelShape SHAPE_EAST = Block.createCuboidShape(13.0, 0.0, 1.0, 15.0, 16.0, 15.0);
 	protected static final VoxelShape SHAPE_SOUTH = Block.createCuboidShape(1.0, 0.0, 13.0, 15.0, 16.0, 15.0);
 	protected static final VoxelShape SHAPE_WEST = Block.createCuboidShape(1.0, 0.0, 1.0, 3.0, 16.0, 15.0);
 	
-	public static final int TOTAL_MODELS = 2;
-	public static final IntProperty RANDOM_MODEL = IntProperty.of("random_model", 0, TOTAL_MODELS - 1);
-	
 	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 	public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
 	
-	public static final MapCodec<EngravedTombstoneBlock> CODEC = createCodec(EngravedTombstoneBlock::new);
+	public static final MapCodec<CarvedTombstoneBlock> CODEC = RecordCodecBuilder.mapCodec((instance) -> {
+		return instance.group(WoodType.CODEC.fieldOf("wood_type").forGetter((CarvedTombstoneBlock block) -> block.getWoodType()), createSettingsCodec()).apply(instance, CarvedTombstoneBlock::new);
+	});
 	
-	public EngravedTombstoneBlock() {
+	public CarvedTombstoneBlock() {
 		super(
-				Settings.copy(Blocks.PLAYER_HEAD)
+				WoodType.DARK_OAK,
+				Settings.copy(Blocks.STONE)
 						.dynamicBounds()
 						.nonOpaque()
 						.solid()
@@ -40,19 +41,22 @@ public class EngravedTombstoneBlock extends HorizontalFacingBlock implements Wat
 		);
 	}
 	
-	public EngravedTombstoneBlock(Settings settings) {
-		super(settings);
+	public CarvedTombstoneBlock(Settings settings) {
+		super(WoodType.DARK_OAK, settings);
+	}
+	
+	public CarvedTombstoneBlock(WoodType woodType, Settings settings) {
+		super(woodType, settings);
 	}
 	
 	@Override
-	protected MapCodec<? extends EngravedTombstoneBlock> getCodec() {
+	protected MapCodec<? extends CarvedTombstoneBlock> getCodec() {
 		return CODEC;
 	}
 	
 	public BlockState getPlacementState(ItemPlacementContext ctx) {
 		return this.getDefaultState()
 				.with(FACING, ctx.getHorizontalPlayerFacing())
-				.with(RANDOM_MODEL, Random.create().nextInt(TOTAL_MODELS))
 				.with(WATERLOGGED, false);
 	}
 	
@@ -63,7 +67,7 @@ public class EngravedTombstoneBlock extends HorizontalFacingBlock implements Wat
 	
 	@Override
 	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-		builder.add(new Property[]{FACING,RANDOM_MODEL,WATERLOGGED});
+		builder.add(new Property[]{FACING,WATERLOGGED});
 	}
 	
 	@Override
@@ -85,6 +89,11 @@ public class EngravedTombstoneBlock extends HorizontalFacingBlock implements Wat
 		return true;
 	}
 	
+	@Override
+	public float getRotationDegrees(BlockState state) {
+		return 0;
+	}
+	
 	protected FluidState getFluidState(BlockState state) {
 		return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
 	}
@@ -101,4 +110,5 @@ public class EngravedTombstoneBlock extends HorizontalFacingBlock implements Wat
 		
 		return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
 	}
+	
 }
