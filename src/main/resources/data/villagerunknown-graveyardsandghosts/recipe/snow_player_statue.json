@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:snow_block"
-  },
+  "ingredient": "minecraft:snow_block",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:snow_player_statue",
     "count": 1

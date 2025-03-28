@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "###",
     "#C#",
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:polished_deepslate"
-    },
-    "C": {
-      "item": "minecraft:chest"
-    }
+    "#": "minecraft:polished_deepslate",
+    "C": "minecraft:chest"
   },
   "result": {
     "id": "villagerunknown-graveyardsandghosts:polished_deepslate_coffin",

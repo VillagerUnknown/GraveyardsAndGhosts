@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:tuff"
-  },
+  "ingredient": "minecraft:tuff",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:tuff_cat_sitting_statue",
     "count": 1

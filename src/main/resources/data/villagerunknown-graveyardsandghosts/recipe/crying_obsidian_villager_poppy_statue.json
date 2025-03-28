@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:crying_obsidian"
-  },
+  "ingredient": "minecraft:crying_obsidian",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:crying_obsidian_villager_poppy_statue",
     "count": 1

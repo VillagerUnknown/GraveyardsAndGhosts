@@ -47,7 +47,7 @@ public class RespawnAnchorBlockMixin {
 	private void onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit, CallbackInfoReturnable<ActionResult> cir) {
 		if( !world.isClient() ) {
 			// # Add nether respawn point when player interacts with a respawn anchor
-			if(cir.getReturnValue() == ActionResult.SUCCESS) {
+			if(cir.getReturnValue() == ActionResult.SUCCESS_SERVER) {
 				GraveyardsandghostsPersistentPlayerData playerData = GraveyardsandghostsPersistentData.getPlayerState(player);
 				
 				Map<String, Set<BlockPos>> playerRespawnPositions = gson.fromJson( playerData.respawnPositions, new TypeToken<Map<String, Set<BlockPos>>>() {}.getType() );

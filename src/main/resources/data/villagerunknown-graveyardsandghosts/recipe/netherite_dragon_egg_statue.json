@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:netherite_block"
-  },
+  "ingredient": "minecraft:netherite_block",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:netherite_dragon_egg_statue",
     "count": 1

@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:jungle_planks"
-  },
+  "ingredient": "minecraft:jungle_planks",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:jungle_plank_cat_sitting_statue",
     "count": 1

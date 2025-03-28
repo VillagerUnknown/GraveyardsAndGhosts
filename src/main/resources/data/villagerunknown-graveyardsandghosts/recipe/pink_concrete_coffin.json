@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "###",
     "#C#",
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:pink_concrete"
-    },
-    "C": {
-      "item": "minecraft:chest"
-    }
+    "#": "minecraft:pink_concrete",
+    "C": "minecraft:chest"
   },
   "result": {
     "id": "villagerunknown-graveyardsandghosts:pink_concrete_coffin",

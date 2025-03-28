@@ -3,13 +3,18 @@ package me.villagerunknown.graveyardsandghosts.block.tombstone;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Property;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
+
+import static me.villagerunknown.graveyardsandghosts.Graveyardsandghosts.MOD_ID;
 
 public class BrokenTombstoneBlock extends TombstoneBlock {
 	
@@ -23,13 +28,14 @@ public class BrokenTombstoneBlock extends TombstoneBlock {
 	
 	public static final MapCodec<BrokenTombstoneBlock> CODEC = createCodec(BrokenTombstoneBlock::new);
 	
-	public BrokenTombstoneBlock() {
+	public BrokenTombstoneBlock( String path ) {
 		super(
 				Settings.copy(Blocks.STONE)
 						.dynamicBounds()
 						.nonOpaque()
 						.solid()
 						.breakInstantly()
+						.registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID,path)))
 		);
 	}
 	

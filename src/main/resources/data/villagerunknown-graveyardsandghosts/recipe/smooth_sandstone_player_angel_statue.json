@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:smooth_sandstone"
-  },
+  "ingredient": "minecraft:smooth_sandstone",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:smooth_sandstone_player_angel_statue",
     "count": 1

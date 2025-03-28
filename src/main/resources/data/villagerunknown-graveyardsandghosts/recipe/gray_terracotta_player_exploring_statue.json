@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:gray_terracotta"
-  },
+  "ingredient": "minecraft:gray_terracotta",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:gray_terracotta_player_exploring_statue",
     "count": 1

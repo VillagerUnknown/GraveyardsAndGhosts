@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:diorite"
-  },
+  "ingredient": "minecraft:diorite",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:diorite_player_angel_statue",
     "count": 1

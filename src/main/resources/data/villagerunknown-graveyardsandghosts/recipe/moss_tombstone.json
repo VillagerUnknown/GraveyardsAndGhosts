@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:moss_block"
-  },
+  "ingredient": "minecraft:moss_block",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:moss_tombstone",
     "count": 6

@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "###",
     "#C#",
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:polished_diorite"
-    },
-    "C": {
-      "item": "minecraft:chest"
-    }
+    "#": "minecraft:polished_diorite",
+    "C": "minecraft:chest"
   },
   "result": {
     "id": "villagerunknown-graveyardsandghosts:polished_diorite_coffin",

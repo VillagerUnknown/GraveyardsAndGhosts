@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "C",
     "#",
     "#"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:sculk"
-    },
-    "C": {
-      "item": "minecraft:totem_of_undying"
-    }
+    "#": "minecraft:sculk",
+    "C": "minecraft:totem_of_undying"
   },
   "result": {
     "id": "villagerunknown-graveyardsandghosts:sculk_resurrection_statue",

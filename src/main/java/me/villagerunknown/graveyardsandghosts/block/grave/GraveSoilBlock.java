@@ -24,12 +24,15 @@ import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Property;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
@@ -37,6 +40,8 @@ import net.minecraft.world.explosion.Explosion;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
+
+import static me.villagerunknown.graveyardsandghosts.Graveyardsandghosts.MOD_ID;
 
 public class GraveSoilBlock extends BlockWithEntity implements BlockEntityProvider {
 	
@@ -67,6 +72,7 @@ public class GraveSoilBlock extends BlockWithEntity implements BlockEntityProvid
 		super(
 				Settings.copy(Blocks.DIRT)
 						.solid()
+						.registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID,"grave_soil")))
 		);
 	}
 	
@@ -295,7 +301,8 @@ public class GraveSoilBlock extends BlockWithEntity implements BlockEntityProvid
 		if( MobHelper.spawnMobByDimension( pos, true ) ) {
 			target.playSound(SoundEvents.ENTITY_WARDEN_DIG);
 			if( target.isPlayer() ) {
-				target.sendMessage(Text.of("You disturbed a grave!"));
+				PlayerEntity player = (PlayerEntity) target;
+				player.sendMessage(Text.of("You disturbed a grave!"), true);
 			} // if
 		} else {
 			applyStatusEffect( world, target );

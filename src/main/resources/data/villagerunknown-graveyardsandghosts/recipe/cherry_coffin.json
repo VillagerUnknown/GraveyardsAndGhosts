@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "###",
     "#C#",
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:stripped_cherry_wood"
-    },
-    "C": {
-      "item": "minecraft:chest"
-    }
+    "#": "minecraft:stripped_cherry_wood",
+    "C": "minecraft:chest"
   },
   "result": {
     "id": "villagerunknown-graveyardsandghosts:cherry_coffin",

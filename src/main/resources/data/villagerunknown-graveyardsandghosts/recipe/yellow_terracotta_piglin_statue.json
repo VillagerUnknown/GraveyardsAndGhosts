@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:yellow_terracotta"
-  },
+  "ingredient": "minecraft:yellow_terracotta",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:yellow_terracotta_piglin_statue",
     "count": 1

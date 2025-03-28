@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:sculk"
-  },
+  "ingredient": "minecraft:sculk",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:sculk_rounded_tombstone",
     "count": 6

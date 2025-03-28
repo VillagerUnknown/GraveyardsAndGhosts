@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:magenta_concrete"
-  },
+  "ingredient": "minecraft:magenta_concrete",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:magenta_concrete_cat_statue",
     "count": 1

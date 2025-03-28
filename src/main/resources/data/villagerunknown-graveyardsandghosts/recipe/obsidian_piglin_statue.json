@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:obsidian"
-  },
+  "ingredient": "minecraft:obsidian",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:obsidian_piglin_statue",
     "count": 1

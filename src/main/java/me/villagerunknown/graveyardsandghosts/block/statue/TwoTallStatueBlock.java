@@ -10,11 +10,14 @@ import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
 import net.minecraft.util.BlockRotation;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
@@ -24,8 +27,10 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
+import net.minecraft.world.tick.ScheduledTickView;
 import org.jetbrains.annotations.Nullable;
 
+import static me.villagerunknown.graveyardsandghosts.Graveyardsandghosts.MOD_ID;
 import static me.villagerunknown.graveyardsandghosts.feature.ghostRespawnFeature.respawnPositions;
 
 public class TwoTallStatueBlock extends StatueBlock {
@@ -39,12 +44,13 @@ public class TwoTallStatueBlock extends StatueBlock {
 	
 	public static final MapCodec<TwoTallStatueBlock> CODEC = createCodec(TwoTallStatueBlock::new);
 	
-	public TwoTallStatueBlock() {
+	public TwoTallStatueBlock( String path ) {
 		super(
 				Settings.copy(Blocks.STONE)
 						.dynamicBounds()
 						.nonOpaque()
 						.solid()
+						.registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID,path)))
 		);
 	}
 	
@@ -55,7 +61,7 @@ public class TwoTallStatueBlock extends StatueBlock {
 	public BlockState getPlacementState(ItemPlacementContext ctx) {
 		BlockPos blockPos = ctx.getBlockPos();
 		World world = ctx.getWorld();
-		if (blockPos.getY() < world.getTopY() - 1 && world.getBlockState(blockPos.up()).canReplace(ctx)) {
+		if (blockPos.getY() < world.getTopYInclusive() - 1 && world.getBlockState(blockPos.up()).canReplace(ctx)) {
 			return withWaterloggedState(world, blockPos, this.getDefaultState()
 					.with(FACING, ctx.getHorizontalPlayerFacing())
 					.with(HALF, DoubleBlockHalf.LOWER)
@@ -87,13 +93,12 @@ public class TwoTallStatueBlock extends StatueBlock {
 		return !(Boolean)state.get(WATERLOGGED);
 	}
 	
-	@Override
-	protected BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+	protected BlockState getStateForNeighborUpdate(BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random) {
 		if (state.get(WATERLOGGED)) {
-			world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+			tickView.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
 		}
 		
-		return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+		return super.getStateForNeighborUpdate(state, world, tickView, pos, direction, neighborPos, neighborState, random);
 	}
 	
 	@Override

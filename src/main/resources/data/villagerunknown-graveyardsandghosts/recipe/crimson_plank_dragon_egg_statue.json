@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:crimson_planks"
-  },
+  "ingredient": "minecraft:crimson_planks",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:crimson_plank_dragon_egg_statue",
     "count": 1

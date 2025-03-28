@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "###",
     "#C#",
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:acacia_planks"
-    },
-    "C": {
-      "item": "minecraft:chest"
-    }
+    "#": "minecraft:acacia_planks",
+    "C": "minecraft:chest"
   },
   "result": {
     "id": "villagerunknown-graveyardsandghosts:acacia_plank_coffin",

@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "###",
     "#C#",
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:stripped_warped_hyphae"
-    },
-    "C": {
-      "item": "minecraft:chest"
-    }
+    "#": "minecraft:stripped_warped_hyphae",
+    "C": "minecraft:chest"
   },
   "result": {
     "id": "villagerunknown-graveyardsandghosts:warped_coffin",

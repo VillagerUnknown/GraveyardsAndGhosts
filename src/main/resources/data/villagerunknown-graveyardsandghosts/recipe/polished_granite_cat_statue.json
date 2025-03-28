@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:polished_granite"
-  },
+  "ingredient": "minecraft:polished_granite",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:polished_granite_cat_statue",
     "count": 1
