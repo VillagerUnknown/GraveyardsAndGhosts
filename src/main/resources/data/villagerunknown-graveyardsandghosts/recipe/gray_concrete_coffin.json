@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "###",
     "#C#",
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:gray_concrete"
-    },
-    "C": {
-      "item": "minecraft:chest"
-    }
+    "#": "minecraft:gray_concrete",
+    "C": "minecraft:chest"
   },
   "result": {
     "id": "villagerunknown-graveyardsandghosts:gray_concrete_coffin",

@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "###",
     "#C#",
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:green_terracotta"
-    },
-    "C": {
-      "item": "minecraft:chest"
-    }
+    "#": "minecraft:green_terracotta",
+    "C": "minecraft:chest"
   },
   "result": {
     "id": "villagerunknown-graveyardsandghosts:green_terracotta_coffin",

@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:polished_blackstone"
-  },
+  "ingredient": "minecraft:polished_blackstone",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:polished_blackstone_rounded_tombstone",
     "count": 6

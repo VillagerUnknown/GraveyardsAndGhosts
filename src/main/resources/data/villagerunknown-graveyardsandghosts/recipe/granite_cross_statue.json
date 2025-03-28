@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:granite"
-  },
+  "ingredient": "minecraft:granite",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:granite_cross_statue",
     "count": 1

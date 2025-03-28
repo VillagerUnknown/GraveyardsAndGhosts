@@ -55,6 +55,7 @@
 
   "itemGroup.villagerunknown-graveyardsandghosts": "Graveyards & Ghosts",
 
+  "item.minecraft.potion.effect.ghost": "Ghost Potion",
   "item.minecraft.tipped_arrow.effect.ghost": "Ghost Tipped Arrow",
   "item.minecraft.splash_potion.effect.ghost": "Ghost Splash Potion",
   "item.minecraft.lingering.effect.ghost": "Lingering Ghost Potion",

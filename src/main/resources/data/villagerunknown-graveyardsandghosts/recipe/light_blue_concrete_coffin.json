@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "###",
     "#C#",
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:light_blue_concrete"
-    },
-    "C": {
-      "item": "minecraft:chest"
-    }
+    "#": "minecraft:light_blue_concrete",
+    "C": "minecraft:chest"
   },
   "result": {
     "id": "villagerunknown-graveyardsandghosts:light_blue_concrete_coffin",

@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:cyan_terracotta"
-  },
+  "ingredient": "minecraft:cyan_terracotta",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:cyan_terracotta_villager_poppy_statue",
     "count": 1

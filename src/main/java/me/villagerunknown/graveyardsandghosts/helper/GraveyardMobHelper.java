@@ -5,6 +5,7 @@ import me.villagerunknown.platform.util.MathUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.mob.*;
 import net.minecraft.entity.passive.BatEntity;
 import net.minecraft.item.ItemStack;
@@ -96,15 +97,15 @@ public class GraveyardMobHelper {
 	}
 	
 	public MobEntity getMobForOverworld() {
-		return (MobEntity) OVERWORLD.get( rand.nextInt( OVERWORLD.size() ) ).getType().create( WORLD );
+		return (MobEntity) OVERWORLD.get( rand.nextInt( OVERWORLD.size() ) ).getType().create( WORLD, SpawnReason.EVENT );
 	}
 	
 	public MobEntity getMobForNether() {
-		return (MobEntity) NETHER.get( rand.nextInt( NETHER.size() ) ).getType().create( WORLD );
+		return (MobEntity) NETHER.get( rand.nextInt( NETHER.size() ) ).getType().create( WORLD, SpawnReason.EVENT );
 	}
 	
 	public MobEntity getMobForEnd() {
-		return (MobEntity) END.get( rand.nextInt( END.size() ) ).getType().create( WORLD );
+		return (MobEntity) END.get( rand.nextInt( END.size() ) ).getType().create( WORLD, SpawnReason.EVENT );
 	}
 	
 	public boolean spawnMob(MobEntity mob, BlockPos pos, boolean includePresets ) {

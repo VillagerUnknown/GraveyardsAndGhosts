@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:tuff"
-  },
+  "ingredient": "minecraft:tuff",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:tuff_piglin_statue",
     "count": 1

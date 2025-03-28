@@ -15,12 +15,14 @@ import me.villagerunknown.graveyardsandghosts.block.tombstone.CarvedTombstoneBlo
 import me.villagerunknown.graveyardsandghosts.block.tombstone.TombstoneBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -187,8 +189,8 @@ public class graveyardBlocksFeature {
 	}
 	
 	private static void register_tombstone( String blockType ) {
-		BLOCKS.put( blockType + "_tombstone", registerBlock( new TombstoneBlock(), blockType + "_tombstone", true) );
-		BLOCKS.put( blockType + "_rounded_tombstone", registerBlock( new TombstoneBlock(), blockType + "_rounded_tombstone", true) );
+		BLOCKS.put( blockType + "_tombstone", registerBlock( new TombstoneBlock(blockType + "_tombstone"), blockType + "_tombstone", true) );
+		BLOCKS.put( blockType + "_rounded_tombstone", registerBlock( new TombstoneBlock(blockType + "_rounded_tombstone"), blockType + "_rounded_tombstone", true) );
 //		BLOCKS.put( blockType + "_tombstone", registerBlock( new TombstoneSignBlock(), blockType + "_tombstone", true) );
 		
 		TOMBSTONES.put( blockType + "_tombstone", BLOCKS.get( blockType + "_tombstone" ) );
@@ -196,27 +198,27 @@ public class graveyardBlocksFeature {
 	}
 	
 	private static void register_broken_tombstone( String blockType ) {
-		BLOCKS.put( "broken_" + blockType + "_tombstone", registerBlock( new BrokenTombstoneBlock(), "broken_" + blockType + "_tombstone", true) );
+		BLOCKS.put( "broken_" + blockType + "_tombstone", registerBlock( new BrokenTombstoneBlock("broken_" + blockType + "_tombstone"), "broken_" + blockType + "_tombstone", true) );
 	}
 	
 	private static void register_coffin( String blockType ) {
-		BLOCKS.put( blockType + "_coffin", registerBlock( new CoffinBlock(), blockType + "_coffin", true) );
+		BLOCKS.put( blockType + "_coffin", registerBlock( new CoffinBlock( blockType + "_coffin" ), blockType + "_coffin", true) );
 		
 		COFFINS.put( blockType + "_coffin", BLOCKS.get( blockType + "_coffin" ) );
 	}
 	
 	private static void register_pedestal( String blockType ) {
-		BLOCKS.put( blockType + "_pedestal", registerBlock( new StatueBlock(), blockType + "_pedestal", true) );
-		BLOCKS.put( blockType + "_thin_pedestal", registerBlock( new StatueBlock(), blockType + "_thin_pedestal", true) );
+		BLOCKS.put( blockType + "_pedestal", registerBlock( new StatueBlock(blockType + "_pedestal"), blockType + "_pedestal", true) );
+		BLOCKS.put( blockType + "_thin_pedestal", registerBlock( new StatueBlock(blockType + "_thin_pedestal"), blockType + "_thin_pedestal", true) );
 		
 		PEDESTALS.put( blockType + "_pedestal", BLOCKS.get( blockType + "_pedestal" ) );
 		PEDESTALS.put( blockType + "_thin_pedestal", BLOCKS.get( blockType + "_thin_pedestal" ) );
 	}
 	
 	private static void register_statue( String blockType ) {
-		BLOCKS.put( blockType + "_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_statue", true) );
-		BLOCKS.put( blockType + "_cross_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_cross_statue", true) );
-		BLOCKS.put( blockType + "_celtic_cross_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_celtic_cross_statue", true) );
+		BLOCKS.put( blockType + "_statue", registerBlock( new TwoTallStatueBlock(blockType + "_statue"), blockType + "_statue", true) );
+		BLOCKS.put( blockType + "_cross_statue", registerBlock( new TwoTallStatueBlock(blockType + "_cross_statue"), blockType + "_cross_statue", true) );
+		BLOCKS.put( blockType + "_celtic_cross_statue", registerBlock( new TwoTallStatueBlock(blockType + "_celtic_cross_statue"), blockType + "_celtic_cross_statue", true) );
 		
 		STATUES.put( blockType + "_statue", BLOCKS.get( blockType + "_statue" ) );
 		STATUES.put( blockType + "_cross_statue", BLOCKS.get( blockType + "_cross_statue" ) );
@@ -224,18 +226,18 @@ public class graveyardBlocksFeature {
 	}
 	
 	private static void register_resurrection_statue( String blockType ) {
-		BLOCKS.put( blockType + "_resurrection_statue", registerBlock( new TwoTallResurrectionStatueBlock(), blockType + "_resurrection_statue", true) );
+		BLOCKS.put( blockType + "_resurrection_statue", registerBlock( new TwoTallResurrectionStatueBlock( blockType + "_resurrection_statue" ), blockType + "_resurrection_statue", true) );
 		
 		RESURRECTION_STATUES.put( blockType + "_resurrection_statue", BLOCKS.get( blockType + "_resurrection_statue" ) );
 	}
 	
 	private static void register_player_statue( String blockType ) {
-		BLOCKS.put( blockType + "_player_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_player_statue", true) );
-		BLOCKS.put( blockType + "_player_exploring_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_player_exploring_statue", true) );
-		BLOCKS.put( blockType + "_player_building_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_player_building_statue", true) );
-		BLOCKS.put( blockType + "_player_fighting_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_player_fighting_statue", true) );
-		BLOCKS.put( blockType + "_player_reaper_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_player_reaper_statue", true) );
-		BLOCKS.put( blockType + "_player_angel_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_player_angel_statue", true) );
+		BLOCKS.put( blockType + "_player_statue", registerBlock( new TwoTallStatueBlock(blockType + "_player_statue"), blockType + "_player_statue", true) );
+		BLOCKS.put( blockType + "_player_exploring_statue", registerBlock( new TwoTallStatueBlock(blockType + "_player_exploring_statue"), blockType + "_player_exploring_statue", true) );
+		BLOCKS.put( blockType + "_player_building_statue", registerBlock( new TwoTallStatueBlock(blockType + "_player_building_statue"), blockType + "_player_building_statue", true) );
+		BLOCKS.put( blockType + "_player_fighting_statue", registerBlock( new TwoTallStatueBlock(blockType + "_player_fighting_statue"), blockType + "_player_fighting_statue", true) );
+		BLOCKS.put( blockType + "_player_reaper_statue", registerBlock( new TwoTallStatueBlock(blockType + "_player_reaper_statue"), blockType + "_player_reaper_statue", true) );
+		BLOCKS.put( blockType + "_player_angel_statue", registerBlock( new TwoTallStatueBlock(blockType + "_player_angel_statue"), blockType + "_player_angel_statue", true) );
 		
 		STATUES.put( blockType + "_player_statue", BLOCKS.get( blockType + "_player_statue" ) );
 		STATUES.put( blockType + "_player_exploring_statue", BLOCKS.get( blockType + "_player_exploring_statue" ) );
@@ -246,40 +248,40 @@ public class graveyardBlocksFeature {
 	}
 	
 	private static void register_cat_statue( String blockType ) {
-		BLOCKS.put( blockType + "_cat_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_cat_statue", true) );
-		BLOCKS.put( blockType + "_cat_sitting_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_cat_sitting_statue", true) );
+		BLOCKS.put( blockType + "_cat_statue", registerBlock( new TwoTallStatueBlock(blockType + "_cat_statue"), blockType + "_cat_statue", true) );
+		BLOCKS.put( blockType + "_cat_sitting_statue", registerBlock( new TwoTallStatueBlock(blockType + "_cat_sitting_statue"), blockType + "_cat_sitting_statue", true) );
 		
 		STATUES.put( blockType + "_cat_statue", BLOCKS.get( blockType + "_cat_statue" ) );
 		STATUES.put( blockType + "_cat_sitting_statue", BLOCKS.get( blockType + "_cat_sitting_statue" ) );
 	}
 	
 	private static void register_wolf_statue( String blockType ) {
-		BLOCKS.put( blockType + "_wolf_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_wolf_statue", true) );
-		BLOCKS.put( blockType + "_wolf_sitting_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_wolf_sitting_statue", true) );
+		BLOCKS.put( blockType + "_wolf_statue", registerBlock( new TwoTallStatueBlock(blockType + "_wolf_statue"), blockType + "_wolf_statue", true) );
+		BLOCKS.put( blockType + "_wolf_sitting_statue", registerBlock( new TwoTallStatueBlock(blockType + "_wolf_sitting_statue"), blockType + "_wolf_sitting_statue", true) );
 		
 		STATUES.put( blockType + "_wolf_statue", BLOCKS.get( blockType + "_wolf_statue" ) );
 		STATUES.put( blockType + "_wolf_sitting_statue", BLOCKS.get( blockType + "_wolf_sitting_statue" ) );
 	}
 	
 	private static void register_villager_statue( String blockType ) {
-		BLOCKS.put( blockType + "_villager_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_villager_statue", true) );
-		BLOCKS.put( blockType + "_villager_poppy_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_villager_poppy_statue", true) );
+		BLOCKS.put( blockType + "_villager_statue", registerBlock( new TwoTallStatueBlock(blockType + "_villager_statue"), blockType + "_villager_statue", true) );
+		BLOCKS.put( blockType + "_villager_poppy_statue", registerBlock( new TwoTallStatueBlock(blockType + "_villager_poppy_statue"), blockType + "_villager_poppy_statue", true) );
 		
 		STATUES.put( blockType + "_villager_statue", BLOCKS.get( blockType + "_villager_statue" ) );
 		STATUES.put( blockType + "_villager_poppy_statue", BLOCKS.get( blockType + "_villager_poppy_statue" ) );
 	}
 	
 	private static void register_pillager_statue( String blockType ) {
-		BLOCKS.put( blockType + "_pillager_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_pillager_statue", true) );
-		BLOCKS.put( blockType + "_pillager_celebrating_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_pillager_celebrating_statue", true) );
+		BLOCKS.put( blockType + "_pillager_statue", registerBlock( new TwoTallStatueBlock(blockType + "_pillager_statue"), blockType + "_pillager_statue", true) );
+		BLOCKS.put( blockType + "_pillager_celebrating_statue", registerBlock( new TwoTallStatueBlock(blockType + "_pillager_celebrating_statue"), blockType + "_pillager_celebrating_statue", true) );
 		
 		STATUES.put( blockType + "_pillager_statue", BLOCKS.get( blockType + "_pillager_statue" ) );
 		STATUES.put( blockType + "_pillager_celebrating_statue", BLOCKS.get( blockType + "_pillager_celebrating_statue" ) );
 	}
 	
 	private static void register_piglin_statue( String blockType ) {
-		BLOCKS.put( blockType + "_piglin_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_piglin_statue", true) );
-		BLOCKS.put( blockType + "_piglin_axe_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_piglin_axe_statue", true) );
+		BLOCKS.put( blockType + "_piglin_statue", registerBlock( new TwoTallStatueBlock(blockType + "_piglin_statue"), blockType + "_piglin_statue", true) );
+		BLOCKS.put( blockType + "_piglin_axe_statue", registerBlock( new TwoTallStatueBlock(blockType + "_piglin_axe_statue"), blockType + "_piglin_axe_statue", true) );
 		
 		STATUES.put( blockType + "_piglin_statue", BLOCKS.get( blockType + "_piglin_statue" ) );
 		STATUES.put( blockType + "_piglin_axe_statue", BLOCKS.get( blockType + "_piglin_axe_statue" ) );
@@ -287,7 +289,7 @@ public class graveyardBlocksFeature {
 	
 	private static void register_dragon_statue( String blockType ) {
 //		BLOCKS.put( blockType + "_dragon_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_dragon_statue", true) );
-		BLOCKS.put( blockType + "_dragon_egg_statue", registerBlock( new TwoTallStatueBlock(), blockType + "_dragon_egg_statue", true) );
+		BLOCKS.put( blockType + "_dragon_egg_statue", registerBlock( new TwoTallStatueBlock(blockType + "_dragon_egg_statue"), blockType + "_dragon_egg_statue", true) );
 		
 		STATUES.put( blockType + "_dragon_egg_statue", BLOCKS.get( blockType + "_dragon_egg_statue" ) );
 	}
@@ -301,7 +303,7 @@ public class graveyardBlocksFeature {
 		
 		// Register item
 		if (shouldRegisterItem) {
-			BlockItem blockItem = new BlockItem(block, new Item.Settings());
+			BlockItem blockItem = new BlockItem(block, new Item.Settings().useBlockPrefixedTranslationKey().registryKey(RegistryKey.of(RegistryKeys.ITEM, id)));
 			Registry.register(Registries.ITEM, id, blockItem);
 			
 			ItemGroupEvents.modifyEntriesEvent(CUSTOM_ITEM_GROUP_KEY).register(fabricItemGroupEntries -> fabricItemGroupEntries.add( blockItem ));
@@ -320,7 +322,7 @@ public class graveyardBlocksFeature {
 	
 	private static void registerGraveSoilBlockEntities() {
 		// # Explicitly define each engraved tombstone block
-		BlockEntityType.Builder<GraveSoilBlockEntity> builder = BlockEntityType.Builder.create(
+		FabricBlockEntityTypeBuilder <GraveSoilBlockEntity> builder = FabricBlockEntityTypeBuilder.create(
 				GraveSoilBlockEntity::new,
 				BLOCKS.get("grave_soil")
 		);
@@ -337,7 +339,7 @@ public class graveyardBlocksFeature {
 	
 	private static void registerTombstoneBlockEntities() {
 		// # Explicitly define each tombstone block
-		BlockEntityType.Builder<TombstoneBlockEntity> builder = BlockEntityType.Builder.create(
+		FabricBlockEntityTypeBuilder <TombstoneBlockEntity> builder = FabricBlockEntityTypeBuilder .create(
 				TombstoneBlockEntity::new,
 				BLOCKS.get("acacia_tombstone")
 		);
@@ -354,7 +356,7 @@ public class graveyardBlocksFeature {
 	
 	private static void registerCoffinBlockEntities() {
 		// # Explicitly define each resurrection statue block
-		BlockEntityType.Builder<CoffinBlockEntity> builder = BlockEntityType.Builder.create(
+		FabricBlockEntityTypeBuilder <CoffinBlockEntity> builder = FabricBlockEntityTypeBuilder .create(
 				CoffinBlockEntity::new,
 				BLOCKS.get("moss_coffin"),
 				BLOCKS.get("clay_coffin"),
@@ -468,7 +470,7 @@ public class graveyardBlocksFeature {
 	
 	private static void registerResurrectionBlockEntities() {
 		// # Explicitly define each resurrection statue block
-		BlockEntityType.Builder<ResurrectionBlockEntity> builder = BlockEntityType.Builder.create(
+		FabricBlockEntityTypeBuilder <ResurrectionBlockEntity> builder = FabricBlockEntityTypeBuilder .create(
 				ResurrectionBlockEntity::new,
 				BLOCKS.get("moss_resurrection_statue"),
 				BLOCKS.get("mud_resurrection_statue"),

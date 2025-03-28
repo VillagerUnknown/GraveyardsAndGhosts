@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:redstone_block"
-  },
+  "ingredient": "minecraft:redstone_block",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:redstone_cross_statue",
     "count": 1

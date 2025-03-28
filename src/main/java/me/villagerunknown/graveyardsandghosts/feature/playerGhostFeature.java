@@ -36,9 +36,9 @@ import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.GlobalPos;
 
 import java.util.*;
@@ -162,7 +162,24 @@ public class playerGhostFeature {
 			EntityType.STRIDER,
 			EntityType.CAMEL,
 			EntityType.MINECART,
-			EntityType.BOAT
+			
+			EntityType.ACACIA_BOAT,
+			EntityType.JUNGLE_BOAT,
+			EntityType.BIRCH_BOAT,
+			EntityType.CHERRY_BOAT,
+			EntityType.DARK_OAK_BOAT,
+			EntityType.JUNGLE_BOAT,
+			EntityType.MANGROVE_BOAT,
+			EntityType.OAK_BOAT,
+			
+			EntityType.ACACIA_CHEST_BOAT,
+			EntityType.JUNGLE_CHEST_BOAT,
+			EntityType.BIRCH_CHEST_BOAT,
+			EntityType.CHERRY_CHEST_BOAT,
+			EntityType.DARK_OAK_CHEST_BOAT,
+			EntityType.JUNGLE_CHEST_BOAT,
+			EntityType.MANGROVE_CHEST_BOAT,
+			EntityType.OAK_CHEST_BOAT
 	);
 	
 	public static List<Item> allowedGhostUseItems = List.of(
@@ -223,6 +240,7 @@ public class playerGhostFeature {
 	
 	private static void registerGhostPotion() {
 		Potion potion = new Potion(
+				Text.translatable( "item.minecraft.potion.effect.ghost" ).toString(),
 				new StatusEffectInstance(
 						Registries.STATUS_EFFECT.getEntry(GHOST_EFFECT),
 						-1,
@@ -272,7 +290,6 @@ public class playerGhostFeature {
 		((ServerPlayerEntity) entity).sendAbilitiesUpdate();
 		
 		HungerManager hungerManager = ((ServerPlayerEntity) entity).getHungerManager();
-		hungerManager.setExhaustion(0);
 		if( hungerManager.isNotFull() ) {
 			hungerManager.add(1, 1);
 		}
@@ -416,7 +433,7 @@ public class playerGhostFeature {
 		// # Prevent the player from using items
 		UseItemCallback.EVENT.register((playerEntity, world, hand) -> {
 			if( playerEntity.isSpectator() ) {
-				return TypedActionResult.pass(null);
+				return ActionResult.PASS;
 			} // if
 			
 			if( Graveyardsandghosts.CONFIG.preventGhostItemUse ) {
@@ -426,17 +443,17 @@ public class playerGhostFeature {
 				} // if
 				
 				if(handStack.isEmpty() ) {
-					return TypedActionResult.pass(null);
+					return ActionResult.PASS;
 				} // if
 				
 				if( playerEntity.hasStatusEffect(GHOST_EFFECT_REGISTRY) ) {
 					if( allowedGhostUseItems.contains( handStack.getItem() ) ) {
-						return TypedActionResult.pass(null);
+						return ActionResult.PASS;
 					} // if
-					return TypedActionResult.fail(null);
+					return ActionResult.PASS;
 				} // if
 			} // if
-			return TypedActionResult.pass(null);
+			return ActionResult.PASS;
 		});
 		
 		// # Prevent the player from breaking blocks

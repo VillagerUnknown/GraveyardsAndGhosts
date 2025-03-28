@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:sculk"
-  },
+  "ingredient": "minecraft:sculk",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:sculk_thin_pedestal",
     "count": 1

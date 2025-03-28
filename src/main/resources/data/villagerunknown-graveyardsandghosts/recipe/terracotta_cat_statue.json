@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:terracotta"
-  },
+  "ingredient": "minecraft:terracotta",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:terracotta_cat_statue",
     "count": 1

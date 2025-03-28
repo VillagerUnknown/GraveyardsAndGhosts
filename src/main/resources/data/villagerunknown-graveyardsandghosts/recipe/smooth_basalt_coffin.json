@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "###",
     "#C#",
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:smooth_basalt"
-    },
-    "C": {
-      "item": "minecraft:chest"
-    }
+    "#": "minecraft:smooth_basalt",
+    "C": "minecraft:chest"
   },
   "result": {
     "id": "villagerunknown-graveyardsandghosts:smooth_basalt_coffin",

@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:black_terracotta"
-  },
+  "ingredient": "minecraft:black_terracotta",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:black_terracotta_wolf_statue",
     "count": 1

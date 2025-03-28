@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "###",
     "#C#",
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:cherry_planks"
-    },
-    "C": {
-      "item": "minecraft:chest"
-    }
+    "#": "minecraft:cherry_planks",
+    "C": "minecraft:chest"
   },
   "result": {
     "id": "villagerunknown-graveyardsandghosts:cherry_plank_coffin",

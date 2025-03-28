@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:lime_terracotta"
-  },
+  "ingredient": "minecraft:lime_terracotta",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:lime_terracotta_player_angel_statue",
     "count": 1

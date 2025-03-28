@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:smooth_sandstone"
-  },
+  "ingredient": "minecraft:smooth_sandstone",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:smooth_sandstone_pedestal",
     "count": 1

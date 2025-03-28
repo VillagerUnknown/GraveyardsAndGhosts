@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:pink_terracotta"
-  },
+  "ingredient": "minecraft:pink_terracotta",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:pink_terracotta_player_building_statue",
     "count": 1

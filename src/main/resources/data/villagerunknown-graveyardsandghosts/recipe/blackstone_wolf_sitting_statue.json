@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:blackstone"
-  },
+  "ingredient": "minecraft:blackstone",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:blackstone_wolf_sitting_statue",
     "count": 1
