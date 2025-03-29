@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "C",
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": "minecraft:stripped_pale_oak_wood",
+    "C": "minecraft:totem_of_undying"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:pale_oak_resurrection_statue",
+    "count": 1
+  }
+}

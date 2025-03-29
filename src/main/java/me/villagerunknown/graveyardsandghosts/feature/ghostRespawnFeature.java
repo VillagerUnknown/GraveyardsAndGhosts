@@ -334,8 +334,8 @@ public class ghostRespawnFeature {
 							
 							if (corpseTimer.isAlarmActivated()) {
 								if (Graveyardsandghosts.CONFIG.enableParticles) {
-									serverWorld.spawnParticles(player, ParticleTypes.SOUL, true, safeSpawnPos.getX() + 0.5, safeSpawnPos.getY() + 1.5, safeSpawnPos.getZ() + 0.5, 1, 0.25, 0.25, 0.25, 0.005F);
-									serverWorld.spawnParticles(player, ParticleTypes.HEART, true, safeSpawnPos.getX() + 0.5, safeSpawnPos.getY() + 2.5, safeSpawnPos.getZ() + 0.5, 3, 0.25, 0.25, 0.25, 1F);
+									serverWorld.spawnParticles( ParticleTypes.SOUL, true, true, safeSpawnPos.getX() + 0.5, safeSpawnPos.getY() + 1.5, safeSpawnPos.getZ() + 0.5, 1, 0.25, 0.25, 0.25, 0.005F);
+									serverWorld.spawnParticles( ParticleTypes.HEART, true, true, safeSpawnPos.getX() + 0.5, safeSpawnPos.getY() + 2.5, safeSpawnPos.getZ() + 0.5, 3, 0.25, 0.25, 0.25, 1F);
 								} // if
 								
 								corpseTimer.resetAlarmActivation();

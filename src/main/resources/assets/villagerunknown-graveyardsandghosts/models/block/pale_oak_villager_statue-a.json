@@ -1,0 +1,7 @@
+{
+	"parent": "villagerunknown-graveyardsandghosts:block/statues/villager/villager_statue-a",
+	"textures": {
+		"0": "minecraft:block/stripped_pale_oak_log",
+		"particle": "minecraft:block/stripped_pale_oak_log"
+	}
+}
