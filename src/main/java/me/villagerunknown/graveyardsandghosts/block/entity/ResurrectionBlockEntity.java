@@ -15,6 +15,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.enums.DoubleBlockHalf;
+import net.minecraft.particle.DustParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -91,7 +92,7 @@ public class ResurrectionBlockEntity extends BlockEntity {
 				if( pos.isWithinDistance( player.getPos(), blockActivationDistance ) ) {
 					if(Graveyardsandghosts.CONFIG.enableParticles && Graveyardsandghosts.CONFIG.enableGraveyardBlockParticles) {
 						assert serverWorld != null;
-						serverWorld.spawnParticles(player, ParticleTypes.HEART, true, pos.getX() + 0.5, pos.getY() + 1.5, pos.getZ() + 0.5, 3, 0.25, 0.25, 0.25, 0.005F);
+						serverWorld.spawnParticles( ParticleTypes.HEART, true, true, pos.getX() + 0.5, pos.getY() + 1.5, pos.getZ() + 0.5, 3, 0.25, 0.25, 0.25, 0.005F);
 					} // if
 				} // if
 			} // if
