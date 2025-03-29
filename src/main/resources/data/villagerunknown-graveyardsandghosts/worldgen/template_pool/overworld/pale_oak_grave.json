@@ -1,0 +1,32 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 150,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/grave/grave-end_stone-a",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:graveyard_dirt_pale_oak"
+      }
+    },
+    {
+      "weight": 5,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/grave/grave-end_stone-open",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:graveyard_dirt_pale_oak"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagerunknown-graveyardsandghosts:end/grave/grave-end_stone-coffin",
+        "projection": "rigid",
+        "processors": "villagerunknown-graveyardsandghosts:graveyard_dirt_pale_oak"
+      }
+    }
+  ]
+}

@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## [1.2.0+1.21.4]
 
+### Added
+
+- Added Pale Oak Graveyard blocks. (This includes Stripped Pale Oak Log and Pale Oak Plank variants.)
+- Added chance for Pale Oak Graveyards to spawn in Pale Gardens. (This includes Stripped Pale Oak Log and Pale Oak Plank variants.)
+
 ### Changed
 
 - Changed supported Minecraft version to 1.21.4.

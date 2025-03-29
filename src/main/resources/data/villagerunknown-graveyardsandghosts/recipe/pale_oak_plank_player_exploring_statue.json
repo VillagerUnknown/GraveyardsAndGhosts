@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:pale_oak_planks",
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:pale_oak_plank_player_exploring_statue",
+    "count": 1
+  }
+}
