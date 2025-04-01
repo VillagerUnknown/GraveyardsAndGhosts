@@ -33,13 +33,6 @@ public class GraveyardsandghostsPersistentData extends PersistentState {
 			).fieldOf("players").forGetter( GraveyardsandghostsPersistentData::getPlayers )
 	).apply( instance, GraveyardsandghostsPersistentData::new ));
 	
-//	private static final Codec<Map<UUID, GraveyardsandghostsPersistentPlayerData>> CODEC = Codec.unboundedMap(
-//			Uuids.CODEC,
-//			GraveyardsandghostsPersistentPlayerData.CODEC
-//	);
-	
-//	public Integer totalDirtBlocksBroken = 0;
-	
 	GraveyardsandghostsPersistentData() {}
 	
 	public GraveyardsandghostsPersistentData(Map<UUID, GraveyardsandghostsPersistentPlayerData> playerDataMap) {
