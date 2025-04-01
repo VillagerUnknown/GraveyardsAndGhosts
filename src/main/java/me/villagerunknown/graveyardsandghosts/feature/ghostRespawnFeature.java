@@ -171,7 +171,8 @@ public class ghostRespawnFeature {
 							safeSpawnPos = PositionUtil.findSafeSpawnPosition( dimWorld, respawnPosition, Graveyardsandghosts.CONFIG.resurrectionSafeRespawnSearchRadius );
 						} // if
 						
-						serverPlayerEntity.setSpawnPoint(dimWorld.getRegistryKey(), safeSpawnPos, serverPlayerEntity.getSpawnAngle(), true, false);
+						ServerPlayerEntity.Respawn spawn = new ServerPlayerEntity.Respawn( dimWorld.getRegistryKey(), safeSpawnPos, 0F, true );
+						serverPlayerEntity.setSpawnPoint( spawn, true );
 					} // if
 				} // if
 			} // if
