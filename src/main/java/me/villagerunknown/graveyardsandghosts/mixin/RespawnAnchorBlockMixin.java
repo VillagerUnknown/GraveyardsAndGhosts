@@ -2,8 +2,8 @@ package me.villagerunknown.graveyardsandghosts.mixin;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import me.villagerunknown.graveyardsandghosts.GraveyardsandghostsPersistentData;
-import me.villagerunknown.graveyardsandghosts.GraveyardsandghostsPersistentPlayerData;
+import me.villagerunknown.graveyardsandghosts.data.PlayerData;
+import me.villagerunknown.graveyardsandghosts.data.persistent.PersistentPlayerData;
 import me.villagerunknown.graveyardsandghosts.feature.ghostRespawnFeature;
 import me.villagerunknown.graveyardsandghosts.feature.playerGhostFeature;
 import me.villagerunknown.platform.util.GsonUtil;
@@ -48,7 +48,7 @@ public class RespawnAnchorBlockMixin {
 		if( !world.isClient() ) {
 			// # Add nether respawn point when player interacts with a respawn anchor
 			if(cir.getReturnValue() == ActionResult.SUCCESS_SERVER) {
-				GraveyardsandghostsPersistentPlayerData playerData = GraveyardsandghostsPersistentData.getPlayerState(player);
+				PlayerData playerData = PersistentPlayerData.getPlayerState(player);
 				
 				Map<String, Set<BlockPos>> playerRespawnPositions = gson.fromJson( playerData.respawnPositions, new TypeToken<Map<String, Set<BlockPos>>>() {}.getType() );
 				
