@@ -3,8 +3,8 @@ package me.villagerunknown.graveyardsandghosts.feature;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import me.villagerunknown.graveyardsandghosts.Graveyardsandghosts;
-import me.villagerunknown.graveyardsandghosts.GraveyardsandghostsPersistentData;
-import me.villagerunknown.graveyardsandghosts.GraveyardsandghostsPersistentPlayerData;
+import me.villagerunknown.graveyardsandghosts.data.PlayerData;
+import me.villagerunknown.graveyardsandghosts.data.persistent.PersistentPlayerData;
 import me.villagerunknown.graveyardsandghosts.network.ConfirmResurrectionPayload;
 import me.villagerunknown.graveyardsandghosts.network.DeclineResurrectionPayload;
 import me.villagerunknown.platform.timer.TickTimer;
@@ -70,7 +70,7 @@ public class ghostRespawnFeature {
 				String dimension = serverWorld.getDimensionEntry().getIdAsString();
 				if("minecraft:overworld".equals(dimension)) {
 					// Player is leaving Overworld
-					GraveyardsandghostsPersistentPlayerData playerData = GraveyardsandghostsPersistentData.getPlayerState((LivingEntity) entity);
+					PlayerData playerData = PersistentPlayerData.getPlayerState((LivingEntity) entity);
 					playerData.lastOverworldPos = gson.toJson( entity.getBlockPos(), BlockPos.class );
 				} // if
 			} // if
@@ -84,7 +84,7 @@ public class ghostRespawnFeature {
 			} // if
 			
 			if( Graveyardsandghosts.CONFIG.enablePlayerGhostOnDeath ) {
-				GraveyardsandghostsPersistentPlayerData playerData = GraveyardsandghostsPersistentData.getPlayerState(serverPlayerEntity);
+				PlayerData playerData = PersistentPlayerData.getPlayerState(serverPlayerEntity);
 				Map<String, Set<BlockPos>> playerRespawnPositions = gson.fromJson( playerData.respawnPositions, new TypeToken<Map<String, Set<BlockPos>>>() {}.getType() );
 
 				closestRespawnDistance = Double.MAX_VALUE;
@@ -171,7 +171,8 @@ public class ghostRespawnFeature {
 							safeSpawnPos = PositionUtil.findSafeSpawnPosition( dimWorld, respawnPosition, Graveyardsandghosts.CONFIG.resurrectionSafeRespawnSearchRadius );
 						} // if
 						
-						serverPlayerEntity.setSpawnPoint(dimWorld.getRegistryKey(), safeSpawnPos, serverPlayerEntity.getSpawnAngle(), true, false);
+						ServerPlayerEntity.Respawn spawn = new ServerPlayerEntity.Respawn( dimWorld.getRegistryKey(), safeSpawnPos, 0F, true );
+						serverPlayerEntity.setSpawnPoint( spawn, true );
 					} // if
 				} // if
 			} // if
@@ -186,7 +187,7 @@ public class ghostRespawnFeature {
 				
 				playerGhostFeature.applyGhostEffect(serverPlayerEntity1);
 				
-				GraveyardsandghostsPersistentPlayerData playerData = GraveyardsandghostsPersistentData.getPlayerState(serverPlayerEntity1);
+				PlayerData playerData = PersistentPlayerData.getPlayerState(serverPlayerEntity1);
 				playerData.lastCorpsePos = gson.toJson( serverPlayerEntity.getLastDeathPos(), new TypeToken<Optional<GlobalPos>>(){}.getType() );
 				
 				resurrectionCorpseTimers.put( serverPlayerEntity1.getUuid(), new TickTimer(0, corpseTimerFrequencyInSeconds) );
@@ -198,7 +199,7 @@ public class ghostRespawnFeature {
 		ServerPlayConnectionEvents.JOIN.register((serverPlayNetworkHandler, packetSender, minecraftServer) -> {
 			ServerPlayerEntity player = serverPlayNetworkHandler.player;
 			
-			GraveyardsandghostsPersistentPlayerData playerData = GraveyardsandghostsPersistentData.getPlayerState(player);
+			PlayerData playerData = PersistentPlayerData.getPlayerState(player);
 			Map<String, Set<BlockPos>> playerRespawnPositions = gson.fromJson( playerData.respawnPositions, new TypeToken<Map<String, Set<BlockPos>>>() {}.getType() );
 			BlockPos lastOverworldPos = gson.fromJson( playerData.lastOverworldPos, BlockPos.class );
 			
@@ -283,7 +284,7 @@ public class ghostRespawnFeature {
 					} // if, else
 					
 					// Allow resurrection at last death location
-					GraveyardsandghostsPersistentPlayerData playerData = GraveyardsandghostsPersistentData.getPlayerState(player);
+					PlayerData playerData = PersistentPlayerData.getPlayerState(player);
 
 					Optional<GlobalPos> lastDeathPos = gson.fromJson( playerData.lastCorpsePos, new TypeToken<Optional<GlobalPos>>(){}.getType() );
 					

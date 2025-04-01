@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0+1.21.5]
+
+### Changed
+
+- Changed supported Minecraft version to 1.21.5.
+
+### Removed
+
+- Temporarily removed hiding items in hand for players with the Ghost effect. This will be re-added in a future version.
+
 ## [1.2.0+1.21.4]
 
 ### Added

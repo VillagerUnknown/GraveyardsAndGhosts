@@ -49,29 +49,31 @@ public class groundskeeperVillagerFeature {
 	}
 	
 	private static void registerVillagerTrades() {
+		RegistryKey<VillagerProfession> professionRegistryKey = RegistryKey.of(Registries.VILLAGER_PROFESSION.getKey(), GROUNDSKEEPER.IDENTIFIER );
+		
 		// # Level 1 - Tombstones
-		TradeOfferHelper.registerVillagerOffers( GROUNDSKEEPER.PROFESSION, 1, f -> {
+		TradeOfferHelper.registerVillagerOffers( professionRegistryKey, 1, f -> {
 			graveyardBlocksFeature.TOMBSTONES.forEach( ( id, block ) -> {
 				f.add( (entity, random) -> VillagerUtil.sellTradeOffer( 1, new TradedItem( Items.EMERALD, 6 ), new ItemStack( block, 8 ) ) );
 			} );
 		} );
 		
 		// # Level 2 - Pedestals
-		TradeOfferHelper.registerVillagerOffers( GROUNDSKEEPER.PROFESSION, 2, f -> {
+		TradeOfferHelper.registerVillagerOffers( professionRegistryKey, 2, f -> {
 			graveyardBlocksFeature.PEDESTALS.forEach( ( id, block ) -> {
 				f.add( (entity, random) -> VillagerUtil.sellTradeOffer( 2, new TradedItem( Items.EMERALD, 8 ), new ItemStack( block, 1 ) ) );
 			} );
 		} );
 		
 		// # Level 3 - Statues
-		TradeOfferHelper.registerVillagerOffers( GROUNDSKEEPER.PROFESSION, 3, f -> {
+		TradeOfferHelper.registerVillagerOffers( professionRegistryKey, 3, f -> {
 			graveyardBlocksFeature.STATUES.forEach( ( id, block ) -> {
 				f.add( (entity, random) -> VillagerUtil.sellTradeOffer( 3, new TradedItem( Items.EMERALD, 12 ), new ItemStack( block, 1 ) ) );
 			} );
 		} );
 		
 		// # Level 4 - Coffins
-		TradeOfferHelper.registerVillagerOffers( GROUNDSKEEPER.PROFESSION, 4, f -> {
+		TradeOfferHelper.registerVillagerOffers( professionRegistryKey, 4, f -> {
 			graveyardBlocksFeature.COFFINS.forEach( ( id, block ) -> {
 				f.add( (entity, random) -> VillagerUtil.sellTradeOffer( 4, new TradedItem( Items.EMERALD, 16 ), new ItemStack( block, 1 ) ) );
 				f.add( (entity, random) -> VillagerUtil.sellTradeOffer( 4, new TradedItem( Items.EMERALD, 8 ), new TradedItem( Items.CHEST, 1 ), new ItemStack( block, 1 ) ) );
@@ -79,7 +81,7 @@ public class groundskeeperVillagerFeature {
 		} );
 		
 		// # Level 5 - Resurrection Statues
-		TradeOfferHelper.registerVillagerOffers( GROUNDSKEEPER.PROFESSION, 5, f -> {
+		TradeOfferHelper.registerVillagerOffers( professionRegistryKey, 5, f -> {
 			graveyardBlocksFeature.RESURRECTION_STATUES.forEach( ( id, block ) -> {
 				f.add( (entity, random) -> VillagerUtil.sellTradeOffer( 5, new TradedItem( Items.EMERALD, 64 ), new ItemStack( block, 1 ) ) );
 				f.add( (entity, random) -> VillagerUtil.sellTradeOffer( 5, new TradedItem( Items.EMERALD, 32 ), new TradedItem( Items.TOTEM_OF_UNDYING, 1 ), new ItemStack( block, 4 ) ) );

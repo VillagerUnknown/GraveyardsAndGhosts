@@ -36,6 +36,9 @@ public class Graveyardsandghosts implements ModInitializer {
 		featureManager.addFeature( "ghostRespawn", ghostRespawnFeature::execute );
 		featureManager.addFeature( "groundskeeperVillager", groundskeeperVillagerFeature::execute );
 		featureManager.addFeature( "graveyardMapsTrade", graveyardMapsTradeFeature::execute );
+		
+		// # Load Features
+		featureManager.loadFeatures();
 	}
 	
 }

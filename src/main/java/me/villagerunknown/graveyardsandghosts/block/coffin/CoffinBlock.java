@@ -260,18 +260,17 @@ public class CoffinBlock extends BlockWithEntity implements Waterloggable {
 	}
 	
 	// This method will drop all items onto the ground when the block is broken
-	@Override
-	public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-		if (state.getBlock() != newState.getBlock()) {
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			if (blockEntity instanceof CoffinBlockEntity coffinBlockEntity) {
-				ItemScatterer.spawn(world, pos, coffinBlockEntity);
-				// update comparators
-				world.updateComparators(pos,this);
-			}
-			super.onStateReplaced(state, world, pos, newState, moved);
-		}
-	}
+//	public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
+//		if (state.getBlock() != newState.getBlock()) {
+//			BlockEntity blockEntity = world.getBlockEntity(pos);
+//			if (blockEntity instanceof CoffinBlockEntity coffinBlockEntity) {
+//				ItemScatterer.spawn(world, pos, coffinBlockEntity);
+//				// update comparators
+//				world.updateComparators(pos,this);
+//			}
+//			super.onStateReplaced(state, world, pos, newState, moved);
+//		}
+//	}
 	
 	@Override
 	public boolean hasComparatorOutput(BlockState state) {

@@ -187,7 +187,6 @@ public class GraveSoilBlock extends BlockWithEntity implements BlockEntityProvid
 		return false;
 	}
 	
-	@Override
 	public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
 		if( world.isClient() ) {
 			return;

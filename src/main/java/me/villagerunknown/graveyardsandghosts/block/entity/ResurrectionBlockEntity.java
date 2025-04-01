@@ -3,8 +3,8 @@ package me.villagerunknown.graveyardsandghosts.block.entity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import me.villagerunknown.graveyardsandghosts.Graveyardsandghosts;
-import me.villagerunknown.graveyardsandghosts.GraveyardsandghostsPersistentData;
-import me.villagerunknown.graveyardsandghosts.GraveyardsandghostsPersistentPlayerData;
+import me.villagerunknown.graveyardsandghosts.data.PlayerData;
+import me.villagerunknown.graveyardsandghosts.data.persistent.PersistentPlayerData;
 import me.villagerunknown.graveyardsandghosts.feature.graveyardBlocksFeature;
 import me.villagerunknown.graveyardsandghosts.feature.ghostRespawnFeature;
 import me.villagerunknown.platform.timer.TickTimer;
@@ -112,7 +112,7 @@ public class ResurrectionBlockEntity extends BlockEntity {
 		
 		if( null != playersWithinRange ) {
 			for (ServerPlayerEntity serverPlayerEntity : playersWithinRange) {
-				GraveyardsandghostsPersistentPlayerData playerData = GraveyardsandghostsPersistentData.getPlayerState(serverPlayerEntity);
+				PlayerData playerData = PersistentPlayerData.getPlayerState(serverPlayerEntity);
 				
 //				LogUtil.info("playerData.respawnPositions: " + playerData.respawnPositions);
 				
