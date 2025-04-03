@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.1+1.21.5]
+
+### Added
+
+- Re-added hiding items in hand for players with the Ghost effect.
+
 ## [1.2.0+1.21.5]
 
 ### Changed

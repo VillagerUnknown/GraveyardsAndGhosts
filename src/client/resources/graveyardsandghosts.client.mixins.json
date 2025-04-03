@@ -3,8 +3,14 @@
   "minVersion": "0.8",
   "package": "me.villagerunknown.graveyardsandghosts.client.mixin",
   "compatibilityLevel": "JAVA_21",
-  "client": [],
+  "client": [
+    "HeldItemRendererMixin",
+    "ItemRendererMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "mixins": [
+    "PlayerEntityRendererMixin"
+  ]
 }
