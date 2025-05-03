@@ -7,7 +7,7 @@ _By setting the option `enablePlayerGhostOnDeath` to false this mod will not cha
 **Features:**
 
 * "Ghost" status effect.
-* Graveyard respawn system.
+* Optional Graveyard respawn system.
 * Custom structures.
 * Custom blocks using vanilla ingredients for players to design their own graveyards.
 * Groundskeeper villager trading Tombstones, Pedestals, Statues, Coffins, and Resurrection Statues.
