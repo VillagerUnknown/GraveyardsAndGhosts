@@ -1,6 +1,8 @@
 # VillagerUnknown's Graveyards & Ghosts
 
-Inspired by MMORPG's, this mod adds graveyards to the world generation and optionally changes the respawn system so that players become ghosts when they die and respawn at the nearest graveyard. _By setting the option `enablePlayerGhostOnDeath` to false this mod will not change the vanilla respawn system and will only add graveyard structures and their blocks._
+Inspired by MMORPG's, this mod adds graveyards to the world generation and optionally changes the respawn system so that players become ghosts when they die and respawn at the nearest graveyard.
+
+_By setting the option `enablePlayerGhostOnDeath` to false this mod will not change the vanilla respawn system and will only add graveyard structures and their blocks._
 
 **Features:**
 
