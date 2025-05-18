@@ -27,6 +27,9 @@ public class GraveyardsandghostsConfigData implements me.shedaniel.autoconfig.Co
 	 */
 	
 	@ConfigEntry.Category("Graveyards")
+	public boolean enableGraveyardRespawnPoints = true;
+	
+	@ConfigEntry.Category("Graveyards")
 	public int graveyardDiscoveryRadius = 64;
 	
 	@ConfigEntry.Category("Graveyards")
