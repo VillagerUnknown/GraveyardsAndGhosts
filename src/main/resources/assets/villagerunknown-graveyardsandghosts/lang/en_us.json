@@ -51,6 +51,13 @@
 
   "container.villagerunknown-graveyardsandghosts.coffin": "Coffin",
 
+  "block.item.villagerunknown-graveyardsandghosts.blast_resistant": "Blast Resistant",
+  "block.item.villagerunknown-graveyardsandghosts.ice": "Ice",
+  "block.item.villagerunknown-graveyardsandghosts.netherite": "Netherite",
+  "block.item.villagerunknown-graveyardsandghosts.snow": "Snow",
+  "block.item.villagerunknown-graveyardsandghosts.wood": "Wood",
+
+  "tag.item.villagerunknown-graveyardsandghosts.fireproof": "Fireproof",
   "tag.item.villagerunknown-graveyardsandghosts.graveyard": "Graveyard",
 
   "itemGroup.villagerunknown-graveyardsandghosts": "Graveyards & Ghosts",
