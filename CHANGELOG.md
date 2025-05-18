@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0+1.21.1]
+
+This update resolves stuttering issues and improves existing features.
+
+_This update adds a new option that will affect users disabling player ghosts on death._
+
+### Added
+
+- Added `enableGraveyardRespawnPoints` option. This option is set to true by default. 
+_This option allows players to allow respawns at graveyards without the Ghost Effect. 
+The Ghost Effect will only be applied if both `enableGraveyardRespawnPoints` and `enablePlayerGhostOnDeath` are set to true.
+If you had `enablePlayerGhostOnDeath` set to false, you will want to set `enableGraveyardRespawnPoints` to false for the same configuration._
+
+### Changed
+
+- Changed supported Platform version to 1.3.0. _This resolves stuttering issues and includes new features._
+- Changed mixin filenames to avoid collisions.
+- Changed usage of `TickTimer` to `ServerTickTimer`. _This helps resolve stuttering issues._
+- Changed most blocks to act like their respective material types. 
+_Resurrection statues are now only blast resistant if made from Obsidian, Crying Obsidian, or Netherite. 
+The tombstones for these same block types no longer instant break to represent their hardness._
+
+### Fixed
+
+- Fixed breaking times of Resurrection Statues. _Resurrection statues were copying Netherite Block properties and had an extremely long breaking time._
+- Fixed location of language files.
+
 ## [1.2.0]
 
 ### Added
