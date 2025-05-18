@@ -6,6 +6,7 @@ import me.villagerunknown.graveyardsandghosts.block.entity.GraveSoilBlockEntity;
 import me.villagerunknown.graveyardsandghosts.feature.graveyardBlocksFeature;
 import me.villagerunknown.graveyardsandghosts.feature.playerGhostFeature;
 import me.villagerunknown.graveyardsandghosts.helper.GraveyardMobHelper;
+import me.villagerunknown.platform.timer.ServerTickTimer;
 import me.villagerunknown.platform.timer.TickTimer;
 import me.villagerunknown.platform.util.EntityUtil;
 import me.villagerunknown.platform.util.MathUtil;
@@ -220,29 +221,33 @@ public class GraveSoilBlock extends BlockWithEntity implements BlockEntityProvid
 			chance = chance * 2;
 		}
 		
-		if (Graveyardsandghosts.CONFIG.enableSounds && Graveyardsandghosts.CONFIG.enableGraveyardBlockSounds && MathUtil.hasChance( chance ) ) {
-			if( null == GraveSoilBlockEntity.soundTimers.get( pos ) ) {
-				soundAttempt( world, pos );
-				
-				GraveSoilBlockEntity.soundTimers.put(pos, new TickTimer( 0, 5 ));
-				GraveSoilBlockEntity.soundTimers.put( pos.up(), new TickTimer( 0, 5 ) );
-				GraveSoilBlockEntity.soundTimers.put( pos.north(), new TickTimer( 0, 5 ) );
-				GraveSoilBlockEntity.soundTimers.put( pos.east(), new TickTimer( 0, 5 ) );
-				GraveSoilBlockEntity.soundTimers.put( pos.west(), new TickTimer( 0, 5 ) );
-				GraveSoilBlockEntity.soundTimers.put( pos.south(), new TickTimer( 0, 5 ) );
-				GraveSoilBlockEntity.soundTimers.put( pos.down(), new TickTimer( 0, 5 ) );
-			}
+		if( null != world.getServer() ) {
+			long currentTick = world.getServer().getTicks();
 			
-			if( null != GraveSoilBlockEntity.soundTimers.get( pos ) && GraveSoilBlockEntity.soundTimers.get( pos ).isAlarmActivated() ) {
-				soundAttempt( world, pos );
+			if (Graveyardsandghosts.CONFIG.enableSounds && Graveyardsandghosts.CONFIG.enableGraveyardBlockSounds && MathUtil.hasChance(chance)) {
+				if (null == GraveSoilBlockEntity.soundTimers.get(pos)) {
+					soundAttempt(world, pos);
+					
+					GraveSoilBlockEntity.soundTimers.put(pos, new ServerTickTimer(currentTick, 0, 5));
+					GraveSoilBlockEntity.soundTimers.put(pos.up(), new ServerTickTimer(currentTick, 0, 5));
+					GraveSoilBlockEntity.soundTimers.put(pos.north(), new ServerTickTimer(currentTick, 0, 5));
+					GraveSoilBlockEntity.soundTimers.put(pos.east(), new ServerTickTimer(currentTick, 0, 5));
+					GraveSoilBlockEntity.soundTimers.put(pos.west(), new ServerTickTimer(currentTick, 0, 5));
+					GraveSoilBlockEntity.soundTimers.put(pos.south(), new ServerTickTimer(currentTick, 0, 5));
+					GraveSoilBlockEntity.soundTimers.put(pos.down(), new ServerTickTimer(currentTick, 0, 5));
+				}
 				
-				GraveSoilBlockEntity.soundTimers.get( pos ).resetAlarmActivation();
-				GraveSoilBlockEntity.soundTimers.get( pos.up() ).resetAlarmActivation();
-				GraveSoilBlockEntity.soundTimers.get( pos.north() ).resetAlarmActivation();
-				GraveSoilBlockEntity.soundTimers.get( pos.east() ).resetAlarmActivation();
-				GraveSoilBlockEntity.soundTimers.get( pos.west() ).resetAlarmActivation();
-				GraveSoilBlockEntity.soundTimers.get( pos.south() ).resetAlarmActivation();
-				GraveSoilBlockEntity.soundTimers.get( pos.down() ).resetAlarmActivation();
+				if (null != GraveSoilBlockEntity.soundTimers.get(pos) && GraveSoilBlockEntity.soundTimers.get(pos).isAlarmActivated()) {
+					soundAttempt(world, pos);
+					
+					GraveSoilBlockEntity.soundTimers.get(pos).resetAlarmActivation( currentTick );
+					GraveSoilBlockEntity.soundTimers.get(pos.up()).resetAlarmActivation( currentTick );
+					GraveSoilBlockEntity.soundTimers.get(pos.north()).resetAlarmActivation( currentTick );
+					GraveSoilBlockEntity.soundTimers.get(pos.east()).resetAlarmActivation( currentTick );
+					GraveSoilBlockEntity.soundTimers.get(pos.west()).resetAlarmActivation( currentTick );
+					GraveSoilBlockEntity.soundTimers.get(pos.south()).resetAlarmActivation( currentTick );
+					GraveSoilBlockEntity.soundTimers.get(pos.down()).resetAlarmActivation( currentTick );
+				} // if
 			} // if
 		} // if
 	}
@@ -258,27 +263,31 @@ public class GraveSoilBlock extends BlockWithEntity implements BlockEntityProvid
 			chance = chance * 2;
 		} // if
 		
-		if( Graveyardsandghosts.CONFIG.enableGraveyardBlockMobSpawns && MathUtil.hasChance( chance ) ) {
-			if( null == GraveSoilBlockEntity.spawnTimers.get( pos.down() ) ) {
-				spawnAttempt( world, pos, target );
-				
-				GraveSoilBlockEntity.spawnTimers.put(pos.down(), new TickTimer( Graveyardsandghosts.CONFIG.graveyardBlockMobSpawnDelayInMinutes ));
-				GraveSoilBlockEntity.spawnTimers.put( pos.down().up(), new TickTimer( Graveyardsandghosts.CONFIG.graveyardBlockMobSpawnDelayInMinutes ) );
-				GraveSoilBlockEntity.spawnTimers.put( pos.down().north(), new TickTimer( Graveyardsandghosts.CONFIG.graveyardBlockMobSpawnDelayInMinutes ) );
-				GraveSoilBlockEntity.spawnTimers.put( pos.down().east(), new TickTimer( Graveyardsandghosts.CONFIG.graveyardBlockMobSpawnDelayInMinutes ) );
-				GraveSoilBlockEntity.spawnTimers.put( pos.down().west(), new TickTimer( Graveyardsandghosts.CONFIG.graveyardBlockMobSpawnDelayInMinutes ) );
-				GraveSoilBlockEntity.spawnTimers.put( pos.down().south(), new TickTimer( Graveyardsandghosts.CONFIG.graveyardBlockMobSpawnDelayInMinutes ) );
-				GraveSoilBlockEntity.spawnTimers.put( pos.down().down(), new TickTimer( Graveyardsandghosts.CONFIG.graveyardBlockMobSpawnDelayInMinutes ) );
-			} else if( GraveSoilBlockEntity.spawnTimers.get( pos.down() ).isAlarmActivated() ) {
-				spawnAttempt( world, pos, target );
-				
-				GraveSoilBlockEntity.spawnTimers.get( pos.down() ).resetAlarmActivation();
-				GraveSoilBlockEntity.spawnTimers.get( pos.down().up() ).resetAlarmActivation();
-				GraveSoilBlockEntity.spawnTimers.get( pos.down().north() ).resetAlarmActivation();
-				GraveSoilBlockEntity.spawnTimers.get( pos.down().east() ).resetAlarmActivation();
-				GraveSoilBlockEntity.spawnTimers.get( pos.down().west() ).resetAlarmActivation();
-				GraveSoilBlockEntity.spawnTimers.get( pos.down().south() ).resetAlarmActivation();
-				GraveSoilBlockEntity.spawnTimers.get( pos.down().down() ).resetAlarmActivation();
+		if( null != world.getServer() ) {
+			long currentTick = world.getServer().getTicks();
+			
+			if (Graveyardsandghosts.CONFIG.enableGraveyardBlockMobSpawns && MathUtil.hasChance(chance)) {
+				if (null == GraveSoilBlockEntity.spawnTimers.get(pos.down())) {
+					spawnAttempt(world, pos, target);
+					
+					GraveSoilBlockEntity.spawnTimers.put(pos.down(), new ServerTickTimer(currentTick, Graveyardsandghosts.CONFIG.graveyardBlockMobSpawnDelayInMinutes));
+					GraveSoilBlockEntity.spawnTimers.put(pos.down().up(), new ServerTickTimer(currentTick, Graveyardsandghosts.CONFIG.graveyardBlockMobSpawnDelayInMinutes));
+					GraveSoilBlockEntity.spawnTimers.put(pos.down().north(), new ServerTickTimer(currentTick, Graveyardsandghosts.CONFIG.graveyardBlockMobSpawnDelayInMinutes));
+					GraveSoilBlockEntity.spawnTimers.put(pos.down().east(), new ServerTickTimer(currentTick, Graveyardsandghosts.CONFIG.graveyardBlockMobSpawnDelayInMinutes));
+					GraveSoilBlockEntity.spawnTimers.put(pos.down().west(), new ServerTickTimer(currentTick, Graveyardsandghosts.CONFIG.graveyardBlockMobSpawnDelayInMinutes));
+					GraveSoilBlockEntity.spawnTimers.put(pos.down().south(), new ServerTickTimer(currentTick, Graveyardsandghosts.CONFIG.graveyardBlockMobSpawnDelayInMinutes));
+					GraveSoilBlockEntity.spawnTimers.put(pos.down().down(), new ServerTickTimer(currentTick, Graveyardsandghosts.CONFIG.graveyardBlockMobSpawnDelayInMinutes));
+				} else if (GraveSoilBlockEntity.spawnTimers.get(pos.down()).isAlarmActivated()) {
+					spawnAttempt(world, pos, target);
+					
+					GraveSoilBlockEntity.spawnTimers.get(pos.down()).resetAlarmActivation( currentTick );
+					GraveSoilBlockEntity.spawnTimers.get(pos.down().up()).resetAlarmActivation( currentTick );
+					GraveSoilBlockEntity.spawnTimers.get(pos.down().north()).resetAlarmActivation( currentTick );
+					GraveSoilBlockEntity.spawnTimers.get(pos.down().east()).resetAlarmActivation( currentTick );
+					GraveSoilBlockEntity.spawnTimers.get(pos.down().west()).resetAlarmActivation( currentTick );
+					GraveSoilBlockEntity.spawnTimers.get(pos.down().south()).resetAlarmActivation( currentTick );
+					GraveSoilBlockEntity.spawnTimers.get(pos.down().down()).resetAlarmActivation( currentTick );
+				} // if
 			} // if
 		} // if
 	}

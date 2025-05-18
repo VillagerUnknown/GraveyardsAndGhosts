@@ -1,6 +1,7 @@
 package me.villagerunknown.graveyardsandghosts.block.entity;
 
 import me.villagerunknown.graveyardsandghosts.feature.graveyardBlocksFeature;
+import me.villagerunknown.platform.timer.ServerTickTimer;
 import me.villagerunknown.platform.timer.TickTimer;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -17,8 +18,8 @@ public class GraveSoilBlockEntity extends BlockEntity {
 	
 	public static Map<BlockPos, Boolean> blocksLoaded = new HashMap<>();
 	
-	public static Map<BlockPos, TickTimer> soundTimers = new HashMap<>();
-	public static Map<BlockPos, TickTimer> spawnTimers = new HashMap<>();
+	public static Map<BlockPos, ServerTickTimer> soundTimers = new HashMap<>();
+	public static Map<BlockPos, ServerTickTimer> spawnTimers = new HashMap<>();
 	
 	public GraveSoilBlockEntity(BlockPos pos, BlockState state) {
 		super(graveyardBlocksFeature.BLOCK_ENTITY_TYPES.get("grave_soil"), pos, state);
@@ -51,15 +52,16 @@ public class GraveSoilBlockEntity extends BlockEntity {
 			world.setBlockState( pos, state );
 		} // if
 		
+		long currentTick = world.getServer().getTicks();
 		
 		// # Sound Timers
 		if( null != soundTimers.get( pos ) ) {
-			soundTimers.get(pos).tick();
+			soundTimers.get(pos).tick( currentTick );
 		} // if
 		
 		// # Spawn Timers
 		if( null != spawnTimers.get( pos ) ) {
-			spawnTimers.get(pos).tick();
+			spawnTimers.get(pos).tick( currentTick );
 		} // if
 	}
 }

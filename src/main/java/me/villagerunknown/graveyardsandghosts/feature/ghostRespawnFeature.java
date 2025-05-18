@@ -5,8 +5,10 @@ import com.google.gson.reflect.TypeToken;
 import me.villagerunknown.graveyardsandghosts.Graveyardsandghosts;
 import me.villagerunknown.graveyardsandghosts.GraveyardsandghostsPersistentData;
 import me.villagerunknown.graveyardsandghosts.GraveyardsandghostsPersistentPlayerData;
+import me.villagerunknown.graveyardsandghosts.block.resurrection.ResurrectionBlock;
 import me.villagerunknown.graveyardsandghosts.network.ConfirmResurrectionPayload;
 import me.villagerunknown.graveyardsandghosts.network.DeclineResurrectionPayload;
+import me.villagerunknown.platform.timer.ServerTickTimer;
 import me.villagerunknown.platform.timer.TickTimer;
 import me.villagerunknown.platform.util.*;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
@@ -23,6 +25,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.RegistryKey;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
@@ -32,6 +35,7 @@ import net.minecraft.stat.Stats;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.GlobalPos;
 import net.minecraft.world.World;
 
@@ -44,9 +48,9 @@ public class ghostRespawnFeature {
 	
 	private static final int corpseTimerFrequencyInSeconds = 3;
 	
-	public static Map<UUID, TickTimer> resurrectionCorpseTimers = new HashMap<>();
-	public static Map<UUID, TickTimer> resurrectionPromptTimers = new HashMap<>();
-	public static Map<UUID, TickTimer> resurrectionPromptDelayTimers = new HashMap<>();
+	public static Map<UUID, ServerTickTimer> resurrectionCorpseTimers = new HashMap<>();
+	public static Map<UUID, ServerTickTimer> resurrectionPromptTimers = new HashMap<>();
+	public static Map<UUID, ServerTickTimer> resurrectionPromptDelayTimers = new HashMap<>();
 	
 	public static Map<BlockPos, RegistryKey<World>> respawnPositions = new HashMap<>();
 	
@@ -83,7 +87,7 @@ public class ghostRespawnFeature {
 				return false;
 			} // if
 			
-			if( Graveyardsandghosts.CONFIG.enablePlayerGhostOnDeath ) {
+			if( Graveyardsandghosts.CONFIG.enableGraveyardRespawnPoints ) {
 				GraveyardsandghostsPersistentPlayerData playerData = GraveyardsandghostsPersistentData.getPlayerState(serverPlayerEntity);
 				Map<String, Set<BlockPos>> playerRespawnPositions = gson.fromJson( playerData.respawnPositions, new TypeToken<Map<String, Set<BlockPos>>>() {}.getType() );
 
@@ -165,9 +169,17 @@ public class ghostRespawnFeature {
 					Graveyardsandghosts.LOGGER.info("Respawn point set at: " + respawnPosition + " in " + dimWorld.getDimensionEntry().getIdAsString() + "; distance: " + closestRespawnDistance);
 					
 					if( null != respawnPosition ) {
-						BlockPos safeSpawnPos = respawnPosition.up(3);
+						BlockPos safeSpawnPos = respawnPosition;
+						BlockState blockState = dimWorld.getBlockState( respawnPosition );
 						
-						if( !dimWorld.getBlockState( safeSpawnPos ).isAir() || !dimWorld.getBlockState( safeSpawnPos.up() ).isAir() ) {
+						if( Graveyardsandghosts.CONFIG.enableGraveyardRespawnPoints ) {
+							respawnPosition.up(3);
+						} else {
+							Direction facing = blockState.get( ResurrectionBlock.FACING );
+							safeSpawnPos = respawnPosition.offset( facing );
+						} // if, else
+						
+						if( !blockState.isAir() || !dimWorld.getBlockState( safeSpawnPos.up() ).isAir() ) {
 							safeSpawnPos = PositionUtil.findSafeSpawnPosition( dimWorld, respawnPosition, Graveyardsandghosts.CONFIG.resurrectionSafeRespawnSearchRadius );
 						} // if
 						
@@ -180,7 +192,7 @@ public class ghostRespawnFeature {
 		
 		// # Convert a Player to a Ghost on Respawn
 		ServerPlayerEvents.AFTER_RESPAWN.register((serverPlayerEntity, serverPlayerEntity1, b) -> {
-			if( Graveyardsandghosts.CONFIG.enablePlayerGhostOnDeath && !serverPlayerEntity1.isCreative() && !serverPlayerEntity1.isSpectator() ) {
+			if( Graveyardsandghosts.CONFIG.enablePlayerGhostOnDeath && Graveyardsandghosts.CONFIG.enableGraveyardRespawnPoints && !serverPlayerEntity1.isCreative() && !serverPlayerEntity1.isSpectator() ) {
 				MessageUtil.sendChatMessage( serverPlayerEntity1, "You respawned as a ghost!" );
 				MessageUtil.sendChatMessage( serverPlayerEntity1, "Go to your corpse or a graveyard to return to normal." );
 				
@@ -189,8 +201,11 @@ public class ghostRespawnFeature {
 				GraveyardsandghostsPersistentPlayerData playerData = GraveyardsandghostsPersistentData.getPlayerState(serverPlayerEntity1);
 				playerData.lastCorpsePos = gson.toJson( serverPlayerEntity.getLastDeathPos(), new TypeToken<Optional<GlobalPos>>(){}.getType() );
 				
-				resurrectionCorpseTimers.put( serverPlayerEntity1.getUuid(), new TickTimer(0, corpseTimerFrequencyInSeconds) );
-				resurrectionPromptTimers.put( serverPlayerEntity1.getUuid(), new TickTimer(0,Graveyardsandghosts.CONFIG.resurrectionPromptFrequencyInSeconds) );
+				if( null != serverPlayerEntity.getServer() ) {
+					long currentTick = serverPlayerEntity.getServer().getTicks();
+					resurrectionCorpseTimers.put(serverPlayerEntity1.getUuid(), new ServerTickTimer(currentTick, 0, corpseTimerFrequencyInSeconds));
+					resurrectionPromptTimers.put(serverPlayerEntity1.getUuid(), new ServerTickTimer(currentTick, 0, Graveyardsandghosts.CONFIG.resurrectionPromptFrequencyInSeconds));
+				}
 			} // if
 		});
 		
@@ -236,9 +251,11 @@ public class ghostRespawnFeature {
 					MessageUtil.sendChatMessage( player, "You're a ghost!" );
 					MessageUtil.sendChatMessage( player, "Resurrect at a grave or your corpse." );
 					
-					resurrectionCorpseTimers.put(player.getUuid(), new TickTimer(0, corpseTimerFrequencyInSeconds));
-					resurrectionPromptTimers.put(player.getUuid(), new TickTimer(0, Graveyardsandghosts.CONFIG.resurrectionPromptFrequencyInSeconds));
-					resurrectionPromptDelayTimers.put(player.getUuid(), new TickTimer(0, Graveyardsandghosts.CONFIG.resurrectionPromptFrequencyInSeconds));
+					long currentTick = minecraftServer.getTicks();
+					
+					resurrectionCorpseTimers.put(player.getUuid(), new ServerTickTimer(currentTick, 0, corpseTimerFrequencyInSeconds));
+					resurrectionPromptTimers.put(player.getUuid(), new ServerTickTimer(currentTick, 0, Graveyardsandghosts.CONFIG.resurrectionPromptFrequencyInSeconds));
+					resurrectionPromptDelayTimers.put(player.getUuid(), new ServerTickTimer(currentTick, 0, Graveyardsandghosts.CONFIG.resurrectionPromptFrequencyInSeconds));
 				} // if
 			} // if
 		});
@@ -256,27 +273,30 @@ public class ghostRespawnFeature {
 				return;
 			}
 			
+			MinecraftServer minecraftServer = serverWorld.getServer();
+			long currentTick = minecraftServer.getTicks();
+			
 			// # Players
 			for (ServerPlayerEntity player : serverWorld.getServer().getPlayerManager().getPlayerList()) {
 				if( player.hasStatusEffect( playerGhostFeature.GHOST_EFFECT_REGISTRY ) && player.isAlive() ) {
-					TickTimer corpseTimer = resurrectionCorpseTimers.get( player.getUuid() );
-					TickTimer promptTimer = resurrectionPromptTimers.get( player.getUuid() );
+					ServerTickTimer corpseTimer = resurrectionCorpseTimers.get( player.getUuid() );
+					ServerTickTimer promptTimer = resurrectionPromptTimers.get( player.getUuid() );
 					
 					if( null == corpseTimer ) {
-						corpseTimer = new TickTimer(0,corpseTimerFrequencyInSeconds);
+						corpseTimer = new ServerTickTimer(currentTick, 0,corpseTimerFrequencyInSeconds);
 					} else {
-						corpseTimer.tick();
+						corpseTimer.tick( currentTick );
 					} // if, else
 					
 					if( !resurrectionPromptDelayTimers.containsKey( player.getUuid() ) ) {
 						if( null == promptTimer ) {
-							promptTimer = new TickTimer(0,Graveyardsandghosts.CONFIG.resurrectionPromptFrequencyInSeconds);
+							promptTimer = new ServerTickTimer(currentTick, 0,Graveyardsandghosts.CONFIG.resurrectionPromptFrequencyInSeconds);
 						} else {
-							promptTimer.tick();
+							promptTimer.tick( currentTick );
 						} // if, else
 					} else {
-						TickTimer promptDelayTimer = resurrectionPromptDelayTimers.get( player.getUuid() );
-						promptDelayTimer.tick();
+						ServerTickTimer promptDelayTimer = resurrectionPromptDelayTimers.get( player.getUuid() );
+						promptDelayTimer.tick( currentTick );
 						if( promptDelayTimer.isAlarmActivated() ) {
 							resurrectionPromptDelayTimers.remove( player.getUuid() );
 						} // if
@@ -328,7 +348,7 @@ public class ghostRespawnFeature {
 										promptPlayerResurrection(player);
 									} // if, else
 									
-									promptTimer.resetAlarmActivation();
+									promptTimer.resetAlarmActivation( currentTick );
 								} // if
 							} // if
 							
@@ -338,7 +358,7 @@ public class ghostRespawnFeature {
 									serverWorld.spawnParticles(player, ParticleTypes.HEART, true, safeSpawnPos.getX() + 0.5, safeSpawnPos.getY() + 2.5, safeSpawnPos.getZ() + 0.5, 3, 0.25, 0.25, 0.25, 1F);
 								} // if
 								
-								corpseTimer.resetAlarmActivation();
+								corpseTimer.resetAlarmActivation( currentTick );
 							} // if
 							
 						} // if
@@ -405,7 +425,7 @@ public class ghostRespawnFeature {
 		// Register Decline Resurrection Payload Receiver
 		ServerPlayNetworking.registerGlobalReceiver(DeclineResurrectionPayload.ID, (payload, context) -> {
 			context.server().execute(() -> {
-				resurrectionPromptDelayTimers.put( context.player().getUuid(), new TickTimer( 0, Graveyardsandghosts.CONFIG.resurrectionPromptFrequencyInSeconds ) );
+				resurrectionPromptDelayTimers.put( context.player().getUuid(), new ServerTickTimer( context.server().getTicks(), 0, Graveyardsandghosts.CONFIG.resurrectionPromptFrequencyInSeconds ) );
 			});
 		});
 	}

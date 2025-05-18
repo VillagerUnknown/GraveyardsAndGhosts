@@ -48,7 +48,7 @@ public class TwoTallStatueBlock extends StatueBlock {
 		);
 	}
 	
-	protected TwoTallStatueBlock(Settings settings) {
+	public TwoTallStatueBlock(Settings settings) {
 		super(settings);
 	}
 	

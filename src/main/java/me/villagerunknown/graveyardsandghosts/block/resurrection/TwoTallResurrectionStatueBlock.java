@@ -52,7 +52,7 @@ public class TwoTallResurrectionStatueBlock extends BlockWithEntity implements B
 		);
 	}
 	
-	protected TwoTallResurrectionStatueBlock(Settings settings) {
+	public TwoTallResurrectionStatueBlock(Settings settings) {
 		super(settings);
 		this.setDefaultState((BlockState)((BlockState)((BlockState)((BlockState)this.stateManager.getDefaultState())
 				.with(FACING, Direction.SOUTH))

@@ -5,6 +5,7 @@ import me.villagerunknown.graveyardsandghosts.Graveyardsandghosts;
 import me.villagerunknown.graveyardsandghosts.block.entity.CoffinBlockEntity;
 import me.villagerunknown.graveyardsandghosts.feature.graveyardBlocksFeature;
 import me.villagerunknown.graveyardsandghosts.helper.GraveyardMobHelper;
+import me.villagerunknown.platform.timer.ServerTickTimer;
 import me.villagerunknown.platform.timer.TickTimer;
 import me.villagerunknown.platform.util.MathUtil;
 import me.villagerunknown.platform.util.PositionUtil;
@@ -66,7 +67,7 @@ public class CoffinBlock extends BlockWithEntity implements Waterloggable {
 		);
 	}
 	
-	protected CoffinBlock(Settings settings) {
+	public CoffinBlock(Settings settings) {
 		super(settings);
 	}
 	
@@ -204,8 +205,6 @@ public class CoffinBlock extends BlockWithEntity implements Waterloggable {
 	@Override
 	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
 		if (!world.isClient) {
-			// This will call the createScreenHandlerFactory method from BlockWithEntity, which will return our blockEntity casted to
-			// a namedScreenHandlerFactory. If your block class does not extend BlockWithEntity, it needs to implement createScreenHandlerFactory.
 			NamedScreenHandlerFactory screenHandlerFactory = null;
 			
 			if( state.get( PART ).equals( BedPart.HEAD ) ) {
@@ -215,7 +214,6 @@ public class CoffinBlock extends BlockWithEntity implements Waterloggable {
 			} // if, else
 			
 			if (screenHandlerFactory != null) {
-				// With this call the server will request the client to open the appropriate Screenhandler
 				player.openHandledScreen(screenHandlerFactory);
 			}
 			
@@ -227,6 +225,7 @@ public class CoffinBlock extends BlockWithEntity implements Waterloggable {
 			
 			MinecraftServer minecraftServer = world.getServer();
 			ServerWorld serverWorld = minecraftServer.getWorld(world.getRegistryKey());
+			long currentTick = minecraftServer.getTicks();
 			
 			if( serverWorld.getTimeOfDay() % 24000 > 13000L ) {
 				mobSpawnChance = mobSpawnChance * 2;
@@ -237,9 +236,9 @@ public class CoffinBlock extends BlockWithEntity implements Waterloggable {
 			if( MathUtil.hasChance( mobSpawnChance ) && Graveyardsandghosts.CONFIG.enableGraveyardBlockMobSpawns ) {
 				if( null == CoffinBlockEntity.spawnTimers.get( pos ) || CoffinBlockEntity.spawnTimers.get( pos ).isAlarmActivated() ) {
 					if( null == CoffinBlockEntity.spawnTimers.get( pos ) ) {
-						CoffinBlockEntity.spawnTimers.put(pos, new TickTimer( Graveyardsandghosts.CONFIG.graveyardBlockMobSpawnDelayInMinutes ));
+						CoffinBlockEntity.spawnTimers.put(pos, new ServerTickTimer( currentTick, Graveyardsandghosts.CONFIG.graveyardBlockMobSpawnDelayInMinutes ));
 					} else {
-						CoffinBlockEntity.spawnTimers.get( pos ).resetAlarmActivation();
+						CoffinBlockEntity.spawnTimers.get( pos ).resetAlarmActivation( currentTick );
 					} // if, else
 					
 					BlockPos safeSpawnPosition = PositionUtil.findSafeSpawnPosition(serverWorld, pos, Graveyardsandghosts.CONFIG.graveyardBlockMobSpawnSearchRadius);
@@ -252,14 +251,12 @@ public class CoffinBlock extends BlockWithEntity implements Waterloggable {
 		return ActionResult.SUCCESS;
 	}
 	
-	// This method will drop all items onto the ground when the block is broken
 	@Override
 	public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
 		if (state.getBlock() != newState.getBlock()) {
 			BlockEntity blockEntity = world.getBlockEntity(pos);
 			if (blockEntity instanceof CoffinBlockEntity coffinBlockEntity) {
 				ItemScatterer.spawn(world, pos, coffinBlockEntity);
-				// update comparators
 				world.updateComparators(pos,this);
 			}
 			super.onStateReplaced(state, world, pos, newState, moved);

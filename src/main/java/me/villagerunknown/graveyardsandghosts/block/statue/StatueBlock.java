@@ -39,7 +39,7 @@ public class StatueBlock extends HorizontalFacingBlock implements Waterloggable 
 		);
 	}
 	
-	protected StatueBlock(Settings settings) {
+	public StatueBlock(Settings settings) {
 		super(settings);
 	}
 	

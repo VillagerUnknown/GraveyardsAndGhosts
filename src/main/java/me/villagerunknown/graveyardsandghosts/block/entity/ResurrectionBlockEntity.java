@@ -7,6 +7,7 @@ import me.villagerunknown.graveyardsandghosts.GraveyardsandghostsPersistentData;
 import me.villagerunknown.graveyardsandghosts.GraveyardsandghostsPersistentPlayerData;
 import me.villagerunknown.graveyardsandghosts.feature.graveyardBlocksFeature;
 import me.villagerunknown.graveyardsandghosts.feature.ghostRespawnFeature;
+import me.villagerunknown.platform.timer.ServerTickTimer;
 import me.villagerunknown.platform.timer.TickTimer;
 import me.villagerunknown.platform.util.GsonUtil;
 import me.villagerunknown.platform.util.MathUtil;
@@ -32,10 +33,10 @@ import java.util.*;
 
 public class ResurrectionBlockEntity extends BlockEntity {
 	
-	private static int blockTimerFrequencyInSeconds = 3;
-	private static int blockActivationDistance = 64;
+	private static final int blockTimerFrequencyInSeconds = 3;
+	private static final int blockActivationDistance = 64;
 	
-	public static TickTimer resurrectionBlockTimer = new TickTimer( 0, blockTimerFrequencyInSeconds );
+	public static ServerTickTimer resurrectionBlockTimer = null;
 	
 	public static final EnumProperty<DoubleBlockHalf> HALF = Properties.DOUBLE_BLOCK_HALF;
 	
@@ -64,10 +65,19 @@ public class ResurrectionBlockEntity extends BlockEntity {
 	}
 	
 	private static void tickUpper( World world, BlockPos pos, BlockState state, ResurrectionBlockEntity blockEntity ) {
+		if( null == world.getServer() || world.isClient() ) {
+			return;
+		}
+		
 		MinecraftServer minecraftServer = world.getServer();
 		ServerWorld serverWorld = minecraftServer.getWorld( world.getRegistryKey() );
+		long currentTick = minecraftServer.getTicks();
 		
-		resurrectionBlockTimer.tick();
+		if( null == resurrectionBlockTimer ) {
+			resurrectionBlockTimer = new ServerTickTimer( currentTick, 0, blockTimerFrequencyInSeconds );
+		} // if
+		
+		resurrectionBlockTimer.tick( currentTick );
 		
 		if( resurrectionBlockTimer.isAlarmActivated() ) {
 			// # Sounds
@@ -80,14 +90,14 @@ public class ResurrectionBlockEntity extends BlockEntity {
 				
 				world.playSound( null, pos, SoundEvents.AMBIENT_SOUL_SAND_VALLEY_LOOP.value(), SoundCategory.AMBIENT, Graveyardsandghosts.CONFIG.soundVolume, 1.0F );
 			} // if
-			resurrectionBlockTimer.resetAlarmActivation();
+			resurrectionBlockTimer.resetAlarmActivation( currentTick );
 		} // if
 		
 		// # Particles
-		ghostRespawnFeature.resurrectionCorpseTimers.forEach((UUID playerUUID, TickTimer corpseTimer ) -> {
+		ghostRespawnFeature.resurrectionCorpseTimers.forEach((UUID playerUUID, ServerTickTimer corpseTimer ) -> {
 			ServerPlayerEntity player = minecraftServer.getPlayerManager().getPlayer( playerUUID );
 			
-			if(corpseTimer.isAlarmActivated() ) {
+			if(corpseTimer.isAlarmActivated() && null != player ) {
 				if( pos.isWithinDistance( player.getPos(), blockActivationDistance ) ) {
 					if(Graveyardsandghosts.CONFIG.enableParticles && Graveyardsandghosts.CONFIG.enableGraveyardBlockParticles) {
 						assert serverWorld != null;

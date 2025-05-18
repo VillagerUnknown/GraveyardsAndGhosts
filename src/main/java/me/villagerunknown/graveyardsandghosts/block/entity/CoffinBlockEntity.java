@@ -4,6 +4,7 @@ import me.villagerunknown.graveyardsandghosts.Graveyardsandghosts;
 import me.villagerunknown.graveyardsandghosts.block.coffin.CoffinBlock;
 import me.villagerunknown.graveyardsandghosts.feature.graveyardBlocksFeature;
 import me.villagerunknown.graveyardsandghosts.helper.GraveyardMobHelper;
+import me.villagerunknown.platform.timer.ServerTickTimer;
 import me.villagerunknown.platform.timer.TickTimer;
 import me.villagerunknown.platform.util.BoxUtil;
 import me.villagerunknown.platform.util.MathUtil;
@@ -50,7 +51,7 @@ public class CoffinBlockEntity extends LootableContainerBlockEntity {
 	
 	private DefaultedList<ItemStack> inventory;
 	
-	public static Map<BlockPos, TickTimer> spawnTimers = new HashMap<>();
+	public static Map<BlockPos, ServerTickTimer> spawnTimers = new HashMap<>();
 	
 	public static final RegistryKey<LootTable> CUSTOM_LOOT_TABLE = RegistryKey.of(RegistryKeys.LOOT_TABLE, Identifier.of(MOD_ID, "chests/coffin_block"));
 	
@@ -134,14 +135,14 @@ public class CoffinBlockEntity extends LootableContainerBlockEntity {
 			return;
 		}
 		
-		if( null != spawnTimers ) {
-			spawnTimers.forEach((BlockPos timerPos, TickTimer timer) -> {
-				timer.tick();
-			});
-		} // if
-		
 		MinecraftServer minecraftServer = world.getServer();
 		ServerWorld serverWorld = minecraftServer.getWorld(world.getRegistryKey());
+		
+		if( null != spawnTimers ) {
+			spawnTimers.forEach((BlockPos timerPos, ServerTickTimer timer) -> {
+				timer.tick( minecraftServer.getTicks() );
+			});
+		} // if
 		
 		if (Graveyardsandghosts.CONFIG.enableSounds && Graveyardsandghosts.CONFIG.enableGraveyardBlockSounds && state.get( CoffinBlock.MODEL ).equals(0) ) {
 			float chance = Graveyardsandghosts.CONFIG.graveyardBlockMobSoundChance;

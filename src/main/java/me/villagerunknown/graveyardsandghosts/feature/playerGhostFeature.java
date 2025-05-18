@@ -6,6 +6,7 @@ import me.villagerunknown.graveyardsandghosts.Graveyardsandghosts;
 import me.villagerunknown.graveyardsandghosts.GraveyardsandghostsPersistentData;
 import me.villagerunknown.graveyardsandghosts.GraveyardsandghostsPersistentPlayerData;
 import me.villagerunknown.graveyardsandghosts.statuseffect.GhostEffect;
+import me.villagerunknown.platform.timer.ServerTickTimer;
 import me.villagerunknown.platform.timer.TickTimer;
 import me.villagerunknown.platform.util.EntityUtil;
 import me.villagerunknown.platform.util.GsonUtil;
@@ -186,8 +187,8 @@ public class playerGhostFeature {
 	
 	private static final Gson gson = GsonUtil.gsonWithAdapters();
 	
-	private static TickTimer soundLoopTimer = new TickTimer(0, 30);
-	private static TickTimer soundAdditionsTimer = new TickTimer(0, 30);
+	private static ServerTickTimer soundLoopTimer = null;
+	private static ServerTickTimer soundAdditionsTimer = null;
 	
 	public static void execute() {
 		init();
@@ -309,8 +310,18 @@ public class playerGhostFeature {
 				return;
 			} // if
 			
-			soundLoopTimer.tick();
-			soundAdditionsTimer.tick();
+			long currentTick = serverWorld.getServer().getTicks();
+			
+			if( null == soundLoopTimer ) {
+				soundLoopTimer = new ServerTickTimer(currentTick, 0, 30);
+			} // if
+			
+			if( null == soundAdditionsTimer ) {
+				soundAdditionsTimer = new ServerTickTimer(currentTick, 0, 30);
+			} // if
+			
+			soundLoopTimer.tick( currentTick );
+			soundAdditionsTimer.tick( currentTick );
 			
 			for (ServerPlayerEntity player : serverWorld.getPlayers()) {
 				if( player.hasStatusEffect( GHOST_EFFECT_REGISTRY ) ) {
@@ -320,13 +331,13 @@ public class playerGhostFeature {
 					if( soundLoopTimer.isAlarmActivated() ) {
 						player.playSoundToPlayer(SoundEvents.AMBIENT_SOUL_SAND_VALLEY_LOOP.value(), SoundCategory.AMBIENT, Graveyardsandghosts.CONFIG.soundVolume, 1F);
 						
-						soundLoopTimer.resetAlarmActivation();
+						soundLoopTimer.resetAlarmActivation( currentTick );
 					} // if
 					
 					if( soundAdditionsTimer.isAlarmActivated() ) {
 						player.playSoundToPlayer(SoundEvents.AMBIENT_SOUL_SAND_VALLEY_ADDITIONS.value(), SoundCategory.AMBIENT, Graveyardsandghosts.CONFIG.soundVolume, 1F);
 						
-						soundAdditionsTimer.resetAlarmActivation();
+						soundAdditionsTimer.resetAlarmActivation( currentTick );
 					} // if
 					
 					// Particles for all Ghosts to see
