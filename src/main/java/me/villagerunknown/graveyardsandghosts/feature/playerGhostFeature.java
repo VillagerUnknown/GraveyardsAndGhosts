@@ -348,7 +348,7 @@ public class playerGhostFeature {
 					List<ServerPlayerEntity> players = serverWorld.getServer().getPlayerManager().getPlayerList();
 					for (ServerPlayerEntity serverPlayerEntity : players) {
 						if( serverPlayerEntity.hasStatusEffect( GHOST_EFFECT_REGISTRY ) ) {
-							if( Graveyardsandghosts.CONFIG.enableParticles ) {
+							if( Graveyardsandghosts.CONFIG.enableParticles && Graveyardsandghosts.CONFIG.enablePlayerGhostParticles ) {
 								EntityUtil.spawnParticles(serverPlayerEntity, 1, ParticleTypes.SOUL, 1, 0.025, 0.025, 0.025, 0.0005);
 							} // if
 						} // if

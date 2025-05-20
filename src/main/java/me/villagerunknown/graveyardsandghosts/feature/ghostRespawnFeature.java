@@ -32,6 +32,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.StatFormatter;
 import net.minecraft.stat.Stats;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
@@ -172,7 +173,7 @@ public class ghostRespawnFeature {
 						BlockPos safeSpawnPos = respawnPosition;
 						BlockState blockState = dimWorld.getBlockState( respawnPosition );
 						
-						if( Graveyardsandghosts.CONFIG.enableGraveyardRespawnPoints ) {
+						if( Graveyardsandghosts.CONFIG.enablePlayerGhostOnDeath ) {
 							respawnPosition.up(3);
 						} else {
 							Direction facing = blockState.get( ResurrectionBlock.FACING );
@@ -193,8 +194,8 @@ public class ghostRespawnFeature {
 		// # Convert a Player to a Ghost on Respawn
 		ServerPlayerEvents.AFTER_RESPAWN.register((serverPlayerEntity, serverPlayerEntity1, b) -> {
 			if( Graveyardsandghosts.CONFIG.enablePlayerGhostOnDeath && Graveyardsandghosts.CONFIG.enableGraveyardRespawnPoints && !serverPlayerEntity1.isCreative() && !serverPlayerEntity1.isSpectator() ) {
-				MessageUtil.sendChatMessage( serverPlayerEntity1, "You respawned as a ghost!" );
-				MessageUtil.sendChatMessage( serverPlayerEntity1, "Go to your corpse or a graveyard to return to normal." );
+				MessageUtil.sendChatMessage( serverPlayerEntity1, Text.translatable("text.villagerunknown-graveyardsandghosts.respawn.respawned").getString() );
+				MessageUtil.sendChatMessage( serverPlayerEntity1, Text.translatable("text.villagerunknown-graveyardsandghosts.respawn.instructions").getString() );
 				
 				playerGhostFeature.applyGhostEffect(serverPlayerEntity1);
 				
@@ -238,8 +239,8 @@ public class ghostRespawnFeature {
 			if( Graveyardsandghosts.CONFIG.playersStartWorldsAsGhosts && !player.isCreative() && !player.isSpectator() ) {
 				if (PlayerStatUtil.getStatFromIdentifier(player, Stats.TOTAL_WORLD_TIME) <= 0) {
 					if (!player.hasStatusEffect(playerGhostFeature.GHOST_EFFECT_REGISTRY)) {
-						MessageUtil.sendChatMessage( player, "You're a ghost!" );
-						MessageUtil.sendChatMessage( player, "Go to a graveyard to start your adventure." );
+						MessageUtil.sendChatMessage( player, Text.translatable( "text.villagerunknown-graveyardsandghosts.spawn.ghost" ).getString() );
+						MessageUtil.sendChatMessage( player, Text.translatable( "text.villagerunknown-graveyardsandghosts.spawn.start" ).getString() );
 						
 						playerGhostFeature.applyGhostEffect(player);
 					} // if
@@ -248,8 +249,8 @@ public class ghostRespawnFeature {
 			
 			if( player.hasStatusEffect( playerGhostFeature.GHOST_EFFECT_REGISTRY ) ) {
 				if( !resurrectionCorpseTimers.containsKey( player.getUuid() ) ) {
-					MessageUtil.sendChatMessage( player, "You're a ghost!" );
-					MessageUtil.sendChatMessage( player, "Resurrect at a grave or your corpse." );
+					MessageUtil.sendChatMessage( player, Text.translatable( "text.villagerunknown-graveyardsandghosts.spawn.ghost" ).getString() );
+					MessageUtil.sendChatMessage( player, Text.translatable( "text.villagerunknown-graveyardsandghosts.effect.remove" ).getString() );
 					
 					long currentTick = minecraftServer.getTicks();
 					
@@ -342,7 +343,7 @@ public class ghostRespawnFeature {
 										if( PositionUtil.hasSafeBlockBelow( serverWorld, player.getBlockPos() ) ) {
 											promptPlayerResurrection(player);
 										}  else {
-											MessageUtil.showActionBarMessage( player, "Stand on a solid block to resurrect." );
+											MessageUtil.showActionBarMessage( player, Text.translatable( "text.villagerunknown-graveyardsandghosts.effect.solid" ).getString() );
 										} // if, else
 									} else {
 										promptPlayerResurrection(player);
@@ -391,7 +392,7 @@ public class ghostRespawnFeature {
 							if( PositionUtil.hasSafeBlockBelow( world, serverPlayerEntity.getBlockPos() ) ) {
 								promptPlayerResurrection(serverPlayerEntity);
 							} else {
-								MessageUtil.showActionBarMessage( serverPlayerEntity, "Stand on a solid block to resurrect." );
+								MessageUtil.showActionBarMessage( serverPlayerEntity, Text.translatable( "text.villagerunknown-graveyardsandghosts.effect.solid" ).getString() );
 							}
 						} else {
 							promptPlayerResurrection(serverPlayerEntity);

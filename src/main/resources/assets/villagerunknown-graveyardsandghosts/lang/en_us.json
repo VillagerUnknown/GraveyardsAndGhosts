@@ -11,6 +11,7 @@
 
   "text.autoconfig.villagerunknown-graveyardsandghosts.category.Graveyards": "Graveyards",
 
+  "text.autoconfig.villagerunknown-graveyardsandghosts.option.enableGraveyardRespawnPoints": "Enable Graveyard Respawn Points",
   "text.autoconfig.villagerunknown-graveyardsandghosts.option.graveyardDiscoveryRadius": "Graveyard Discovery Radius",
   "text.autoconfig.villagerunknown-graveyardsandghosts.option.enableGraveyardBlockSounds": "Enable Graveyard Block Sounds",
   "text.autoconfig.villagerunknown-graveyardsandghosts.option.enableGraveyardBlockParticles": "Enable Graveyard Block Particles",
@@ -24,6 +25,7 @@
 
   "text.autoconfig.villagerunknown-graveyardsandghosts.option.playersStartWorldsAsGhosts": "Players Start Worlds as Ghosts",
   "text.autoconfig.villagerunknown-graveyardsandghosts.option.enablePlayerGhostOnDeath": "Enable Player Ghost on Death",
+  "text.autoconfig.villagerunknown-graveyardsandghosts.option.enablePlayerGhostParticles": "Enable Player Ghost Particles",
   "text.autoconfig.villagerunknown-graveyardsandghosts.option.preventGhostCollisions": "Prevent Ghost Collisions",
   "text.autoconfig.villagerunknown-graveyardsandghosts.option.preventGhostBlockAttack": "Prevent Ghost Block Attack",
   "text.autoconfig.villagerunknown-graveyardsandghosts.option.preventGhostBlockUse": "Prevent Ghost Block Use",
@@ -65,6 +67,18 @@
   "item.minecraft.tipped_arrow.effect.ghost": "Ghost Tipped Arrow",
   "item.minecraft.splash_potion.effect.ghost": "Ghost Splash Potion",
   "item.minecraft.lingering.effect.ghost": "Lingering Ghost Potion",
+
+  "text.villagerunknown-graveyardsandghosts.spawn.ghost": "You're a ghost!",
+  "text.villagerunknown-graveyardsandghosts.spawn.start": "Go to a graveyard to start your adventure.",
+
+  "text.villagerunknown-graveyardsandghosts.respawn.respawned": "You respawned as a ghost!",
+  "text.villagerunknown-graveyardsandghosts.respawn.instructions": "Go to your corpse or a graveyard to return to normal.",
+
+  "text.villagerunknown-graveyardsandghosts.effect.remove": "Resurrect at a grave or your corpse.",
+  "text.villagerunknown-graveyardsandghosts.effect.solid": "Stand on a solid block to resurrect.",
+
+  "text.villagerunknown-graveyardsandghosts.screen.title": "Resurrect",
+  "text.villagerunknown-graveyardsandghosts.screen.message": "Would you like to resurrect?",
 
   "block.villagerunknown-graveyardsandghosts.grave_soil": "Grave Soil",
 

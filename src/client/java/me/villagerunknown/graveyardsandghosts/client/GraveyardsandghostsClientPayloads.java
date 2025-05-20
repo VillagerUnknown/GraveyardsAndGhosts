@@ -26,8 +26,8 @@ public class GraveyardsandghostsClientPayloads {
 					} // if, else
 					client.setScreen(null);
 				},
-						Text.of("Resurrect"),
-						Text.of("Would you like to resurrect?")
+						Text.translatable("text.villagerunknown-graveyardsandghosts.screen.title"),
+						Text.translatable("text.villagerunknown-graveyardsandghosts.screen.message")
 				));
 			});
 		});
