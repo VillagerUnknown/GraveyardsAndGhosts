@@ -14,6 +14,7 @@ _This update adds a new option that will affect users disabling player ghosts on
 _This option allows players to allow respawns at graveyards without the Ghost Effect. 
 The Ghost Effect will only be applied if both `enableGraveyardRespawnPoints` and `enablePlayerGhostOnDeath` are set to true.
 If you had `enablePlayerGhostOnDeath` set to false, you will want to set `enableGraveyardRespawnPoints` to false for the same configuration._
+- Added `enablePlayerGhostParticles` option. This option is set to true by default.
 
 ### Changed
 
