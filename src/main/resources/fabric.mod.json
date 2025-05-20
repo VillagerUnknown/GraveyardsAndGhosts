@@ -10,7 +10,7 @@
     "sources":"https://github.com/VillagerUnknown/GraveyardsAndGhosts",
     "issues":"https://github.com/VillagerUnknown/GraveyardsAndGhosts/issues"
   },
-  "license": "CC-BY-4.0",
+  "license": "MIT",
   "icon": "assets/villagerunknown-graveyardsandghosts/villagerunknown-graveyards-and-ghosts.png",
   "environment": "*",
   "entrypoints": {
