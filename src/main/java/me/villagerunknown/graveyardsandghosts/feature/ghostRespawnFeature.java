@@ -36,8 +36,10 @@ import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.GlobalPos;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 import java.util.*;
@@ -174,14 +176,19 @@ public class ghostRespawnFeature {
 						BlockState blockState = dimWorld.getBlockState( respawnPosition );
 						
 						if( Graveyardsandghosts.CONFIG.enablePlayerGhostOnDeath ) {
-							respawnPosition.up(3);
+							safeSpawnPos = safeSpawnPos.up(3);
 						} else {
 							Direction facing = blockState.get( ResurrectionBlock.FACING );
-							safeSpawnPos = respawnPosition.offset( facing );
+							safeSpawnPos = safeSpawnPos.offset( facing );
 						} // if, else
 						
-						if( !blockState.isAir() || !dimWorld.getBlockState( safeSpawnPos.up() ).isAir() ) {
-							safeSpawnPos = PositionUtil.findSafeSpawnPosition( dimWorld, respawnPosition, Graveyardsandghosts.CONFIG.resurrectionSafeRespawnSearchRadius );
+						blockState = dimWorld.getBlockState( safeSpawnPos );
+						
+						ChunkPos chunkPos = dimWorld.getWorldChunk( safeSpawnPos ).getPos();
+						BlockView blockView = dimWorld.getChunkAsView( chunkPos.x, chunkPos.z );
+						
+						if( blockState.shouldSuffocate( blockView, safeSpawnPos ) || dimWorld.getBlockState( safeSpawnPos.up() ).shouldSuffocate( blockView, safeSpawnPos.up() ) ) {
+							safeSpawnPos = PositionUtil.findSafeSpawnPosition( dimWorld, safeSpawnPos, Graveyardsandghosts.CONFIG.resurrectionSafeRespawnSearchRadius );
 						} // if
 						
 						serverPlayerEntity.setSpawnPoint(dimWorld.getRegistryKey(), safeSpawnPos, serverPlayerEntity.getSpawnAngle(), true, false);
