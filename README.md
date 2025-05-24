@@ -2,6 +2,8 @@
 
 Inspired by MMORPG's, this mod adds graveyards to the world generation and optionally changes the respawn system so that players become ghosts when they die and respawn at the nearest graveyard.
 
+_By setting the `enableGraveyardRespawnPoints` and `enablePlayerGhostOnDeath` options to false this mod will not change the vanilla respawn system and will only add graveyard structures and their blocks._
+
 **Features:**
 
 * "Ghost" status effect.
@@ -62,6 +64,7 @@ It will act as a respawn point for ghosts. Ghosts can interact with the statue t
 
 **Graveyard Options:**
 
+* Enable Graveyard Respawn Points
 * Graveyard Discovery Radius
 * Enable Graveyard Block Particles
 * Enable Graveyard Block Sounds
