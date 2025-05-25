@@ -374,23 +374,23 @@ public class graveyardBlocksFeature {
 	
 	public static Block registerBlock(Block block, String name, boolean shouldRegisterItem) {
 		Identifier id = Identifier.of(MOD_ID, name);
+		Block registeredBlock = Registry.register(Registries.BLOCK, id, block);
 		
 		// Register item
 		if (shouldRegisterItem) {
 			Item.Settings itemSettings = new Item.Settings();
 			
-			if( block.asItem().getDefaultStack().isIn( TagKey.of( RegistryKeys.ITEM, Identifier.of( MOD_ID, "fireproof" ) ) ) ) {
+			if( registeredBlock.asItem().getDefaultStack().isIn( TagKey.of( RegistryKeys.ITEM, Identifier.of( MOD_ID, "fireproof" ) ) ) ) {
 				itemSettings = itemSettings.fireproof();
 			} // if
 			
-			BlockItem blockItem = new BlockItem(block, itemSettings);
-			Registry.register(Registries.ITEM, id, blockItem);
+			BlockItem blockItem = new BlockItem(registeredBlock, itemSettings);
+			BlockItem registeredBlockItem = Registry.register(Registries.ITEM, id, blockItem);
 			
-			ItemGroupEvents.modifyEntriesEvent(CUSTOM_ITEM_GROUP_KEY).register(fabricItemGroupEntries -> fabricItemGroupEntries.add( blockItem ));
+			ItemGroupEvents.modifyEntriesEvent(CUSTOM_ITEM_GROUP_KEY).register(fabricItemGroupEntries -> fabricItemGroupEntries.add( registeredBlockItem ));
 		}
 		
-		// Register block
-		return Registry.register(Registries.BLOCK, id, block);
+		return registeredBlock;
 	}
 	
 	public static void registerBlockEntityTypes() {

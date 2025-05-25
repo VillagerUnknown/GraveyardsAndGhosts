@@ -98,3 +98,7 @@ It will act as a respawn point for ghosts. Ghosts can interact with the statue t
 
 * Request features and report bugs at https://github.com/VillagerUnknown/GraveyardsAndGhosts/issues
 * View the changelog at https://github.com/VillagerUnknown/GraveyardsAndGhosts/blob/main/CHANGELOG.md
+
+### Known Issues
+
+* The pick-block function does not work for blocks from this mod.
