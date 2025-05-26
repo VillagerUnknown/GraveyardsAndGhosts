@@ -240,7 +240,7 @@ public class ghostRespawnFeature {
 			if( null == lastOverworldPos ) {
 				Graveyardsandghosts.LOGGER.info(player.getNameForScoreboard() + " has not used a portal to leave the Overworld");
 			} else {
-				Graveyardsandghosts.LOGGER.info(player.getNameForScoreboard() + " last took a portal out of the Overworld at " + lastOverworldPos);
+				Graveyardsandghosts.LOGGER.info(player.getNameForScoreboard() + " last took a portal out of the Overworld at " + lastOverworldPos.getX() + ", " + lastOverworldPos.getY() + ", " + lastOverworldPos.getZ());
 			} // if, else
 			
 			if( Graveyardsandghosts.CONFIG.playersStartWorldsAsGhosts && !player.isCreative() && !player.isSpectator() ) {
