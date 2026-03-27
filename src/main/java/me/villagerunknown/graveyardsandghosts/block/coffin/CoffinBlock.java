@@ -52,9 +52,9 @@ public class CoffinBlock extends BlockWithEntity implements Waterloggable {
 	public static final int TOTAL_MODELS = 2;
 	public static final IntProperty MODEL = IntProperty.of("model", 0, TOTAL_MODELS - 1 );
 	
-	public static final EnumProperty<BedPart> PART = Properties.BED_PART;
-	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
-	public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
+	public static final EnumProperty<BedPart> PART;
+	public static final BooleanProperty WATERLOGGED;
+	public static final DirectionProperty FACING;
 	
 	public static final MapCodec<CoffinBlock> CODEC = createCodec(CoffinBlock::new);
 	
@@ -100,7 +100,7 @@ public class CoffinBlock extends BlockWithEntity implements Waterloggable {
 			};
 			return shape;
 		}
-		return SHAPE_EAST;
+		return SHAPE_NORTH;
 	}
 	
 	@Override
@@ -286,6 +286,12 @@ public class CoffinBlock extends BlockWithEntity implements Waterloggable {
 	@Override
 	public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
 		return validateTicker( type, graveyardBlocksFeature.BLOCK_ENTITY_TYPES.get("coffin_block"), CoffinBlockEntity::tick );
+	}
+	
+	static{
+		PART = Properties.BED_PART;
+		WATERLOGGED = Properties.WATERLOGGED;
+		FACING = HorizontalFacingBlock.FACING;
 	}
 	
 }

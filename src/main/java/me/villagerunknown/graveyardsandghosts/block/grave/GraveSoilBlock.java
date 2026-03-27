@@ -34,6 +34,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldView;
 import net.minecraft.world.explosion.Explosion;
 import org.jetbrains.annotations.Nullable;
 
@@ -304,7 +305,7 @@ public class GraveSoilBlock extends BlockWithEntity implements BlockEntityProvid
 		if( MobHelper.spawnMobByDimension( pos, true ) ) {
 			target.playSound(SoundEvents.ENTITY_WARDEN_DIG);
 			if( target.isPlayer() ) {
-				target.sendMessage(Text.of("You disturbed a grave!"));
+				target.sendMessage(Text.translatable( "block.villagerunknown-graveyardsandghosts.grave_soil.disturbed" ));
 			} // if
 		} else {
 			applyStatusEffect( world, target );
@@ -337,4 +338,5 @@ public class GraveSoilBlock extends BlockWithEntity implements BlockEntityProvid
 	protected BlockRenderType getRenderType(BlockState state) {
 		return BlockRenderType.MODEL;
 	}
+	
 }

@@ -6,14 +6,18 @@ import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.*;
+import net.minecraft.util.BlockMirror;
+import net.minecraft.util.BlockRotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
+import net.minecraft.world.WorldView;
 
 public class StatueBlock extends HorizontalFacingBlock implements Waterloggable {
 	
@@ -25,8 +29,8 @@ public class StatueBlock extends HorizontalFacingBlock implements Waterloggable 
 	public static final int TOTAL_MODELS = 2;
 	public static final IntProperty RANDOM_MODEL = IntProperty.of("random_model", 0, TOTAL_MODELS - 1);
 	
-	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
-	public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
+	public static final BooleanProperty WATERLOGGED;
+	public static final DirectionProperty FACING;
 	
 	public static final MapCodec<StatueBlock> CODEC = createCodec(StatueBlock::new);
 	
@@ -52,7 +56,7 @@ public class StatueBlock extends HorizontalFacingBlock implements Waterloggable 
 		return this.getDefaultState()
 				.with(FACING, ctx.getHorizontalPlayerFacing())
 				.with(RANDOM_MODEL, Random.create().nextInt(TOTAL_MODELS))
-				.with(WATERLOGGED, false);
+				.with(WATERLOGGED, ctx.getWorld().getBlockState( ctx.getBlockPos() ).getBlock().equals( Blocks.WATER ) );
 	}
 	
 	@Override
@@ -71,7 +75,7 @@ public class StatueBlock extends HorizontalFacingBlock implements Waterloggable 
 			};
 			return shape;
 		}
-		return SHAPE_EAST;
+		return SHAPE_NORTH;
 	}
 	
 	@Override
@@ -96,9 +100,22 @@ public class StatueBlock extends HorizontalFacingBlock implements Waterloggable 
 		return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
 	}
 	
+	protected BlockState rotate(BlockState state, BlockRotation rotation) {
+		return (BlockState)state.with(FACING, rotation.rotate((Direction)state.get(FACING)));
+	}
+	
+	protected BlockState mirror(BlockState state, BlockMirror mirror) {
+		return state.rotate(mirror.getRotation((Direction)state.get(FACING)));
+	}
+	
 	@Override
 	protected MapCodec<? extends StatueBlock> getCodec() {
 		return CODEC;
+	}
+	
+	static{
+		WATERLOGGED = Properties.WATERLOGGED;
+		FACING = HorizontalFacingBlock.FACING;
 	}
 	
 }

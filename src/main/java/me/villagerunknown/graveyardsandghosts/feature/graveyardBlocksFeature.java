@@ -13,6 +13,7 @@ import me.villagerunknown.graveyardsandghosts.block.statue.TwoTallStatueBlock;
 import me.villagerunknown.graveyardsandghosts.block.tombstone.BrokenTombstoneBlock;
 import me.villagerunknown.graveyardsandghosts.block.tombstone.CarvedTombstoneBlock;
 import me.villagerunknown.graveyardsandghosts.block.tombstone.TombstoneBlock;
+import me.villagerunknown.platform.util.RegistryUtil;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
@@ -192,14 +193,7 @@ public class graveyardBlocksFeature {
 	public static Map<String, Block> COFFINS = new HashMap<>();
 	public static Map<String, Block> RESURRECTION_STATUES = new HashMap<>();
 	
-	public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(Graveyardsandghosts.MOD_ID, "item_group"));
-	public static final ItemGroup CUSTOM_ITEM_GROUP = FabricItemGroup.builder()
-			.icon(() -> new ItemStack(Items.SKELETON_SKULL))
-			.displayName(Text.translatable("itemGroup." + MOD_ID))
-			.build();
-	
 	public static void execute() {
-		registerItemGroup();
 		registerBlocks();
 	}
 	
@@ -368,29 +362,20 @@ public class graveyardBlocksFeature {
 		STATUES.put( blockType + "_dragon_egg_statue", BLOCKS.get( blockType + "_dragon_egg_statue" ) );
 	}
 	
-	private static void registerItemGroup() {
-		Registry.register(Registries.ITEM_GROUP, CUSTOM_ITEM_GROUP_KEY, CUSTOM_ITEM_GROUP);
-	}
-	
 	public static Block registerBlock(Block block, String name, boolean shouldRegisterItem) {
-		Identifier id = Identifier.of(MOD_ID, name);
-		Block registeredBlock = Registry.register(Registries.BLOCK, id, block);
-		
 		// Register item
 		if (shouldRegisterItem) {
 			Item.Settings itemSettings = new Item.Settings();
 			
-			if( registeredBlock.asItem().getDefaultStack().isIn( TagKey.of( RegistryKeys.ITEM, Identifier.of( MOD_ID, "fireproof" ) ) ) ) {
-				itemSettings = itemSettings.fireproof();
+			if( name.toLowerCase().contains("netherite") ) {
+				itemSettings.fireproof();
 			} // if
 			
-			BlockItem blockItem = new BlockItem(registeredBlock, itemSettings);
-			BlockItem registeredBlockItem = Registry.register(Registries.ITEM, id, blockItem);
-			
-			ItemGroupEvents.modifyEntriesEvent(CUSTOM_ITEM_GROUP_KEY).register(fabricItemGroupEntries -> fabricItemGroupEntries.add( registeredBlockItem ));
-		}
+			RegistryUtil.addItemToGroup( Graveyardsandghosts.CUSTOM_ITEM_GROUP_KEY, RegistryUtil.registerItem( name, new BlockItem( block, itemSettings ), MOD_ID ) );
+		} // if
 		
-		return registeredBlock;
+		// Register block
+		return RegistryUtil.registerBlock( name, block, MOD_ID );
 	}
 	
 	public static void registerBlockEntityTypes() {

@@ -81,6 +81,7 @@
   "text.villagerunknown-graveyardsandghosts.screen.message": "Would you like to resurrect?",
 
   "block.villagerunknown-graveyardsandghosts.grave_soil": "Grave Soil",
+  "block.villagerunknown-graveyardsandghosts.grave_soil.disturbed": "You disturbed a grave!",
 
   "block.villagerunknown-graveyardsandghosts.emerald_tombstone": "Emerald Tombstone",
   "block.villagerunknown-graveyardsandghosts.emerald_rounded_tombstone": "Rounded Emerald Tombstone",

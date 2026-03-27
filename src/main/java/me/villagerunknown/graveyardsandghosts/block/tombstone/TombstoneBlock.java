@@ -8,6 +8,8 @@ import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.*;
+import net.minecraft.util.BlockMirror;
+import net.minecraft.util.BlockRotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
@@ -22,8 +24,8 @@ public class TombstoneBlock extends HorizontalFacingBlock implements Waterloggab
 	protected static final VoxelShape SHAPE_SOUTH = Block.createCuboidShape(1.0, 0.0, 13.0, 15.0, 16.0, 15.0);
 	protected static final VoxelShape SHAPE_WEST = Block.createCuboidShape(1.0, 0.0, 1.0, 3.0, 16.0, 15.0);
 	
-	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
-	public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
+	public static final BooleanProperty WATERLOGGED;
+	public static final DirectionProperty FACING;
 	
 	public static final MapCodec<TombstoneBlock> CODEC = createCodec(TombstoneBlock::new);
 	
@@ -49,7 +51,7 @@ public class TombstoneBlock extends HorizontalFacingBlock implements Waterloggab
 	public BlockState getPlacementState(ItemPlacementContext ctx) {
 		return this.getDefaultState()
 				.with(FACING, ctx.getHorizontalPlayerFacing())
-				.with(WATERLOGGED, false);
+				.with(WATERLOGGED, ctx.getWorld().getBlockState( ctx.getBlockPos() ).getBlock().equals( Blocks.WATER ) );
 	}
 	
 	@Override
@@ -73,7 +75,7 @@ public class TombstoneBlock extends HorizontalFacingBlock implements Waterloggab
 			};
 			return shape;
 		}
-		return SHAPE_EAST;
+		return SHAPE_NORTH;
 	}
 	
 	@Override
@@ -97,4 +99,18 @@ public class TombstoneBlock extends HorizontalFacingBlock implements Waterloggab
 		
 		return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
 	}
+	
+	protected BlockState rotate(BlockState state, BlockRotation rotation) {
+		return (BlockState)state.with(FACING, rotation.rotate((Direction)state.get(FACING)));
+	}
+	
+	protected BlockState mirror(BlockState state, BlockMirror mirror) {
+		return state.rotate(mirror.getRotation((Direction)state.get(FACING)));
+	}
+	
+	static{
+		WATERLOGGED = Properties.WATERLOGGED;
+		FACING = HorizontalFacingBlock.FACING;
+	}
+	
 }

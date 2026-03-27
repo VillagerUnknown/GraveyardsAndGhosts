@@ -74,7 +74,7 @@ public class ResurrectionBlock extends HorizontalFacingBlock implements BlockEnt
 			};
 			return shape;
 		}
-		return SHAPE_EAST;
+		return SHAPE_NORTH;
 	}
 	
 	@Override

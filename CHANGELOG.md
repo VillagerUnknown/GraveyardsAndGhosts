@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.1+1.21.1]
+
+This update resolves issues with crashes and block-picking.
+
+### Fixed
+
+- Fixed registration of fireproof items. Netherite items are now fireproof as intended.
+- Fixed block-picking by correcting the registration of fireproof items.
+- Fixed a crash when attempting to save villager data by correcting the registration of fireproof items.
+
 ## [1.3.0+1.21.1]
 
 This update resolves stuttering issues and improves existing features.

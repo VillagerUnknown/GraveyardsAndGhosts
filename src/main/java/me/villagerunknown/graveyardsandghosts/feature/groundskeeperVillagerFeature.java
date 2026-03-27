@@ -2,10 +2,12 @@ package me.villagerunknown.graveyardsandghosts.feature;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import me.villagerunknown.graveyardsandghosts.Graveyardsandghosts;
 import me.villagerunknown.platform.util.VillagerUtil;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.object.builder.v1.world.poi.PointOfInterestHelper;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
@@ -25,6 +27,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.function.Predicate;
 
+import static me.villagerunknown.graveyardsandghosts.Graveyardsandghosts.LOGGER;
 import static me.villagerunknown.graveyardsandghosts.Graveyardsandghosts.MOD_ID;
 
 public class groundskeeperVillagerFeature {
@@ -52,7 +55,7 @@ public class groundskeeperVillagerFeature {
 		// # Level 1 - Tombstones
 		TradeOfferHelper.registerVillagerOffers( GROUNDSKEEPER.PROFESSION, 1, f -> {
 			graveyardBlocksFeature.TOMBSTONES.forEach( ( id, block ) -> {
-				f.add( (entity, random) -> VillagerUtil.sellTradeOffer( 1, new TradedItem( Items.EMERALD, 6 ), new ItemStack( block, 8 ) ) );
+				f.add((entity, random) -> VillagerUtil.sellTradeOffer(1, new TradedItem(Items.EMERALD, 6), new ItemStack( block, 8 ) ) );
 			} );
 		} );
 		

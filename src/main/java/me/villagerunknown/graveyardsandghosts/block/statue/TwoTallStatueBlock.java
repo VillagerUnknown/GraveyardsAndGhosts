@@ -14,6 +14,7 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
+import net.minecraft.util.BlockMirror;
 import net.minecraft.util.BlockRotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -30,12 +31,7 @@ import static me.villagerunknown.graveyardsandghosts.feature.ghostRespawnFeature
 
 public class TwoTallStatueBlock extends StatueBlock {
 	
-	protected static final VoxelShape SHAPE_NORTH = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 32.0, 16.0);
-	protected static final VoxelShape SHAPE_EAST = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 32.0, 16.0);
-	protected static final VoxelShape SHAPE_SOUTH = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 32.0, 16.0);
-	protected static final VoxelShape SHAPE_WEST = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 32.0, 16.0);
-	
-	public static final EnumProperty<DoubleBlockHalf> HALF = Properties.DOUBLE_BLOCK_HALF;
+	public static final EnumProperty<DoubleBlockHalf> HALF;
 	
 	public static final MapCodec<TwoTallStatueBlock> CODEC = createCodec(TwoTallStatueBlock::new);
 	
@@ -81,10 +77,6 @@ public class TwoTallStatueBlock extends StatueBlock {
 	
 	protected FluidState getFluidState(BlockState state) {
 		return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
-	}
-	
-	protected boolean isTransparent(BlockState state, BlockView world, BlockPos pos) {
-		return !(Boolean)state.get(WATERLOGGED);
 	}
 	
 	@Override
@@ -147,6 +139,10 @@ public class TwoTallStatueBlock extends StatueBlock {
 	@Override
 	protected MapCodec<? extends TwoTallStatueBlock> getCodec() {
 		return CODEC;
+	}
+	
+	static{
+		HALF = Properties.DOUBLE_BLOCK_HALF;
 	}
 	
 }

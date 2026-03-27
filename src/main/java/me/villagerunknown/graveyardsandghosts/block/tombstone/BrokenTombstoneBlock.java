@@ -38,7 +38,7 @@ public class BrokenTombstoneBlock extends TombstoneBlock {
 	}
 	
 	@Override
-	protected MapCodec<? extends BrokenTombstoneBlock> getCodec() {
+	protected MapCodec<BrokenTombstoneBlock> getCodec() {
 		return CODEC;
 	}
 	
@@ -65,7 +65,7 @@ public class BrokenTombstoneBlock extends TombstoneBlock {
 			};
 			return shape;
 		}
-		return SHAPE_EAST;
+		return SHAPE_NORTH;
 	}
 	
 }
