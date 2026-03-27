@@ -6,6 +6,10 @@ All notable changes to this project will be documented in this file.
 
 This update resolves issues with crashes and block-picking.
 
+### Changed
+
+- Changed supported Platform version to 1.3.3.
+
 ### Fixed
 
 - Fixed registration of fireproof items. Netherite items are now fireproof as intended.
