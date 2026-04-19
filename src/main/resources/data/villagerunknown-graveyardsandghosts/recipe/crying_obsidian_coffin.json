@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "###",
     "#C#",
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:crying_obsidian"
-    },
-    "C": {
-      "item": "minecraft:chest"
-    }
+    "#": "minecraft:crying_obsidian",
+    "C": "minecraft:chest"
   },
   "result": {
     "id": "villagerunknown-graveyardsandghosts:crying_obsidian_coffin",

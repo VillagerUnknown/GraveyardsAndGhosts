@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "###",
     "#C#",
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:polished_tuff"
-    },
-    "C": {
-      "item": "minecraft:chest"
-    }
+    "#": "minecraft:polished_tuff",
+    "C": "minecraft:chest"
   },
   "result": {
     "id": "villagerunknown-graveyardsandghosts:polished_tuff_coffin",

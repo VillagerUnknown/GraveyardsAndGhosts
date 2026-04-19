@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "C",
     "#",
     "#"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:cobblestone"
-    },
-    "C": {
-      "item": "minecraft:totem_of_undying"
-    }
+    "#": "minecraft:cobblestone",
+    "C": "minecraft:totem_of_undying"
   },
   "result": {
     "id": "villagerunknown-graveyardsandghosts:cobblestone_resurrection_statue",

@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:stripped_cherry_wood"
-  },
+  "ingredient": "minecraft:stripped_cherry_wood",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:cherry_wolf_sitting_statue",
     "count": 1

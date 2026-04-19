@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:amethyst_block"
-  },
+  "ingredient": "minecraft:amethyst_block",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:amethyst_cross_statue",
     "count": 1

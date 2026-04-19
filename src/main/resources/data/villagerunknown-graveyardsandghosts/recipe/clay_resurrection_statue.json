@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "C",
     "#",
     "#"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:clay"
-    },
-    "C": {
-      "item": "minecraft:totem_of_undying"
-    }
+    "#": "minecraft:clay",
+    "C": "minecraft:totem_of_undying"
   },
   "result": {
     "id": "villagerunknown-graveyardsandghosts:clay_resurrection_statue",

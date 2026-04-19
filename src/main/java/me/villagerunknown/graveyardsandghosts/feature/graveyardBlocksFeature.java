@@ -16,6 +16,7 @@ import me.villagerunknown.graveyardsandghosts.block.tombstone.TombstoneBlock;
 import me.villagerunknown.platform.util.RegistryUtil;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -31,6 +32,7 @@ import net.minecraft.util.Identifier;
 
 import java.util.*;
 
+import static me.villagerunknown.graveyardsandghosts.Graveyardsandghosts.CUSTOM_ITEM_GROUP_KEY;
 import static me.villagerunknown.graveyardsandghosts.Graveyardsandghosts.MOD_ID;
 
 public class graveyardBlocksFeature {
@@ -257,8 +259,10 @@ public class graveyardBlocksFeature {
 	}
 	
 	private static void register_tombstone( String blockType, AbstractBlock.Settings settings ) {
-		BLOCKS.put( blockType + "_tombstone", registerBlock( new TombstoneBlock( settings ), blockType + "_tombstone", true) );
-		BLOCKS.put( blockType + "_rounded_tombstone", registerBlock( new TombstoneBlock( settings ), blockType + "_rounded_tombstone", true) );
+		settings.registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID,blockType)));
+		
+		BLOCKS.put( blockType + "_tombstone", registerBlock( new TombstoneBlock(settings), blockType + "_tombstone", true) );
+		BLOCKS.put( blockType + "_rounded_tombstone", registerBlock( new TombstoneBlock(settings), blockType + "_rounded_tombstone", true) );
 //		BLOCKS.put( blockType + "_tombstone", registerBlock( new TombstoneSignBlock(), blockType + "_tombstone", true) );
 		
 		TOMBSTONES.put( blockType + "_tombstone", BLOCKS.get( blockType + "_tombstone" ) );
@@ -266,10 +270,14 @@ public class graveyardBlocksFeature {
 	}
 	
 	private static void register_broken_tombstone( String blockType, AbstractBlock.Settings settings ) {
-		BLOCKS.put( "broken_" + blockType + "_tombstone", registerBlock( new BrokenTombstoneBlock( settings ), "broken_" + blockType + "_tombstone", true) );
+		settings.registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID,blockType)));
+		
+		BLOCKS.put( "broken_" + blockType + "_tombstone", registerBlock( new BrokenTombstoneBlock(settings), "broken_" + blockType + "_tombstone", true) );
 	}
 	
 	private static void register_coffin( String blockType, AbstractBlock.Settings settings ) {
+		settings.registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID,blockType)));
+		
 		BLOCKS.put( blockType + "_coffin", registerBlock( new CoffinBlock( settings ), blockType + "_coffin", true) );
 		
 		COFFINS.put( blockType + "_coffin", BLOCKS.get( blockType + "_coffin" ) );
@@ -363,19 +371,18 @@ public class graveyardBlocksFeature {
 	}
 	
 	public static Block registerBlock(Block block, String name, boolean shouldRegisterItem) {
+		Identifier id = Identifier.of(MOD_ID, name);
+		
 		// Register item
 		if (shouldRegisterItem) {
-			Item.Settings itemSettings = new Item.Settings();
+			BlockItem blockItem = new BlockItem(block, new Item.Settings().useBlockPrefixedTranslationKey().registryKey(RegistryKey.of(RegistryKeys.ITEM, id)));
+			Registry.register(Registries.ITEM, id, blockItem);
 			
-			if( name.toLowerCase().contains("netherite") ) {
-				itemSettings.fireproof();
-			} // if
-			
-			RegistryUtil.addItemToGroup( Graveyardsandghosts.CUSTOM_ITEM_GROUP_KEY, RegistryUtil.registerItem( name, new BlockItem( block, itemSettings ), MOD_ID ) );
-		} // if
+			ItemGroupEvents.modifyEntriesEvent(CUSTOM_ITEM_GROUP_KEY).register(fabricItemGroupEntries -> fabricItemGroupEntries.add( blockItem ));
+		}
 		
 		// Register block
-		return RegistryUtil.registerBlock( name, block, MOD_ID );
+		return Registry.register(Registries.BLOCK, id, block);
 	}
 	
 	public static void registerBlockEntityTypes() {
@@ -387,7 +394,7 @@ public class graveyardBlocksFeature {
 	
 	private static void registerGraveSoilBlockEntities() {
 		// # Explicitly define each engraved tombstone block
-		BlockEntityType.Builder<GraveSoilBlockEntity> builder = BlockEntityType.Builder.create(
+		FabricBlockEntityTypeBuilder <GraveSoilBlockEntity> builder = FabricBlockEntityTypeBuilder.create(
 				GraveSoilBlockEntity::new,
 				BLOCKS.get("grave_soil")
 		);
@@ -404,7 +411,7 @@ public class graveyardBlocksFeature {
 	
 	private static void registerTombstoneBlockEntities() {
 		// # Explicitly define each tombstone block
-		BlockEntityType.Builder<TombstoneBlockEntity> builder = BlockEntityType.Builder.create(
+		FabricBlockEntityTypeBuilder <TombstoneBlockEntity> builder = FabricBlockEntityTypeBuilder .create(
 				TombstoneBlockEntity::new,
 				BLOCKS.get("acacia_tombstone")
 		);
@@ -421,7 +428,7 @@ public class graveyardBlocksFeature {
 	
 	private static void registerCoffinBlockEntities() {
 		// # Explicitly define each resurrection statue block
-		BlockEntityType.Builder<CoffinBlockEntity> builder = BlockEntityType.Builder.create(
+		FabricBlockEntityTypeBuilder <CoffinBlockEntity> builder = FabricBlockEntityTypeBuilder .create(
 				CoffinBlockEntity::new,
 				BLOCKS.get("moss_coffin"),
 				BLOCKS.get("clay_coffin"),
@@ -535,7 +542,7 @@ public class graveyardBlocksFeature {
 	
 	private static void registerResurrectionBlockEntities() {
 		// # Explicitly define each resurrection statue block
-		BlockEntityType.Builder<ResurrectionBlockEntity> builder = BlockEntityType.Builder.create(
+		FabricBlockEntityTypeBuilder <ResurrectionBlockEntity> builder = FabricBlockEntityTypeBuilder .create(
 				ResurrectionBlockEntity::new,
 				BLOCKS.get("moss_resurrection_statue"),
 				BLOCKS.get("mud_resurrection_statue"),

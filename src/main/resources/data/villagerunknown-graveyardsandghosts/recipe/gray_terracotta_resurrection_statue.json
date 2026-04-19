@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "C",
     "#",
     "#"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:gray_terracotta"
-    },
-    "C": {
-      "item": "minecraft:totem_of_undying"
-    }
+    "#": "minecraft:gray_terracotta",
+    "C": "minecraft:totem_of_undying"
   },
   "result": {
     "id": "villagerunknown-graveyardsandghosts:gray_terracotta_resurrection_statue",

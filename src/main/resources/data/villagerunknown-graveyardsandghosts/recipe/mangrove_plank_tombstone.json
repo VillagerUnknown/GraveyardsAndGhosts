@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:mangrove_planks"
-  },
+  "ingredient": "minecraft:mangrove_planks",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:mangrove_plank_tombstone",
     "count": 6

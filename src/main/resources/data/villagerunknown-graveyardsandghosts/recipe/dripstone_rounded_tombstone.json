@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:dripstone_block"
-  },
+  "ingredient": "minecraft:dripstone_block",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:dripstone_rounded_tombstone",
     "count": 6

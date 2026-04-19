@@ -6,6 +6,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import org.jetbrains.annotations.Nullable;
 
 public class GhostEffect extends StatusEffect {
@@ -24,31 +25,28 @@ public class GhostEffect extends StatusEffect {
 		return true;
 	}
 	
-	@Override
-	public void applyInstantEffect(@Nullable Entity source, @Nullable Entity attacker, LivingEntity target, int amplifier, double proximity) {
+	public void applyInstantEffect(ServerWorld world, @Nullable Entity effectEntity, @Nullable Entity attacker, LivingEntity target, int amplifier, double proximity) {
 		if( target instanceof ServerPlayerEntity ) {
 			playerGhostFeature.applyGhostAbilities(target, amplifier);
 		} // if
 		
-		super.applyInstantEffect(source, attacker, target, amplifier, proximity);
+		super.applyInstantEffect(world, effectEntity, attacker, target, amplifier, proximity);
 	}
 	
-	@Override
-	public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
+	public boolean applyUpdateEffect(ServerWorld world, LivingEntity entity, int amplifier) {
 		if( entity instanceof ServerPlayerEntity ) {
 			playerGhostFeature.applyGhostAbilities(entity, amplifier);
 		} // if
 		
-		return super.applyUpdateEffect(entity, amplifier);
+		return super.applyUpdateEffect(world, entity, amplifier);
 	}
 	
-	@Override
-	public void onEntityRemoval(LivingEntity entity, int amplifier, Entity.RemovalReason reason) {
+	public void onEntityRemoval(ServerWorld world, LivingEntity entity, int amplifier, Entity.RemovalReason reason) {
 		if( entity instanceof ServerPlayerEntity ) {
 			playerGhostFeature.applyHumanAbilities(entity);
 		} // if
 		
-		super.onEntityRemoval(entity, amplifier, reason);
+		super.onEntityRemoval(world, entity, amplifier, reason);
 	}
 	
 }

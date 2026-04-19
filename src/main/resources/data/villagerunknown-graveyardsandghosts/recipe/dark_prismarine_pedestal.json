@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:dark_prismarine"
-  },
+  "ingredient": "minecraft:dark_prismarine",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:dark_prismarine_pedestal",
     "count": 1

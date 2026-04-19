@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:polished_deepslate"
-  },
+  "ingredient": "minecraft:polished_deepslate",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:polished_deepslate_pillager_celebrating_statue",
     "count": 1

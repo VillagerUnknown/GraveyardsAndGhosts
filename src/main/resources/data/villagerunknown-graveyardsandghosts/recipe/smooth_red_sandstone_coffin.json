@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "###",
     "#C#",
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:smooth_red_sandstone"
-    },
-    "C": {
-      "item": "minecraft:chest"
-    }
+    "#": "minecraft:smooth_red_sandstone",
+    "C": "minecraft:chest"
   },
   "result": {
     "id": "villagerunknown-graveyardsandghosts:smooth_red_sandstone_coffin",

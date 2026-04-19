@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:emerald_block"
-  },
+  "ingredient": "minecraft:emerald_block",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:emerald_cross_statue",
     "count": 1

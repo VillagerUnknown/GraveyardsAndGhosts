@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "###",
     "#C#",
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:lime_concrete"
-    },
-    "C": {
-      "item": "minecraft:chest"
-    }
+    "#": "minecraft:lime_concrete",
+    "C": "minecraft:chest"
   },
   "result": {
     "id": "villagerunknown-graveyardsandghosts:lime_concrete_coffin",

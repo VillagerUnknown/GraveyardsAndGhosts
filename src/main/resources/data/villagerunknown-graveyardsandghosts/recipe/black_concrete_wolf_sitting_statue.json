@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:black_concrete"
-  },
+  "ingredient": "minecraft:black_concrete",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:black_concrete_wolf_sitting_statue",
     "count": 1

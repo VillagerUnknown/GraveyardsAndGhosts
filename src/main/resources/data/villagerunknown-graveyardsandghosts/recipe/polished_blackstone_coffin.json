@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "###",
     "#C#",
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:polished_blackstone"
-    },
-    "C": {
-      "item": "minecraft:chest"
-    }
+    "#": "minecraft:polished_blackstone",
+    "C": "minecraft:chest"
   },
   "result": {
     "id": "villagerunknown-graveyardsandghosts:polished_blackstone_coffin",

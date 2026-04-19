@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "###",
     "#C#",
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:packed_mud"
-    },
-    "C": {
-      "item": "minecraft:chest"
-    }
+    "#": "minecraft:packed_mud",
+    "C": "minecraft:chest"
   },
   "result": {
     "id": "villagerunknown-graveyardsandghosts:packed_mud_coffin",

@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:white_concrete"
-  },
+  "ingredient": "minecraft:white_concrete",
   "result": {
     "id": "villagerunknown-graveyardsandghosts:white_concrete_dragon_egg_statue",
     "count": 1
