@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.1+1.21.2]
+
+### Changed
+
+- Changed supported Minecraft version to 1.21.2.
+
 ## [1.3.1+1.21.1]
 
 This update resolves issues with crashes and block-picking.
