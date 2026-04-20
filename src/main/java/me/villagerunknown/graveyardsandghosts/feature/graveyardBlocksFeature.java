@@ -259,10 +259,8 @@ public class graveyardBlocksFeature {
 	}
 	
 	private static void register_tombstone( String blockType, AbstractBlock.Settings settings ) {
-		settings.registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID,blockType)));
-		
-		BLOCKS.put( blockType + "_tombstone", registerBlock( new TombstoneBlock(settings), blockType + "_tombstone", true) );
-		BLOCKS.put( blockType + "_rounded_tombstone", registerBlock( new TombstoneBlock(settings), blockType + "_rounded_tombstone", true) );
+		BLOCKS.put( blockType + "_tombstone", registerBlock( new TombstoneBlock(settings.registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID,blockType + "_tombstone")))), blockType + "_tombstone", true) );
+		BLOCKS.put( blockType + "_rounded_tombstone", registerBlock( new TombstoneBlock(settings.registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID,blockType + "_rounded_tombstone")))), blockType + "_rounded_tombstone", true) );
 //		BLOCKS.put( blockType + "_tombstone", registerBlock( new TombstoneSignBlock(), blockType + "_tombstone", true) );
 		
 		TOMBSTONES.put( blockType + "_tombstone", BLOCKS.get( blockType + "_tombstone" ) );
@@ -270,13 +268,13 @@ public class graveyardBlocksFeature {
 	}
 	
 	private static void register_broken_tombstone( String blockType, AbstractBlock.Settings settings ) {
-		settings.registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID,blockType)));
+		settings.registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID,"broken_" + blockType + "_tombstone")));
 		
 		BLOCKS.put( "broken_" + blockType + "_tombstone", registerBlock( new BrokenTombstoneBlock(settings), "broken_" + blockType + "_tombstone", true) );
 	}
 	
 	private static void register_coffin( String blockType, AbstractBlock.Settings settings ) {
-		settings.registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID,blockType)));
+		settings.registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID,blockType + "_coffin")));
 		
 		BLOCKS.put( blockType + "_coffin", registerBlock( new CoffinBlock( settings ), blockType + "_coffin", true) );
 		
