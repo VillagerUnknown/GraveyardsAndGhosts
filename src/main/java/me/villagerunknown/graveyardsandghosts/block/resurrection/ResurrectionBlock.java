@@ -46,7 +46,7 @@ public class ResurrectionBlock extends HorizontalFacingBlock implements BlockEnt
 		);
 	}
 	
-	protected ResurrectionBlock(AbstractBlock.Settings settings) {
+	protected ResurrectionBlock(Settings settings) {
 		super(settings);
 	}
 	
