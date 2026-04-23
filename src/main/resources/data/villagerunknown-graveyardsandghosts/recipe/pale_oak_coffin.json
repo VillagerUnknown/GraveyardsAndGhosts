@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###",
+    "#C#",
+    "###"
+  ],
+  "key": {
+    "#": "minecraft:stripped_pale_oak_wood",
+    "C": "minecraft:chest"
+  },
+  "result": {
+    "id": "villagerunknown-graveyardsandghosts:pale_oak_coffin",
+    "count": 1
+  }
+}

@@ -11,7 +11,6 @@
 
   "text.autoconfig.villagerunknown-graveyardsandghosts.category.Graveyards": "Graveyards",
 
-  "text.autoconfig.villagerunknown-graveyardsandghosts.option.enableGraveyardRespawnPoints": "Enable Graveyard Respawn Points",
   "text.autoconfig.villagerunknown-graveyardsandghosts.option.graveyardDiscoveryRadius": "Graveyard Discovery Radius",
   "text.autoconfig.villagerunknown-graveyardsandghosts.option.enableGraveyardBlockSounds": "Enable Graveyard Block Sounds",
   "text.autoconfig.villagerunknown-graveyardsandghosts.option.enableGraveyardBlockParticles": "Enable Graveyard Block Particles",
@@ -25,7 +24,6 @@
 
   "text.autoconfig.villagerunknown-graveyardsandghosts.option.playersStartWorldsAsGhosts": "Players Start Worlds as Ghosts",
   "text.autoconfig.villagerunknown-graveyardsandghosts.option.enablePlayerGhostOnDeath": "Enable Player Ghost on Death",
-  "text.autoconfig.villagerunknown-graveyardsandghosts.option.enablePlayerGhostParticles": "Enable Player Ghost Particles",
   "text.autoconfig.villagerunknown-graveyardsandghosts.option.preventGhostCollisions": "Prevent Ghost Collisions",
   "text.autoconfig.villagerunknown-graveyardsandghosts.option.preventGhostBlockAttack": "Prevent Ghost Block Attack",
   "text.autoconfig.villagerunknown-graveyardsandghosts.option.preventGhostBlockUse": "Prevent Ghost Block Use",
@@ -53,14 +51,8 @@
 
   "container.villagerunknown-graveyardsandghosts.coffin": "Coffin",
 
-  "block.item.villagerunknown-graveyardsandghosts.blast_resistant": "Blast Resistant",
-  "block.item.villagerunknown-graveyardsandghosts.ice": "Ice",
-  "block.item.villagerunknown-graveyardsandghosts.netherite": "Netherite",
-  "block.item.villagerunknown-graveyardsandghosts.snow": "Snow",
-  "block.item.villagerunknown-graveyardsandghosts.wood": "Wood",
-
-  "tag.item.villagerunknown-graveyardsandghosts.fireproof": "Fireproof",
   "tag.item.villagerunknown-graveyardsandghosts.graveyard": "Graveyard",
+  "tag.item.villagerunknown-graveyardsandghosts.fireproof": "Fireproof",
 
   "itemGroup.villagerunknown-graveyardsandghosts": "Graveyards & Ghosts",
 
@@ -69,20 +61,7 @@
   "item.minecraft.splash_potion.effect.ghost": "Ghost Splash Potion",
   "item.minecraft.lingering.effect.ghost": "Lingering Ghost Potion",
 
-  "text.villagerunknown-graveyardsandghosts.spawn.ghost": "You're a ghost!",
-  "text.villagerunknown-graveyardsandghosts.spawn.start": "Go to a graveyard to start your adventure.",
-
-  "text.villagerunknown-graveyardsandghosts.respawn.respawned": "You respawned as a ghost!",
-  "text.villagerunknown-graveyardsandghosts.respawn.instructions": "Go to your corpse or a graveyard to return to normal.",
-
-  "text.villagerunknown-graveyardsandghosts.effect.remove": "Resurrect at a grave or your corpse.",
-  "text.villagerunknown-graveyardsandghosts.effect.solid": "Stand on a solid block to resurrect.",
-
-  "text.villagerunknown-graveyardsandghosts.screen.title": "Resurrect",
-  "text.villagerunknown-graveyardsandghosts.screen.message": "Would you like to resurrect?",
-
   "block.villagerunknown-graveyardsandghosts.grave_soil": "Grave Soil",
-  "block.villagerunknown-graveyardsandghosts.grave_soil.disturbed": "You disturbed a grave!",
 
   "block.villagerunknown-graveyardsandghosts.emerald_tombstone": "Emerald Tombstone",
   "block.villagerunknown-graveyardsandghosts.emerald_rounded_tombstone": "Rounded Emerald Tombstone",
@@ -1204,6 +1183,62 @@
   "block.villagerunknown-graveyardsandghosts.dark_oak_piglin_axe_statue": "Dark Oak Piglin Axe Statue",
   "block.villagerunknown-graveyardsandghosts.dark_oak_dragon_egg_statue": "Dark Oak Dragon Egg Statue",
 
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_tombstone": "Pale Oak Plank Tombstone",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_rounded_tombstone": "Rounded Pale Oak Plank Tombstone",
+  "block.villagerunknown-graveyardsandghosts.broken_pale_oak_plank_tombstone": "Broken Pale Oak Plank Tombstone",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_coffin": "Pale Oak Plank Coffin",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_pedestal": "Pale Oak Plank Pedestal",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_thin_pedestal": "Thin Pale Oak Plank Pedestal",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_statue": "Pale Oak Plank Obelisk Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_resurrection_statue": "Pale Oak Plank Resurrection Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_cross_statue": "Pale Oak Plank Cross Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_celtic_cross_statue": "Pale Oak Plank Celtic Cross Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_player_statue": "Pale Oak Plank Player Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_player_exploring_statue": "Pale Oak Plank Player Exploring Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_player_building_statue": "Pale Oak Plank Player Building Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_player_fighting_statue": "Pale Oak Plank Player Fighting Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_player_reaper_statue": "Pale Oak Plank Player Reaper Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_player_angel_statue": "Pale Oak Plank Player Angel Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_cat_statue": "Pale Oak Plank Cat Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_cat_sitting_statue": "Pale Oak Plank Cat Sitting Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_wolf_statue": "Pale Oak Plank Wolf Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_wolf_sitting_statue": "Pale Oak Plank Wolf Sitting Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_villager_statue": "Pale Oak Plank Villager Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_villager_poppy_statue": "Pale Oak Plank Villager Poppy Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_pillager_statue": "Pale Oak Plank Pillager Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_pillager_celebrating_statue": "Pale Oak Plank Pillager Celebrating Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_piglin_statue": "Pale Oak Plank Piglin Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_piglin_axe_statue": "Pale Oak Plank Piglin Axe Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_plank_dragon_egg_statue": "Pale Oak Plank Dragon Egg Statue",
+
+  "block.villagerunknown-graveyardsandghosts.pale_oak_tombstone": "Pale Oak Tombstone",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_rounded_tombstone": "Rounded Pale Oak Tombstone",
+  "block.villagerunknown-graveyardsandghosts.broken_pale_oak_tombstone": "Broken Pale Oak Tombstone",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_coffin": "Pale Oak Coffin",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_pedestal": "Pale Oak Pedestal",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_thin_pedestal": "Thin Pale Oak Pedestal",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_statue": "Pale Oak Obelisk Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_resurrection_statue": "Pale Oak Resurrection Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_cross_statue": "Pale Oak Cross Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_celtic_cross_statue": "Pale Oak Celtic Cross Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_player_statue": "Pale Oak Player Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_player_exploring_statue": "Pale Oak Player Exploring Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_player_building_statue": "Pale Oak Player Building Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_player_fighting_statue": "Pale Oak Player Fighting Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_player_reaper_statue": "Pale Oak Player Reaper Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_player_angel_statue": "Pale Oak Player Angel Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_cat_statue": "Pale Oak Cat Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_cat_sitting_statue": "Pale Oak Cat Sitting Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_wolf_statue": "Pale Oak Wolf Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_wolf_sitting_statue": "Pale Oak Wolf Sitting Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_villager_statue": "Pale Oak Villager Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_villager_poppy_statue": "Pale Oak Villager Poppy Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_pillager_statue": "Pale Oak Pillager Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_pillager_celebrating_statue": "Pale Oak Pillager Celebrating Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_piglin_statue": "Pale Oak Piglin Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_piglin_axe_statue": "Pale Oak Piglin Axe Statue",
+  "block.villagerunknown-graveyardsandghosts.pale_oak_dragon_egg_statue": "Pale Oak Dragon Egg Statue",
+
   "block.villagerunknown-graveyardsandghosts.acacia_plank_tombstone": "Acacia Plank Tombstone",
   "block.villagerunknown-graveyardsandghosts.acacia_plank_rounded_tombstone": "Rounded Acacia Plank Tombstone",
   "block.villagerunknown-graveyardsandghosts.broken_acacia_plank_tombstone": "Broken Acacia Plank Tombstone",
@@ -2183,7 +2218,7 @@
   "block.villagerunknown-graveyardsandghosts.pink_concrete_piglin_statue": "Pink Concrete Piglin Statue",
   "block.villagerunknown-graveyardsandghosts.pink_concrete_piglin_axe_statue": "Pink Concrete Piglin Axe Statue",
   "block.villagerunknown-graveyardsandghosts.pink_concrete_dragon_egg_statue": "Pink Concrete Dragon Egg Statue",
-  
+
   "block.villagerunknown-graveyardsandghosts.white_terracotta_tombstone": "White Terracotta Tombstone",
   "block.villagerunknown-graveyardsandghosts.white_terracotta_rounded_tombstone": "Rounded White Terracotta Tombstone",
   "block.villagerunknown-graveyardsandghosts.broken_white_terracotta_tombstone": "Broken White Terracotta Tombstone",

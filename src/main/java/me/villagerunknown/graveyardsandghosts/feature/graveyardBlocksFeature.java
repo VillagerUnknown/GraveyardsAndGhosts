@@ -46,7 +46,7 @@ public class graveyardBlocksFeature {
 			"dark_oak",
 			"mangrove",
 			"cherry",
-//			"pale_oak",
+			"pale_oak",
 			"crimson",
 			"warped",
 
@@ -58,7 +58,7 @@ public class graveyardBlocksFeature {
 			"dark_oak_plank",
 			"mangrove_plank",
 			"cherry_plank",
-//			"pale_oak_plank",
+			"pale_oak_plank",
 			"crimson_plank",
 			"warped_plank",
 			
@@ -152,7 +152,7 @@ public class graveyardBlocksFeature {
 			"dark_oak",
 			"mangrove",
 			"cherry",
-//			"pale_oak",
+			"pale_oak",
 			"crimson",
 			"warped",
 			
@@ -164,7 +164,7 @@ public class graveyardBlocksFeature {
 			"dark_oak_plank",
 			"mangrove_plank",
 			"cherry_plank",
-//			"pale_oak_plank",
+			"pale_oak_plank",
 			"crimson_plank",
 			"warped_plank"
 	));
@@ -447,6 +447,7 @@ public class graveyardBlocksFeature {
 				BLOCKS.get("dark_oak_coffin"),
 				BLOCKS.get("mangrove_coffin"),
 				BLOCKS.get("cherry_coffin"),
+				BLOCKS.get("pale_oak_coffin"),
 				BLOCKS.get("crimson_coffin"),
 				BLOCKS.get("warped_coffin"),
 				
@@ -458,7 +459,7 @@ public class graveyardBlocksFeature {
 				BLOCKS.get("dark_oak_plank_coffin"),
 				BLOCKS.get("mangrove_plank_coffin"),
 				BLOCKS.get("cherry_plank_coffin"),
-//				BLOCKS.get("pale_oak_plank_coffin"),
+				BLOCKS.get("pale_oak_plank_coffin"),
 				BLOCKS.get("crimson_plank_coffin"),
 				BLOCKS.get("warped_plank_coffin"),
 				
@@ -561,6 +562,7 @@ public class graveyardBlocksFeature {
 				BLOCKS.get("dark_oak_resurrection_statue"),
 				BLOCKS.get("mangrove_resurrection_statue"),
 				BLOCKS.get("cherry_resurrection_statue"),
+				BLOCKS.get("pale_oak_resurrection_statue"),
 				BLOCKS.get("crimson_resurrection_statue"),
 				BLOCKS.get("warped_resurrection_statue"),
 				
@@ -572,6 +574,7 @@ public class graveyardBlocksFeature {
 				BLOCKS.get("dark_oak_plank_resurrection_statue"),
 				BLOCKS.get("mangrove_plank_resurrection_statue"),
 				BLOCKS.get("cherry_plank_resurrection_statue"),
+				BLOCKS.get("pale_oak_plank_resurrection_statue"),
 				BLOCKS.get("crimson_plank_resurrection_statue"),
 				BLOCKS.get("warped_plank_resurrection_statue"),
 				
