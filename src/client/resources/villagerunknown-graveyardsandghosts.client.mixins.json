@@ -4,7 +4,9 @@
   "package": "me.villagerunknown.graveyardsandghosts.client.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
-    "ItemRendererMixin"
+    "HeldItemRendererMixin",
+    "ItemRendererMixin",
+    "PlayerEntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

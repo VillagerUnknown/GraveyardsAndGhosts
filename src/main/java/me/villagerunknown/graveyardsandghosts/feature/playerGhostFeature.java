@@ -3,8 +3,8 @@ package me.villagerunknown.graveyardsandghosts.feature;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import me.villagerunknown.graveyardsandghosts.Graveyardsandghosts;
-import me.villagerunknown.graveyardsandghosts.GraveyardsandghostsPersistentData;
-import me.villagerunknown.graveyardsandghosts.GraveyardsandghostsPersistentPlayerData;
+import me.villagerunknown.graveyardsandghosts.data.PlayerData;
+import me.villagerunknown.graveyardsandghosts.data.persistent.PersistentPlayerData;
 import me.villagerunknown.graveyardsandghosts.statuseffect.GhostEffect;
 import me.villagerunknown.platform.timer.ServerTickTimer;
 import me.villagerunknown.platform.timer.TickTimer;
@@ -342,7 +342,7 @@ public class playerGhostFeature {
 			
 			for (ServerPlayerEntity player : serverWorld.getPlayers()) {
 				if( player.hasStatusEffect( GHOST_EFFECT_REGISTRY ) ) {
-					GraveyardsandghostsPersistentPlayerData playerData = GraveyardsandghostsPersistentData.getPlayerState(player);
+					PlayerData playerData = PersistentPlayerData.getPlayerState(player);
 					Optional<GlobalPos> lastDeathPos = gson.fromJson( playerData.lastCorpsePos, new TypeToken<Optional<GlobalPos>>(){}.getType() );
 					
 					if( soundLoopTimer.isAlarmActivated() ) {

@@ -259,18 +259,6 @@ public class CoffinBlock extends BlockWithEntity implements Waterloggable {
 	}
 	
 	@Override
-	public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-		if (state.getBlock() != newState.getBlock()) {
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			if (blockEntity instanceof CoffinBlockEntity coffinBlockEntity) {
-				ItemScatterer.spawn(world, pos, coffinBlockEntity);
-				world.updateComparators(pos,this);
-			}
-			super.onStateReplaced(state, world, pos, newState, moved);
-		}
-	}
-	
-	@Override
 	public boolean hasComparatorOutput(BlockState state) {
 		return true;
 	}
