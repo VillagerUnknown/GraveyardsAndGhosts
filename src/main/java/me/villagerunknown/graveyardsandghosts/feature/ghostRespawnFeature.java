@@ -98,8 +98,8 @@ public class ghostRespawnFeature {
 				respawnPosition = null;
 
 				if( null != playerRespawnPositions) {
-					Set<BlockPos> dimensionPositions = playerRespawnPositions.getOrDefault( serverPlayerEntity.getServerWorld().getRegistryKey().getValue().toString(), new HashSet<>() );
-					World dimWorld = serverPlayerEntity.getServer().getWorld( serverPlayerEntity.getServerWorld().getRegistryKey() );
+					Set<BlockPos> dimensionPositions = playerRespawnPositions.getOrDefault( serverPlayerEntity.getWorld().getRegistryKey().getValue().toString(), new HashSet<>() );
+					World dimWorld = serverPlayerEntity.getServer().getWorld( serverPlayerEntity.getWorld().getRegistryKey() );
 					BlockPos lastPlayerPosition = serverPlayerEntity.getBlockPos();
 					
 					Graveyardsandghosts.LOGGER.info("Trying to set respawn point for " + serverPlayerEntity.getNameForScoreboard() + " in " + dimWorld.getDimensionEntry().getIdAsString() + " from " + dimensionPositions.size() + " possible points.");
