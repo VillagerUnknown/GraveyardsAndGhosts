@@ -192,7 +192,7 @@
               "function": "minecraft:explosion_decay"
             }
           ],
-          "name": "minecraft:chain",
+          "name": "minecraft:iron_chain",
           "weight": 3
         },
         {
