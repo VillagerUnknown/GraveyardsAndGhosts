@@ -147,7 +147,7 @@ public class CoffinBlock extends BlockWithEntity implements Waterloggable {
 	}
 	
 	public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-		if (!world.isClient) {
+		if (!world.isClient()) {
 			BedPart bedPart = (BedPart)state.get(PART);
 			BlockPos joinedBlockPos = pos.offset(getDirectionTowardsOtherPart(bedPart, (Direction)state.get(FACING)));
 			BlockState joinedBlockState = world.getBlockState(joinedBlockPos);
@@ -177,7 +177,7 @@ public class CoffinBlock extends BlockWithEntity implements Waterloggable {
 	
 	public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
 		super.onPlaced(world, pos, state, placer, itemStack);
-		if (!world.isClient) {
+		if (!world.isClient()) {
 			BlockPos blockPos = pos.offset((Direction)state.get(FACING));
 			world.setBlockState(blockPos, (BlockState)state.with(PART, BedPart.HEAD), 3);
 			world.updateNeighbors(pos, Blocks.AIR);
@@ -211,7 +211,7 @@ public class CoffinBlock extends BlockWithEntity implements Waterloggable {
 	
 	@Override
 	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-		if (!world.isClient) {
+		if (!world.isClient()) {
 			NamedScreenHandlerFactory screenHandlerFactory = null;
 			
 			if( state.get( PART ).equals( BedPart.HEAD ) ) {
@@ -273,7 +273,6 @@ public class CoffinBlock extends BlockWithEntity implements Waterloggable {
 		return state.rotate(mirror.getRotation((Direction)state.get(FACING)));
 	}
 	
-	@Override
 	public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
 		return ScreenHandler.calculateComparatorOutput(world.getBlockEntity(pos));
 	}

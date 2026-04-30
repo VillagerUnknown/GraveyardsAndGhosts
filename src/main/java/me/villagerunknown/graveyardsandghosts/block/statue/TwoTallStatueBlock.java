@@ -101,7 +101,7 @@ public class TwoTallStatueBlock extends StatueBlock {
 	}
 	
 	public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-		if (!world.isClient) {
+		if (!world.isClient()) {
 			if (player.isCreative()) {
 				onBreakInCreative(world, pos, state, player);
 			} else {

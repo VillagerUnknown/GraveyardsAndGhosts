@@ -264,7 +264,7 @@ public class playerGhostFeature {
 	}
 	
 	public static void applyGhostEffect( ServerPlayerEntity serverPlayerEntity ) {
-		if(serverPlayerEntity.getWorld().isClient()) {
+		if(serverPlayerEntity.getEntityWorld().isClient()) {
 			return;
 		}
 		
@@ -272,7 +272,7 @@ public class playerGhostFeature {
 	}
 	
 	public static void clearGhostEffect( ServerPlayerEntity serverPlayerEntity ) {
-		if(serverPlayerEntity.getWorld().isClient()) {
+		if(serverPlayerEntity.getEntityWorld().isClient()) {
 			return;
 		}
 		
@@ -281,7 +281,7 @@ public class playerGhostFeature {
 	}
 	
 	public static void applyGhostAbilities(LivingEntity entity, int amplifier) {
-		if(entity.getWorld().isClient()) {
+		if(entity.getEntityWorld().isClient()) {
 			return;
 		}
 		
@@ -302,7 +302,7 @@ public class playerGhostFeature {
 	}
 	
 	public static void applyHumanAbilities(LivingEntity entity) {
-		if(entity.getWorld().isClient()) {
+		if(entity.getEntityWorld().isClient()) {
 			return;
 		}
 		

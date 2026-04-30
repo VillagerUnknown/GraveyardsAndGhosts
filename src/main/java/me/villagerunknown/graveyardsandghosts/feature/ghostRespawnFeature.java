@@ -41,6 +41,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.GlobalPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldProperties;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -98,15 +99,16 @@ public class ghostRespawnFeature {
 				respawnPosition = null;
 
 				if( null != playerRespawnPositions) {
-					Set<BlockPos> dimensionPositions = playerRespawnPositions.getOrDefault( serverPlayerEntity.getWorld().getRegistryKey().getValue().toString(), new HashSet<>() );
-					World dimWorld = serverPlayerEntity.getServer().getWorld( serverPlayerEntity.getWorld().getRegistryKey() );
+					Set<BlockPos> dimensionPositions = playerRespawnPositions.getOrDefault( serverPlayerEntity.getEntityWorld().getRegistryKey().getValue().toString(), new HashSet<>() );
+					World dimWorld = serverPlayerEntity.getEntityWorld();
 					BlockPos lastPlayerPosition = serverPlayerEntity.getBlockPos();
+					MinecraftServer server = dimWorld.getServer();
 					
 					Graveyardsandghosts.LOGGER.info("Trying to set respawn point for " + serverPlayerEntity.getNameForScoreboard() + " in " + dimWorld.getDimensionEntry().getIdAsString() + " from " + dimensionPositions.size() + " possible points.");
 					
 					if( dimensionPositions.isEmpty() ) {
-						dimensionPositions = playerRespawnPositions.getOrDefault( serverPlayerEntity.getServer().getOverworld().getRegistryKey().getValue().toString(), new HashSet<>() );
-						dimWorld = serverPlayerEntity.getServer().getWorld( serverPlayerEntity.getServer().getOverworld().getRegistryKey() );
+						dimensionPositions = playerRespawnPositions.getOrDefault( server.getOverworld().getRegistryKey().getValue().toString(), new HashSet<>() );
+						dimWorld = server.getWorld( server.getOverworld().getRegistryKey() );
 						lastPlayerPosition = gson.fromJson( playerData.lastOverworldPos, BlockPos.class );
 						
 						Graveyardsandghosts.LOGGER.info("Trying to set respawn point for " + serverPlayerEntity.getNameForScoreboard() + " in " + dimWorld.getDimensionEntry().getIdAsString() + " from " + dimensionPositions.size() + " possible points.");
@@ -191,7 +193,9 @@ public class ghostRespawnFeature {
 							safeSpawnPos = PositionUtil.findSafeSpawnPosition( dimWorld, safeSpawnPos, Graveyardsandghosts.CONFIG.resurrectionSafeRespawnSearchRadius );
 						} // if
 						
-						ServerPlayerEntity.Respawn spawn = new ServerPlayerEntity.Respawn( dimWorld.getRegistryKey(), safeSpawnPos, 0F, true );
+						WorldProperties.SpawnPoint spawnPoint = new WorldProperties.SpawnPoint(new GlobalPos( dimWorld.getRegistryKey(), safeSpawnPos), 0F, 0F);
+						
+						ServerPlayerEntity.Respawn spawn = new ServerPlayerEntity.Respawn( spawnPoint, true );
 						serverPlayerEntity.setSpawnPoint( spawn, true );
 					} // if
 				} // if
@@ -210,11 +214,11 @@ public class ghostRespawnFeature {
 				PlayerData playerData = PersistentPlayerData.getPlayerState(serverPlayerEntity1);
 				playerData.lastCorpsePos = gson.toJson( serverPlayerEntity.getLastDeathPos(), new TypeToken<Optional<GlobalPos>>(){}.getType() );
 				
-				if( null != serverPlayerEntity.getServer() ) {
-					long currentTick = serverPlayerEntity.getServer().getTicks();
-					resurrectionCorpseTimers.put(serverPlayerEntity1.getUuid(), new ServerTickTimer(currentTick, 0, corpseTimerFrequencyInSeconds));
-					resurrectionPromptTimers.put(serverPlayerEntity1.getUuid(), new ServerTickTimer(currentTick, 0, Graveyardsandghosts.CONFIG.resurrectionPromptFrequencyInSeconds));
-				}
+				MinecraftServer server = serverPlayerEntity.getEntityWorld().getServer();
+				
+				long currentTick = server.getTicks();
+				resurrectionCorpseTimers.put(serverPlayerEntity1.getUuid(), new ServerTickTimer(currentTick, 0, corpseTimerFrequencyInSeconds));
+				resurrectionPromptTimers.put(serverPlayerEntity1.getUuid(), new ServerTickTimer(currentTick, 0, Graveyardsandghosts.CONFIG.resurrectionPromptFrequencyInSeconds));
 			} // if
 		});
 		
@@ -446,9 +450,9 @@ public class ghostRespawnFeature {
 		} // if
 		
 		if( Graveyardsandghosts.CONFIG.enableParticles ) {
-			if( Graveyardsandghosts.CONFIG.enableFlashParticles ) {
-				EntityUtil.spawnParticles( player, 1, ParticleTypes.FLASH, 1, 0, 0, 0, 1F );
-			} // if
+//			if( Graveyardsandghosts.CONFIG.enableFlashParticles ) {
+//				EntityUtil.spawnParticles( player, 1, ParticleTypes.FLASH, 1, 0, 0, 0, 1F );
+//			} // if
 			
 			EntityUtil.spawnParticles( player, 1, ParticleTypes.TOTEM_OF_UNDYING, 10, 0.25, 0.25, 0.25, 0.005F );
 			EntityUtil.spawnParticles( player, 1, ParticleTypes.SOUL, 1, 0.25, 0.25, 0.25, 0.005F );

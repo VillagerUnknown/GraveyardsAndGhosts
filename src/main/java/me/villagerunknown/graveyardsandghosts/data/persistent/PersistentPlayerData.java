@@ -57,7 +57,7 @@ public class PersistentPlayerData extends AbstractPersistentData {
 	}
 	
 	public static PlayerData getPlayerState(LivingEntity player) {
-		World world = player.getWorld();
+		World world = player.getEntityWorld();
 		
 		if( null != world ) {
 			MinecraftServer server = world.getServer();
