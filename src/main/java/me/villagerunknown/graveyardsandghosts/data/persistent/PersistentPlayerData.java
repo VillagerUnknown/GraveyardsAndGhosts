@@ -41,8 +41,8 @@ public class PersistentPlayerData extends AbstractPersistentData {
 	
 	private static PersistentStateType<PersistentPlayerData> type = new PersistentStateType<>(
 			MOD_ID,
-			(context) -> new PersistentPlayerData(),
-			ctx -> CODEC,
+			PersistentPlayerData::new,
+			CODEC,
 			null
 	);
 	

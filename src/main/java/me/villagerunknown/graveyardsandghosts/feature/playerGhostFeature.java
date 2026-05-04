@@ -346,13 +346,13 @@ public class playerGhostFeature {
 					Optional<GlobalPos> lastDeathPos = gson.fromJson( playerData.lastCorpsePos, new TypeToken<Optional<GlobalPos>>(){}.getType() );
 					
 					if( soundLoopTimer.isAlarmActivated() ) {
-						player.playSoundToPlayer(SoundEvents.AMBIENT_SOUL_SAND_VALLEY_LOOP.value(), SoundCategory.AMBIENT, Graveyardsandghosts.CONFIG.soundVolume, 1F);
+						player.playSound(SoundEvents.AMBIENT_SOUL_SAND_VALLEY_LOOP.value(), Graveyardsandghosts.CONFIG.soundVolume, 1F);
 						
 						soundLoopTimer.resetAlarmActivation( currentTick );
 					} // if
 					
 					if( soundAdditionsTimer.isAlarmActivated() ) {
-						player.playSoundToPlayer(SoundEvents.AMBIENT_SOUL_SAND_VALLEY_ADDITIONS.value(), SoundCategory.AMBIENT, Graveyardsandghosts.CONFIG.soundVolume, 1F);
+						player.playSound(SoundEvents.AMBIENT_SOUL_SAND_VALLEY_ADDITIONS.value(), Graveyardsandghosts.CONFIG.soundVolume, 1F);
 						
 						soundAdditionsTimer.resetAlarmActivation( currentTick );
 					} // if
