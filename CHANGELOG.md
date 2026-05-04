@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
 
 - Changed supported Minecraft version to 1.21.9.
 
+### Fixed
+
+- Fixed missing translations for Pale Oak variants.
+
 ## [1.3.1+1.21.6]
 
 ### Changed
